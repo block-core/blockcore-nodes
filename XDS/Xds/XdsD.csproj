@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RuntimeFrameworkVersion>3.1.0</RuntimeFrameworkVersion>
+    <AssemblyName>blockcore.xdsd</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>StratisD</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1705;IDE0008;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blockcore.Core" Version="1.0.2" />
+    <PackageReference Include="Blockcore.Features.Api" Version="1.0.2" />
+    <PackageReference Include="Blockcore.Features.BlockStore" Version="1.0.2" />
+    <PackageReference Include="Blockcore.Features.ColdStaking" Version="1.0.2" />
+    <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.2" />
+    <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.0.2" />
+    <PackageReference Include="Blockcore.Features.Miner" Version="1.0.2" />
+    <PackageReference Include="Blockcore.Features.RPC" Version="1.0.2" />
+    <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.2" />
+    <PackageReference Include="Blockcore.NBitcoin" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blockcore.Networks.Xds\Blockcore.Networks.Xds.csproj" />
+  </ItemGroup>
+</Project>
