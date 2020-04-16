@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Blockcore.Consensus.Rules;
 using Microsoft.Extensions.Logging;
@@ -6,59 +6,75 @@ using NBitcoin;
 
 namespace Blockcore.Networks.Xds.Rules
 {
-    /// <summary>
-    /// Checks if transactions match the white-listing criteria. This rule and <see cref="XdsOutputNotWhitelistedMempoolRule"/> must correspond.
-    /// </summary>
-    public class XdsOutputNotWhitelistedRule : PartialValidationConsensusRule
-    {
-        public override Task RunAsync(RuleContext context)
-        {
-            var block = context.ValidationContext.BlockToValidate;
-            var isPosBlock = block.Transactions.Count >= 2 && block.Transactions[1].IsCoinStake;
+   /// <summary>
+   /// Checks if transactions match the white-listing criteria. This rule and <see cref="XdsOutputNotWhitelistedMempoolRule"/> must correspond.
+   /// </summary>
+   public class XdsOutputNotWhitelistedRule : PartialValidationConsensusRule
+   {
+      public override Task RunAsync(RuleContext context)
+      {
+         Block block = context.ValidationContext.BlockToValidate;
 
-            foreach (var transaction in context.ValidationContext.BlockToValidate.Transactions)
+         bool isPosBlock = block.Transactions.Count >= 2 && block.Transactions[1].IsCoinStake;
+
+         foreach (Transaction transaction in context.ValidationContext.BlockToValidate.Transactions)
+         {
+            if (transaction.IsCoinStake)
             {
-                if (transaction.IsCoinStake)
-                    continue;
-
-                if (transaction.IsCoinBase && isPosBlock)
-                    continue;
-
-                foreach (var output in transaction.Outputs)
-                {
-                    if (IsOutputWhitelisted(output))
-                        continue;
-
-                    this.Logger.LogTrace($"(-)[FAIL_{nameof(XdsOutputNotWhitelistedRule)}]".ToUpperInvariant());
-                    XdsConsensusErrors.OutputNotWhitelisted.Throw();
-                }
+               continue;
             }
 
-            return Task.CompletedTask;
-        }
+            if (transaction.IsCoinBase && isPosBlock)
+            {
+               continue;
+            }
 
-        public static bool IsOutputWhitelisted(TxOut txOut)
-        {
-            if (txOut == null || txOut.ScriptPubKey == null || txOut.ScriptPubKey.Length == 0)
-                throw new ArgumentException("This method expects a TxOut with a non-empty ScriptPubKey.");
+            foreach (TxOut output in transaction.Outputs)
+            {
+               if (IsOutputWhitelisted(output))
+               {
+                  continue;
+               }
 
-            byte[] raw = txOut.ScriptPubKey.ToBytes();
+               Logger.LogTrace($"(-)[FAIL_{nameof(XdsOutputNotWhitelistedRule)}]".ToUpperInvariant());
 
-            const int witnessVersion = 0;
+               XdsConsensusErrors.OutputNotWhitelisted.Throw();
+            }
+         }
 
-            // P2WPKH
-            if (raw.Length == 22 && raw[0] == witnessVersion && raw[1] == 20)
-                return true;
+         return Task.CompletedTask;
+      }
 
-            // P2WSH
-            if (raw.Length == 34 && raw[0] == witnessVersion && raw[1] == 32)
-                return true;
+      public static bool IsOutputWhitelisted(TxOut txOut)
+      {
+         if (txOut == null || txOut.ScriptPubKey == null || txOut.ScriptPubKey.Length == 0)
+         {
+            throw new ArgumentException("This method expects a TxOut with a non-empty ScriptPubKey.");
+         }
 
-            // OP_RETURN
-            if (raw[0] == (byte)OpcodeType.OP_RETURN)
-                return true;
+         byte[] raw = txOut.ScriptPubKey.ToBytes();
 
-            return false;
-        }
-    }
+         const int witnessVersion = 0;
+
+         // P2WPKH
+         if (raw.Length == 22 && raw[0] == witnessVersion && raw[1] == 20)
+         {
+            return true;
+         }
+
+         // P2WSH
+         if (raw.Length == 34 && raw[0] == witnessVersion && raw[1] == 32)
+         {
+            return true;
+         }
+
+         // OP_RETURN
+         if (raw[0] == (byte)OpcodeType.OP_RETURN)
+         {
+            return true;
+         }
+
+         return false;
+      }
+   }
 }

@@ -15,32 +15,32 @@ using NBitcoin.Protocol;
 
 namespace StratisD
 {
-    public class Program
-    {
-        public static async Task Main(string[] args)
-        {
-            try
-            {
-                var nodeSettings = new NodeSettings(networksSelector: Networks.Xds,
-                    protocolVersion: ProtocolVersion.PROVEN_HEADER_VERSION,
-                    args: args);
+   public class Program
+   {
+      public static async Task Main(string[] args)
+      {
+         try
+         {
+            var nodeSettings = new NodeSettings(networksSelector: Networks.Xds,
+                protocolVersion: ProtocolVersion.PROVEN_HEADER_VERSION,
+                args: args);
 
-                IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
-                    .UseNodeSettings(nodeSettings)
-                    .UseBlockStore()
-                    .UsePosConsensus()
-                    .UseMempool()
-                    .UseColdStakingWallet()
-                    .AddPowPosMining()
-                    .UseApi()
-                    .AddRPC();
+            IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
+                .UseNodeSettings(nodeSettings)
+                .UseBlockStore()
+                .UsePosConsensus()
+                .UseMempool()
+                .UseColdStakingWallet()
+                .AddPowPosMining()
+                .UseApi()
+                .AddRPC();
 
-                await nodeBuilder.Build().RunAsync();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("There was a problem initializing the node. Details: '{0}'", ex.ToString());
-            }
-        }
-    }
+            await nodeBuilder.Build().RunAsync();
+         }
+         catch (Exception ex)
+         {
+            Console.WriteLine("There was a problem initializing the node. Details: '{0}'", ex.ToString());
+         }
+      }
+   }
 }
