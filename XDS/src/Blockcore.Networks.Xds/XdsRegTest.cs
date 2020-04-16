@@ -1,10 +1,10 @@
-﻿namespace Blockcore.Networks.Xds
+namespace Blockcore.Networks.Xds
 {
-    public class XdsRegTest : XdsMain
-    {
-        public XdsRegTest()
-        {
-            // TODO
-        }
-    }
+   public class XdsRegTest : XdsMain
+   {
+      public XdsRegTest()
+      {
+         // TODO
+      }
+   }
 }
