@@ -9,8 +9,7 @@ on:
 
 jobs:
 
-  build:
-
+  b:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
@@ -81,17 +80,17 @@ jobs:
     - name: Package (Linux)
       if: matrix.os == 'ubuntu-latest'
       run: |
-        echo "::set-env name=RELEASE_PATH::./src/${{env.PROJECT_NAME}}/bin/publish/${{env.RELEASE_NAME}}"
-        cd ./src/${{env.PROJECT_NAME}}/bin/publish/
+        echo "::set-env name=RELEASE_PATH::./bin/publish/${{env.RELEASE_NAME}}"
+        cd ./bin/publish/
         tar cvzf ${{env.RELEASE_NAME}} *
 
     - name: Package (Windows)
       if: matrix.os == 'windows-latest'
-      run: Compress-Archive -Path .\src\${{env.PROJECT_NAME}}\bin\publish\* -DestinationPath .\${{env.RELEASE_NAME}}
+      run: Compress-Archive -Path .\bin\publish\* -DestinationPath .\${{env.RELEASE_NAME}}
 
     - name: Package (Mac)
       if: matrix.os == 'macos-latest'
-      run: zip -j -r ${{env.RELEASE_NAME}} ./src/${{env.PROJECT_NAME}}/bin/publish/
+      run: zip -j -r ${{env.RELEASE_NAME}} ./bin/publish/
 
     - name: Release
       uses: sondreb/action-release@master
