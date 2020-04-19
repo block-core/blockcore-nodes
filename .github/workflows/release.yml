@@ -2,7 +2,7 @@ name: Build and Release Docker Image
 
 on:
   release:
-    types: [published, prereleased]
+    types: [published, prereleased, edited]
 
 jobs:
   build:
@@ -14,11 +14,11 @@ jobs:
         chain: ['XDS', 'CITY']
         include:
           - chain: XDS
-            name: "XDS"
+            name: "xds"
             assembly: "blockcore.xdsd.dll"
             ports: "38333 48333 48334"
           - chain: CITY
-            name: "CITY"
+            name: "city"
             assembly: "City.Node.dll"
             ports: "4333 4334 4335 4336"
       fail-fast: false
@@ -43,7 +43,7 @@ jobs:
           files: '["Dockerfile"]'
         env:
           VERSION: ${{ github.event.release.tag_name }}
-          CHAIN: ${{ matrix.name }}
+          CHAIN: ${{ matrix.chain }}
           PORTS: ${{ matrix.ports }}
           ASSEMBLY: ${{ matrix.assembly }}
 
