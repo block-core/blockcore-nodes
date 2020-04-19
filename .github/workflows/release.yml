@@ -1,0 +1,56 @@
+name: Build and Release Docker Image
+
+on:
+  release:
+    types: [published, prereleased]
+
+jobs:
+  build:
+    name: Build and Push
+
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        chain: ['XDS', 'CITY']
+        include:
+          - chain: XDS
+            name: "XDS"
+            assembly: "blockcore.xdsd.dll"
+            ports: "38333 48333 48334"
+          - chain: CITY
+            name: "CITY"
+            assembly: "City.Node.dll"
+            ports: "4333 4334 4335 4336"
+      fail-fast: false
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Log Variables
+        run: |
+          echo "action - ${{ github.event.action }}"
+          echo "url - ${{ github.event.release.url }}"
+          echo "assets_url - ${{ github.event.release.assets_url }}"
+          echo "id - ${{ github.event.release.id }}"
+          echo "tag_name - ${{ github.event.release.tag_name }}"
+          echo "assets - ${{ github.event.assets }}"
+          echo "assets[0] - ${{ github.event.assets[0] }}"
+
+      - uses: cschleiden/replace-tokens@v1
+        with:
+          files: '["Dockerfile"]'
+        env:
+          VERSION: ${{ github.event.release.tag_name }}
+          CHAIN: ${{ matrix.name }}
+          PORTS: ${{ matrix.ports }}
+          ASSEMBLY: ${{ matrix.assembly }}
+
+      - name: Build the Docker container image
+        run: docker build -f "Dockerfile" -t blockcore/node/${{ matrix.name }}:latest -t blockcore/node/${{ matrix.name }}:${{ github.event.release.tag_name }} --label "unstable=true" "."
+
+      - name: Login and Push to Docker Registry
+        run: |
+          docker login -u "sondreb" -p "${{secrets.DockerHubSecret}}"
+          docker push blockcore/node/${{ matrix.name }}
