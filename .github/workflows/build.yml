@@ -9,7 +9,7 @@ on:
 
 jobs:
 
-  buildAndPrepareRelease:
+  build:
 
     strategy:
       matrix:

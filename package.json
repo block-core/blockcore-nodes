@@ -1,0 +1,25 @@
+{
+   "name": "blockcorenodes",
+   "version": "1.0.3",
+   "license": "MIT",
+   "author": {
+      "name": "Blockcore",
+      "email": "post@blockcore.net",
+      "url": "https://www.blockcore.net"
+   },
+   "description": "",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/block-core/blockcore-nodes.git"
+   },
+   "bugs": {
+      "url": "https://github.com/block-core/blockcore-nodes/issues"
+   },
+   "homepage": "https://github.com/block-core/blockcore-nodes#readme",
+   "scripts": {
+      "version": "node -p \"require('./package.json').version\""
+   },
+   "private": true,
+   "dependencies": {},
+   "devDependencies": {}
+}
