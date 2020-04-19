@@ -98,7 +98,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         files: "${{env.RELEASE_PATH}}"
         draft: true
-        prerelease: true
+        prerelease: false
         body: ''
         name: "Blockcore Reference Nodes (Release ${{env.VERSION}})"
         tag: ${{env.VERSION}}
