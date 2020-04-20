@@ -13,8 +13,21 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['XDS', 'CITY']
+        chain: ['CITY', 'XDS', 'XLR']
         include:
+          - chain: CITY
+            name: "CITY"
+            solution: "CITY/City.sln"
+            project: "CITY/src/City.Node/City.Node.csproj"
+          - chain: XDS
+            name: "XDS"
+            solution: "XDS/Blockcore.Xds.sln"
+            project: "XDS/src/XdsD/XdsD.csproj"
+          - chain: XLR
+            name: "XLR"
+            solution: "XLR/Solaris.sln"
+            project: "XLR/src/Solaris.Node/Solaris.Node.csproj"
+            
           - os: windows-latest
             extension: ".zip"
             runtime: "win-x64"
@@ -24,14 +37,6 @@ jobs:
           - os: macos-latest
             runtime: "osx-x64"
             extension: ".zip"
-          - chain: XDS
-            name: "XDS"
-            solution: "XDS/Blockcore.Xds.sln"
-            project: "XDS/src/XdsD/XdsD.csproj"
-          - chain: CITY
-            name: "CITY"
-            solution: "CITY/City.sln"
-            project: "CITY/src/City.Node/City.Node.csproj"
         node_version: [12.x]
       fail-fast: false
 

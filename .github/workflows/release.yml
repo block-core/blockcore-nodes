@@ -11,16 +11,21 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        chain: ['XDS', 'CITY']
+        chain: ['CITY', 'XDS', 'XLR']
         include:
-          - chain: XDS
-            name: "xds"
-            assembly: "blockcore.xdsd.dll"
-            ports: "38333 48333 48334"
           - chain: CITY
             name: "city"
             assembly: "City.Node.dll"
             ports: "4333 4334 4335 4336"
+          - chain: XDS
+            name: "xds"
+            assembly: "blockcore.xdsd.dll"
+            ports: "38333 48333 48334"
+          - chain: XLR
+            name: "xlr"
+            assembly: "Solaris.Node.dll"
+            ports: "60000 61000 62000 63000"
+
       fail-fast: false
 
     runs-on: ${{ matrix.os }}
