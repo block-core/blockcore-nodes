@@ -13,12 +13,16 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['CITY', 'XDS', 'XLR']
+        chain: ['CITY', 'STRAT', 'XDS', 'XLR']
         include:
           - chain: CITY
             name: "CITY"
             solution: "CITY/City.sln"
             project: "CITY/src/City.Node/City.Node.csproj"
+          - chain: STRAT
+            name: "STRAT"
+            solution: "STRAT/Stratis.sln"
+            project: "STRAT/src/Stratis.Node/Stratis.Node.csproj"
           - chain: XDS
             name: "XDS"
             solution: "XDS/Blockcore.Xds.sln"
@@ -27,7 +31,7 @@ jobs:
             name: "XLR"
             solution: "XLR/Solaris.sln"
             project: "XLR/src/Solaris.Node/Solaris.Node.csproj"
-            
+
           - os: windows-latest
             extension: ".zip"
             runtime: "win-x64"

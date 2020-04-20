@@ -11,12 +11,16 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        chain: ['CITY', 'XDS', 'XLR']
+        chain: ['CITY', 'STRAT', 'XDS', 'XLR']
         include:
           - chain: CITY
             name: "city"
             assembly: "City.Node.dll"
             ports: "4333 4334 4335 4336"
+          - chain: STRAT
+            name: "strat"
+            assembly: "Stratis.Node.dll"
+            ports: "16178 16174 37221 38824"
           - chain: XDS
             name: "xds"
             assembly: "blockcore.xdsd.dll"
