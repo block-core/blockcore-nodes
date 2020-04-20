@@ -48,7 +48,7 @@ jobs:
           ASSEMBLY: ${{ matrix.assembly }}
 
       - name: Build the Docker container image
-        run: docker build -f "Dockerfile" -t blockcore/node/${{ matrix.name }}:latest -t blockcore/node/${{ matrix.name }}:${{ github.event.release.tag_name }} --label "unstable=true" "."
+        run: docker build -f "Dockerfile" -t blockcore/node-${{ matrix.name }}:latest -t blockcore/node-${{ matrix.name }}:${{ github.event.release.tag_name }} --label "unstable=true" "."
 
       - name: Login and Push to Docker Registry
         run: |
