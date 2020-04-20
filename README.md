@@ -1,24 +1,21 @@
 # Blockcore Reference Nodes
 
-Reference implementations of Blockcore based blockchains
+Reference implementations of Blockcore based blockchains.
 
-This software is provided without any support, use at your own risk.
-
-Please refer to the official software for individual blockchains for supported software.
+*This software is provided without any support, use at your own risk.*
 
 ## Available for these blockchains
 
 - XDS
 - CITY - [City Chain](https://www.city-chain.org)
 
+## Download
 
-## Manual download
-
-Go to the release page to find the packaged nodes for various chains. Separate downloads for Windows, Linux and macOS is available.
+Go to the [release] page to find the packaged nodes for various chains. Separate downloads for Windows, Linux and macOS is available.
 
 ## Docker
 
-All our Blockcore Reference Nodes is published to our [Docker Hub](https://hub.docker.com/orgs/blockcore).
+All our Blockcore Reference Nodes is published to our [Docker Hub](https://hub.docker.com/orgs/blockcore/repositories).
 
 It is super easy to spin up a new instance of any of the nodes, they all follow the same syntax (name and version).
 
@@ -37,3 +34,14 @@ Run the Blockcore Reference Node for City Chain blockchain in background:
 ```sh
 docker run blockcore/node-city:1.0.4
 ```
+
+## Support and compatibility
+
+These are all unofficial reference node software. They are not supported in any way.
+
+The software can be incompatible with the blockchain they are built for.
+
+You run the risk of getting your IP address banned on the blockchain if you run 
+node software that violated the blockchain consensus.
+
+Please refer to the official software for individual blockchains for supported node software.
