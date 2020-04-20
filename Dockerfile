@@ -12,4 +12,4 @@ RUN curl -Ls https://github.com/block-core/blockcore-nodes/releases/download/#{V
 
 EXPOSE #{PORTS}#
 
-ENTRYPOINT ["dotnet", "#{ASSEMBLY}#.dll"]
+ENTRYPOINT ["dotnet", "#{ASSEMBLY}#"]
