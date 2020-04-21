@@ -170,7 +170,7 @@ namespace Stratis.Networks
          consensus.ConsensusRules
              .Register<HeaderTimeChecksRule>()
              .Register<HeaderTimeChecksPosRule>()
-             .Register<PosFutureDriftRule>()
+             .Register<StratisBugFixPosFutureDriftRule>()
              .Register<CheckDifficultyPosRule>()
              .Register<StratisHeaderVersionRule>()
              .Register<ProvenHeaderSizeRule>()

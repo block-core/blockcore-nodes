@@ -12,7 +12,7 @@ namespace Stratis
    {
       public const string FileNamePrefix = "stratis";
       public const string ConfigFileName = "stratis.conf";
-      public const string Magic = "05-22-5-70";
+      public const string Magic = "70-35-22-05";
       public const int CoinType = 105; // SLIP-0044: https://github.com/satoshilabs/slips/blob/master/slip-0044.md
       public const decimal PremineReward = 98000000;
       public const decimal PoWBlockReward = 4;
