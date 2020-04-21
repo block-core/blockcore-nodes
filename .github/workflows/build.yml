@@ -13,12 +13,16 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['CITY', 'STRAT', 'XDS', 'XLR']
+        chain: ['CITY','IMPL', 'STRAT', 'XDS', 'XLR']
         include:
           - chain: CITY
             name: "CITY"
             solution: "CITY/City.sln"
             project: "CITY/src/City.Node/City.Node.csproj"
+          - chain: IMPL
+            name: "IMPL"
+            solution: "IMPL/Impleum.sln"
+            project: "IMPL/src/Impleum.Node/Impleum.Node.csproj"
           - chain: STRAT
             name: "STRAT"
             solution: "STRAT/Stratis.sln"

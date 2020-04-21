@@ -11,12 +11,16 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        chain: ['CITY', 'STRAT', 'XDS', 'XLR']
+        chain: ['CITY','IMPL', 'STRAT', 'XDS', 'XLR']
         include:
           - chain: CITY
             name: "city"
             assembly: "City.Node.dll"
             ports: "4333 4334 4335 4336"
+          - chain: IMPL
+            name: "impl"
+            assembly: "Impleum.Node.dll"
+            ports: "16171 16172 38222"
           - chain: STRAT
             name: "strat"
             assembly: "Stratis.Node.dll"
