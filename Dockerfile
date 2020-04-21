@@ -1,5 +1,7 @@
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim
 
+VOLUME /root/.#{NAME}#
+
 WORKDIR /usr/local/app/
 
 RUN apt-get update \
