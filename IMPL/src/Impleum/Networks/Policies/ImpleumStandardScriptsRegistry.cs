@@ -24,6 +24,8 @@ namespace Impleum.Networks.Policies
             PayToWitTemplate.Instance
         };
 
+      public override List<ScriptTemplate> GetScriptTemplates => standardTemplates;
+
       public override void RegisterStandardScriptTemplate(ScriptTemplate scriptTemplate)
       {
          if (!standardTemplates.Any(template => (template.Type == scriptTemplate.Type)))
