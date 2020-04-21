@@ -46,22 +46,30 @@ namespace Solaris
 
          public static List<DNSSeedData> DNS = new List<DNSSeedData>
          {
-            // TODO: Add additional DNS seeds here
             new DNSSeedData("node1.solarisdns.network", "node1.solarisdns.network"),
             new DNSSeedData("node2.solarisdns.network", "node2.solarisdns.network"),
-            new DNSSeedData("seed.xlr.blockcore.net", "seed.xlr.blockcore.net"),
+            new DNSSeedData("node3.solarisdns.network", "node3.solarisdns.network"),
+            new DNSSeedData("node4.solarisdns.network", "node4.solarisdns.network"),
+            new DNSSeedData("node5.solarisdns.network", "node5.solarisdns.network"),
+            new DNSSeedData("seed.xlr.blockcore.net", "seed.xlr.blockcore.net")
          };
 
          public static List<NetworkAddress> Nodes = new List<NetworkAddress>
          {
-            // TODO: Add additional seed nodes here
-            new NetworkAddress(IPAddress.Parse("176.223.131.60"), SolarisSetup.Test.DefaultPort),
-            new NetworkAddress(IPAddress.Parse("85.214.223.236"), SolarisSetup.Test.DefaultPort),
+            new NetworkAddress(IPAddress.Parse("176.223.131.60"), 60000), //Official node 1
+            new NetworkAddress(IPAddress.Parse("85.214.223.236"), 60000), //Official node 2
+            new NetworkAddress(IPAddress.Parse("85.214.241.80"), 60000), //Official node 3
+            new NetworkAddress(IPAddress.Parse("85.214.130.77"), 60000), //Official node 4
+            new NetworkAddress(IPAddress.Parse("81.169.238.113"), 60000), //Official node 5
+            new NetworkAddress(IPAddress.Parse("81.169.234.147"), 60000), //Official node 6
+            new NetworkAddress(IPAddress.Parse("80.211.88.141"), 60000) //Trustaking node
          };
 
          public static Dictionary<int, CheckpointInfo> Checkpoints = new Dictionary<int, CheckpointInfo>
          {
-            // TODO: Add checkpoints as the network progresses.
+                { 0, new CheckpointInfo(new uint256("0xa3a98f72634c7d098164926b83ff136b66d1cafbb9aeb5a3b8d18da02937f79f"), new uint256("0x0000000000000000000000000000000000000000000000000000000000000000")) },
+                { 1409, new CheckpointInfo(new uint256("0xd2f9c43c57fbb066daf940f80e9ce1a63d5d444e9e337b1491f79c36288ab0da"), new uint256("0x602e263081a44650085947dbe99fd0c51041389d79fb9c3f379f8a403a74d977")) },
+                { 2900, new CheckpointInfo(new uint256("0x21e7bce830a7646e2ea049b7f37a42f032e09e8b2526cbf8d69fb094014826eb"), new uint256("0x83590685c1d2dfcb0ca9220af9447677a375cbfaaaf4305be309bb7141e41a47")) }
          };
       }
 
