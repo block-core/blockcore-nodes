@@ -53,6 +53,7 @@ jobs:
         env:
           VERSION: ${{ github.event.release.tag_name }}
           CHAIN: ${{ matrix.chain }}
+          NAME: ${{ matrix.name }}
           PORTS: ${{ matrix.ports }}
           ASSEMBLY: ${{ matrix.assembly }}
 
