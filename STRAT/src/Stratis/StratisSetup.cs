@@ -49,7 +49,7 @@ namespace Stratis
             // TODO: Add additional DNS seeds here
             new DNSSeedData("mainnet1.stratisnetwork.com", "mainnet1.stratisnetwork.com"),
             new DNSSeedData("mainnet2.stratisnetwork.com", "mainnet2.stratisnetwork.com"),
-            new DNSSeedData("seed.strat.blockcore.net", "seed.strat.blockcore.net"),
+            new DNSSeedData("strat.seed.blockcore.net", "strat.seed.blockcore.net"),
          };
 
          public static List<NetworkAddress> Nodes = new List<NetworkAddress>

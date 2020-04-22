@@ -49,7 +49,7 @@ namespace Impleum
             // TODO: Add additional DNS seeds here
             new DNSSeedData("impleum.com", "impleum.com"),
             new DNSSeedData("explorer.impleum.com", "explorer.impleum.com"),
-            new DNSSeedData("seed.impl.blockcore.net", "seed.impl.blockcore.net"),
+            new DNSSeedData("impl.seed.blockcore.net", "impl.seed.blockcore.net"),
          };
 
          public static List<NetworkAddress> Nodes = new List<NetworkAddress>

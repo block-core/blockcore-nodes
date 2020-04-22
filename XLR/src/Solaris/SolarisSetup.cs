@@ -51,7 +51,7 @@ namespace Solaris
             new DNSSeedData("node3.solarisdns.network", "node3.solarisdns.network"),
             new DNSSeedData("node4.solarisdns.network", "node4.solarisdns.network"),
             new DNSSeedData("node5.solarisdns.network", "node5.solarisdns.network"),
-            new DNSSeedData("seed.xlr.blockcore.net", "seed.xlr.blockcore.net")
+            new DNSSeedData("xlr.seed.blockcore.net", "xlr.seed.blockcore.net")
          };
 
          public static List<NetworkAddress> Nodes = new List<NetworkAddress>
