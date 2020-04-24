@@ -1,33 +1,33 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RuntimeFrameworkVersion>3.1.0</RuntimeFrameworkVersion>
-    <AssemblyName>Impleum.Node</AssemblyName>
-    <OutputType>Exe</OutputType>
-    <Authors>Blockcore</Authors>
-  </PropertyGroup>
+   <PropertyGroup>
+      <TargetFramework>netcoreapp3.1</TargetFramework>
+      <RuntimeFrameworkVersion>3.1.0</RuntimeFrameworkVersion>
+      <AssemblyName>Impleum.Node</AssemblyName>
+      <OutputType>Exe</OutputType>
+      <Authors>Blockcore</Authors>
+   </PropertyGroup>
 
-  <PropertyGroup>
-    <LangVersion>latest</LangVersion>
-  </PropertyGroup>
+   <PropertyGroup>
+      <LangVersion>latest</LangVersion>
+   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Blockcore.Features.Api" Version="1.0.5" />
-    <PackageReference Include="Blockcore.Features.BlockStore" Version="1.0.5" />
-    <PackageReference Include="Blockcore.Features.ColdStaking" Version="1.0.5" />
-    <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.5" />
-    <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.0.5" />
-    <PackageReference Include="Blockcore.Features.Miner" Version="1.0.5" />
-    <PackageReference Include="Blockcore.Features.RPC" Version="1.0.5" />
-    <PackageReference Include="Blockcore.Features.SignalR" Version="1.0.5" />
-    <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.5" />
-    <PackageReference Include="Blockcore.Features.Diagnostic" Version="1.0.5" />
-    <PackageReference Include="Blockcore.NBitcoin" Version="1.0.5" />
-  </ItemGroup>
+   <ItemGroup>
+      <PackageReference Include="Blockcore.Features.Api" Version="1.0.6" />
+      <PackageReference Include="Blockcore.Features.BlockStore" Version="1.0.6" />
+      <PackageReference Include="Blockcore.Features.ColdStaking" Version="1.0.6" />
+      <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.6" />
+      <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.0.6" />
+      <PackageReference Include="Blockcore.Features.Miner" Version="1.0.6" />
+      <PackageReference Include="Blockcore.Features.RPC" Version="1.0.6" />
+      <PackageReference Include="Blockcore.Features.SignalR" Version="1.0.6" />
+      <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.6" />
+      <PackageReference Include="Blockcore.Features.Diagnostic" Version="1.0.6" />
+      <PackageReference Include="Blockcore.NBitcoin" Version="1.0.6" />
+   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Impleum\Impleum.csproj" />
-  </ItemGroup>
+   <ItemGroup>
+      <ProjectReference Include="..\Impleum\Impleum.csproj" />
+   </ItemGroup>
 
 </Project>

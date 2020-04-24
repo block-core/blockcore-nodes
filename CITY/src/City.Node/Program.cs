@@ -4,6 +4,7 @@ using Blockcore;
 using Blockcore.Builder;
 using Blockcore.Configuration;
 using Blockcore.Features.Api;
+using Blockcore.Features.BlockExplorer;
 using Blockcore.Features.BlockStore;
 using Blockcore.Features.ColdStaking;
 using Blockcore.Features.Consensus;
@@ -14,8 +15,8 @@ using Blockcore.Features.RPC;
 using Blockcore.Features.SignalR;
 using Blockcore.Features.SignalR.Broadcasters;
 using Blockcore.Features.SignalR.Events;
+using Blockcore.Features.WalletNotify;
 using Blockcore.Utilities;
-using NBitcoin;
 using NBitcoin.Protocol;
 
 namespace City.Daemon
@@ -35,11 +36,13 @@ namespace City.Daemon
             IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
                 .UseNodeSettings(nodeSettings)
                 .UseBlockStore()
+                .UseBlockExplorer()
                 .UsePosConsensus()
                 .UseMempool()
                 .UseColdStakingWallet()
                 .AddPowPosMining()
                 .UseApi()
+                .UseWalletNotify()
                 .AddRPC()
                 .UseDiagnosticFeature();
 
