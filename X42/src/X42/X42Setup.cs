@@ -55,8 +55,8 @@ namespace X42
          public static List<NetworkAddress> Nodes = new List<NetworkAddress>
          {
             // TODO: Add additional seed nodes here
-            new NetworkAddress(IPAddress.Parse("34.255.35.42"), X42Setup.Test.DefaultPort),
-            new NetworkAddress(IPAddress.Parse("52.211.235.48"), X42Setup.Test.DefaultPort),
+            new NetworkAddress(IPAddress.Parse("34.255.35.42"), X42Setup.Main.DefaultPort),
+            new NetworkAddress(IPAddress.Parse("52.211.235.48"), X42Setup.Main.DefaultPort),
          };
 
          public static Dictionary<int, CheckpointInfo> Checkpoints = new Dictionary<int, CheckpointInfo>
@@ -97,8 +97,8 @@ namespace X42
          public static List<NetworkAddress> Nodes = new List<NetworkAddress>
          {
             // TODO: Add additional seed nodes here
-            new NetworkAddress(IPAddress.Parse("34.255.35.42"), X42Setup.Test.DefaultPort),
-            new NetworkAddress(IPAddress.Parse("52.211.235.48"), X42Setup.Test.DefaultPort),
+            new NetworkAddress(IPAddress.Parse("34.255.35.42"), X42Setup.RegTest.DefaultPort),
+            new NetworkAddress(IPAddress.Parse("52.211.235.48"), X42Setup.RegTest.DefaultPort),
          };
 
          public static Dictionary<int, CheckpointInfo> Checkpoints = new Dictionary<int, CheckpointInfo>
