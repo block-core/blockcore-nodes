@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RuntimeFrameworkVersion>3.1.0</RuntimeFrameworkVersion>
+    <AssemblyName>X42.Networks</AssemblyName>
+    <Authors>Blockcore</Authors>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.5" />
+    <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.0.5" />
+    <PackageReference Include="Blockcore.NBitcoin" Version="1.0.5" />
+  </ItemGroup>
+
+</Project>

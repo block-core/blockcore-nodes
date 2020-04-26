@@ -1,0 +1,30 @@
+chcp 65001
+dotnet new blockcorecoin ^
+--output X42 ^
+--cointicker x42 ^
+--magic "42-66-52-03" ^
+--cointype 424242 ^
+--pubkeyaddress 75 ^
+--scriptaddress 125 ^
+--secretaddress 203 ^
+--pow-reward 0 ^
+--pos-reward 20 ^
+--pos-timestamp-mask "0000003F" ^
+--pos-version 3 ^
+--premine-reward 10500000 ^
+--port 52342 ^
+--rpcport 52343 ^
+--apiport 42220 ^
+--target-spacing 64 ^
+--lastpowblock 523 ^
+--seeddns1 "mainnet1.x42seed.host" ^
+--seeddns2 "mainnetnode1.x42seed.host" ^
+--seednode1 "34.255.35.42" ^
+--seednode2 "52.211.235.48" ^
+--genesistext "On Emancipation Day, we are fighting to maintain our democratic freedom at various levels - https://www.stabroeknews.com/2018/opinion/letters/08/01/on-emancipation-day-we-are-fighting-to-maintain-our-democratic-freedom-at-various-levels/ | popó & lita - 6F3582CC2B720980C936D95A2E07F809" ^
+--genesis-time-main 1533106324 ^
+--genesis-nonce-main 246101626 ^
+--genesis-bits-main "1e0fffff" ^
+--genesis-block-hash-main "0x04ffe583707a96c1c2eb54af33a4b1dc6d9d8e09fea8c9a7b097ba88f0cb64c4" ^
+--genesis-merkle-hash-main "0x6e3439a32382f83dee4f94a6f8bdd38908bcf0c82ec09aba85c5321357f01f67" ^
+--force
