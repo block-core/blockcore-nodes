@@ -39,12 +39,19 @@ namespace Impleum.Networks
 
          var consensusFactory = new PosConsensusFactory();
 
+         // Create the genesis block.
+         GenesisTime = ImpleumSetup.Main.GenesisTime;
+         GenesisNonce = ImpleumSetup.Main.GenesisNonce;
+         GenesisBits = ImpleumSetup.Main.GenesisBits;
+         GenesisVersion = ImpleumSetup.Main.GenesisVersion;
+         GenesisReward = ImpleumSetup.Main.GenesisReward;
+
          Block genesisBlock = CreateGenesisBlock(consensusFactory,
-            ImpleumSetup.Main.GenesisTime,
-            ImpleumSetup.Main.GenesisNonce,
-            ImpleumSetup.Main.GenesisBits,
-            ImpleumSetup.Main.GenesisVersion,
-            ImpleumSetup.Main.GenesisReward,
+            GenesisTime,
+            GenesisNonce,
+            GenesisBits,
+            GenesisVersion,
+            GenesisReward,
             ImpleumSetup.GenesisText);
 
          Genesis = genesisBlock;
