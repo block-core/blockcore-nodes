@@ -27,7 +27,7 @@ namespace Solaris
       {
          public const string Name = "SolarisMain";
          public const string RootFolderName = "solaris";
-         public const string CoinTicker = "XLR";
+         public const string CoinTicker = "xlr";
          public const int DefaultPort = 60000;
          public const int DefaultRPCPort = 61000;
          public const int DefaultAPIPort = 62000;
@@ -77,7 +77,7 @@ namespace Solaris
       {
          public const string Name = "SolarisRegTest";
          public const string RootFolderName = "SolarisRegTest";
-         public const string CoinTicker = "TXLR";
+         public const string CoinTicker = "txlr";
          public const int DefaultPort = 60008;
          public const int DefaultRPCPort = 61008;
          public const int DefaultAPIPort = 62008;
@@ -119,7 +119,7 @@ namespace Solaris
       {
          public const string Name = "SolarisTest";
          public const string RootFolderName = "SolarisTest";
-         public const string CoinTicker = "TXLR";
+         public const string CoinTicker = "txlr";
          public const int DefaultPort = 60009;
          public const int DefaultRPCPort = 61009;
          public const int DefaultAPIPort = 62009;
