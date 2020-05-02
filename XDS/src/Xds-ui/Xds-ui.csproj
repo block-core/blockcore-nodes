@@ -3,12 +3,10 @@
    <PropertyGroup>
       <TargetFramework>netcoreapp3.1</TargetFramework>
       <RuntimeFrameworkVersion>3.1.0</RuntimeFrameworkVersion>
-      <AssemblyName>blockcore.xdsd</AssemblyName>
+
+      <AssemblyName>blockcore.xdsui</AssemblyName>
       <OutputType>Exe</OutputType>
-      <PackageId>XdsD</PackageId>
-      <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-      <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-      <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+      <PackageId>Xds-ui</PackageId>
    </PropertyGroup>
 
    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -20,6 +18,7 @@
    </PropertyGroup>
 
    <ItemGroup>
+      <PackageReference Include="WebWindow" Version="0.1.0-20200214.10" />
       <PackageReference Include="Blockcore.Core" Version="1.0.7" />
       <PackageReference Include="Blockcore.Features.Api" Version="1.0.7" />
       <PackageReference Include="Blockcore.Features.BlockStore" Version="1.0.7" />

@@ -9,11 +9,10 @@ using Blockcore.Features.Consensus;
 using Blockcore.Features.MemoryPool;
 using Blockcore.Features.Miner;
 using Blockcore.Features.RPC;
-using Blockcore.Networks.Xds;
 using Blockcore.Utilities;
 using NBitcoin.Protocol;
 
-namespace StratisD
+namespace Blockcore
 {
    public class Program
    {
@@ -21,7 +20,7 @@ namespace StratisD
       {
          try
          {
-            var nodeSettings = new NodeSettings(networksSelector: Networks.Xds,
+            var nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.Xds.Networks.Xds,
                 protocolVersion: ProtocolVersion.PROVEN_HEADER_VERSION,
                 args: args);
 
