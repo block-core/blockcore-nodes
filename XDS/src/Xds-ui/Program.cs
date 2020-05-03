@@ -37,8 +37,6 @@ namespace Blockcore
             var node = nodeBuilder.Build();
             var nodeTask = node.RunAsync();
 
-            //HideConsole();
-
             var window = new WebWindow(node.Network.CoinTicker + " Node");
             window.NavigateToUrl(node.NodeService<ApiSettings>().ApiUri.ToString());
             window.Size = new System.Drawing.Size(1050, 650);
