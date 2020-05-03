@@ -41,7 +41,7 @@ namespace Blockcore
 
             var window = new WebWindow(node.Network.CoinTicker + " Node");
             window.NavigateToUrl(node.NodeService<ApiSettings>().ApiUri.ToString());
-            window.Size = new System.Drawing.Size(1000, 600);
+            window.Size = new System.Drawing.Size(1050, 650);
             window.SetIconFile("favicon.ico");
             window.WaitForExit();
 
