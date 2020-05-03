@@ -18,6 +18,12 @@
    </PropertyGroup>
 
    <ItemGroup>
+      <EmbeddedResource Include="favicon.ico">
+         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+   </ItemGroup>
+
+   <ItemGroup>
       <PackageReference Include="WebWindow" Version="0.1.0-20200214.10" />
       <PackageReference Include="Blockcore.Core" Version="1.0.7" />
       <PackageReference Include="Blockcore.Features.Api" Version="1.0.7" />
@@ -30,11 +36,5 @@
       <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.7" />
       <PackageReference Include="Blockcore.NBitcoin" Version="1.0.7" />
       <PackageReference Include="Blockcore.Networks.Xds" Version="1.0.7" />
-   </ItemGroup>
-
-   <ItemGroup>
-      <None Update="favicon.ico">
-         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
    </ItemGroup>
 </Project>

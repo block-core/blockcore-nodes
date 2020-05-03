@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Reflection;
 using Blockcore.Builder;
 using Blockcore.Configuration;
 using Blockcore.Features.Api;
@@ -9,6 +11,7 @@ using Blockcore.Features.MemoryPool;
 using Blockcore.Features.Miner;
 using Blockcore.Features.RPC;
 using Blockcore.Utilities;
+using Microsoft.Extensions.FileProviders;
 using NBitcoin.Protocol;
 using WebWindows;
 
@@ -37,10 +40,12 @@ namespace Blockcore
             var node = nodeBuilder.Build();
             var nodeTask = node.RunAsync();
 
+            WriteResourceToFile("Xds-ui.favicon.ico", "Xds-ui.favicon.ico");
+
             var window = new WebWindow(node.Network.CoinTicker + " Node");
             window.NavigateToUrl(node.NodeService<ApiSettings>().ApiUri.ToString());
             window.Size = new System.Drawing.Size(1050, 650);
-            window.SetIconFile("favicon.ico");
+            window.SetIconFile("Xds-ui.favicon.ico");
             window.WaitForExit();
 
             node.Dispose();
@@ -48,6 +53,17 @@ namespace Blockcore
          catch (Exception ex)
          {
             Console.WriteLine("There was a problem initializing the node. Details: '{0}'", ex.ToString());
+         }
+      }
+
+      public static void WriteResourceToFile(string resourceName, string fileName)
+      {
+         using (var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+         {
+            using (var file = new FileStream(fileName, FileMode.Create, FileAccess.Write))
+            {
+               resource.CopyTo(file);
+            }
          }
       }
    }
