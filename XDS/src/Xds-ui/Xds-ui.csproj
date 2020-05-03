@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
    <PropertyGroup>
       <TargetFramework>netcoreapp3.1</TargetFramework>
       <RuntimeFrameworkVersion>3.1.0</RuntimeFrameworkVersion>
 
       <AssemblyName>blockcore.xdsui</AssemblyName>
-      <OutputType>Exe</OutputType>
+      <OutputType>WinExe</OutputType>
       <PackageId>Xds-ui</PackageId>
    </PropertyGroup>
 
@@ -30,5 +30,11 @@
       <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.7" />
       <PackageReference Include="Blockcore.NBitcoin" Version="1.0.7" />
       <PackageReference Include="Blockcore.Networks.Xds" Version="1.0.7" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <None Update="favicon.ico">
+         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
    </ItemGroup>
 </Project>

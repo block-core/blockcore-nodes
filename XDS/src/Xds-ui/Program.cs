@@ -1,6 +1,4 @@
 using System;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 using Blockcore.Builder;
 using Blockcore.Configuration;
 using Blockcore.Features.Api;
@@ -18,19 +16,7 @@ namespace Blockcore
 {
    public class Program
    {
-      [DllImport("kernel32.dll")]
-      private static extern IntPtr GetConsoleWindow();
-
-      [DllImport("user32.dll")]
-      private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-
-      private const int SW_HIDE = 0;
-      private const int SW_SHOW = 5;
-
-#pragma warning disable IDE1006 // Naming Styles
-
-      public static async Task Main(string[] args)
-#pragma warning restore IDE1006 // Naming Styles
+      public static void Main(string[] args)
       {
          try
          {
@@ -49,12 +35,14 @@ namespace Blockcore
                 .AddRPC();
 
             var node = nodeBuilder.Build();
-            node.RunAsync();
+            var nodeTask = node.RunAsync();
 
-            HideConsole();
+            //HideConsole();
 
             var window = new WebWindow(node.Network.CoinTicker + " Node");
             window.NavigateToUrl(node.NodeService<ApiSettings>().ApiUri.ToString());
+            window.Size = new System.Drawing.Size(1000, 600);
+            window.SetIconFile("favicon.ico");
             window.WaitForExit();
 
             node.Dispose();
@@ -62,30 +50,6 @@ namespace Blockcore
          catch (Exception ex)
          {
             Console.WriteLine("There was a problem initializing the node. Details: '{0}'", ex.ToString());
-         }
-      }
-
-      public static void HideConsole()
-      {
-         if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-         {
-            var handle = GetConsoleWindow();
-
-            // Hide
-            ShowWindow(handle, SW_HIDE);
-
-            // Show
-            // ShowWindow(handle, SW_SHOW);
-         }
-         else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-         {
-         }
-         else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-         {
-         }
-         else
-         {
-            // Do nothing
          }
       }
    }
