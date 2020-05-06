@@ -17,6 +17,8 @@
 
    <PropertyGroup>
       <LangVersion>latest</LangVersion>
+         <ServerGarbageCollection>false</ServerGarbageCollection>
+      <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
    </PropertyGroup>
 
    <ItemGroup>
