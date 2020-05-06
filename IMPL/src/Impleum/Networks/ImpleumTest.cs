@@ -94,7 +94,7 @@ namespace Impleum.Networks
          Base58Prefixes[(int)Base58Type.ASSET_ID] = new byte[] { 115 };
 
          Bech32Encoders = new Bech32Encoder[2];
-         var encoder = new Bech32Encoder(ImpleumSetup.RegTest.CoinTicker);
+         var encoder = new Bech32Encoder(ImpleumSetup.RegTest.CoinTicker.ToLowerInvariant());
          Bech32Encoders[(int)Bech32Type.WITNESS_PUBKEY_ADDRESS] = encoder;
          Bech32Encoders[(int)Bech32Type.WITNESS_SCRIPT_ADDRESS] = encoder;
 

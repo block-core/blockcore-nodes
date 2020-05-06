@@ -137,7 +137,7 @@ namespace City.Networks
          Base58Prefixes[(int)Base58Type.COLORED_ADDRESS] = new byte[] { 0x13 };
 
          Bech32Encoders = new Bech32Encoder[2];
-         var encoder = new Bech32Encoder(network.CoinTicker);
+         var encoder = new Bech32Encoder(network.CoinTicker.ToLowerInvariant());
          Bech32Encoders[(int)Bech32Type.WITNESS_PUBKEY_ADDRESS] = encoder;
          Bech32Encoders[(int)Bech32Type.WITNESS_SCRIPT_ADDRESS] = encoder;
 
