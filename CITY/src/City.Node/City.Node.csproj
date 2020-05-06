@@ -15,19 +15,19 @@
    </PropertyGroup>
 
    <ItemGroup>
-      <PackageReference Include="Blockcore.Features.Api" Version="1.0.6" />
-      <PackageReference Include="Blockcore.Features.BlockStore" Version="1.0.6" />
+      <PackageReference Include="Blockcore.Features.Api" Version="1.0.7" />
+      <PackageReference Include="Blockcore.Features.BlockStore" Version="1.0.7" />
       <PackageReference Include="Blockcore.Features.BlockExplorer" Version="1.0.0" />
-      <PackageReference Include="Blockcore.Features.ColdStaking" Version="1.0.6" />
-      <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.6" />
-      <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.0.6" />
-      <PackageReference Include="Blockcore.Features.Miner" Version="1.0.6" />
-      <PackageReference Include="Blockcore.Features.RPC" Version="1.0.6" />
-      <PackageReference Include="Blockcore.Features.SignalR" Version="1.0.6" />
-      <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.6" />
+      <PackageReference Include="Blockcore.Features.ColdStaking" Version="1.0.7" />
+      <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.7" />
+      <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.0.7" />
+      <PackageReference Include="Blockcore.Features.Miner" Version="1.0.7" />
+      <PackageReference Include="Blockcore.Features.RPC" Version="1.0.7" />
+      <PackageReference Include="Blockcore.Features.SignalR" Version="1.0.7" />
+      <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.7" />
       <PackageReference Include="Blockcore.Features.WalletNotify" Version="1.0.0" />
-      <PackageReference Include="Blockcore.Features.Diagnostic" Version="1.0.6" />
-      <PackageReference Include="Blockcore.NBitcoin" Version="1.0.6" />
+      <PackageReference Include="Blockcore.Features.Diagnostic" Version="1.0.7" />
+      <PackageReference Include="Blockcore.NBitcoin" Version="1.0.7" />
    </ItemGroup>
 
    <ItemGroup>
