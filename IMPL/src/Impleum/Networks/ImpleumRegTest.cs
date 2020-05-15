@@ -19,7 +19,6 @@ namespace Impleum.Networks
          DefaultPort = ImpleumSetup.RegTest.DefaultPort;
          DefaultRPCPort = ImpleumSetup.RegTest.DefaultRPCPort;
          DefaultAPIPort = ImpleumSetup.RegTest.DefaultAPIPort;
-         DefaultSignalRPort = ImpleumSetup.RegTest.DefaultSignalRPort;
 
          var consensusFactory = new PosConsensusFactory();
 

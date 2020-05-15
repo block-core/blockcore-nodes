@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        chain: ['CITY','IMPL', 'STRAT', 'XDS', 'XLR']
+        chain: ['AMS','CITY','IMPL', 'STRAT', 'XDS', 'XLR']
         include:
           - chain: CITY
             name: "city"

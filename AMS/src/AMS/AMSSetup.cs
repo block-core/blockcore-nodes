@@ -31,7 +31,6 @@ namespace AMS
          public const int DefaultPort = 50000;
          public const int DefaultRPCPort = 51000;
          public const int DefaultAPIPort = 63000;
-         public const int DefaultSignalRPort = 53000;
          public const int PubKeyAddress = 83; // https://en.bitcoin.it/wiki/List_of_address_prefixes
          public const int ScriptAddress = 125;
          public const int SecretAddress = 191;
@@ -77,7 +76,6 @@ namespace AMS
          public const int DefaultPort = 9333;
          public const int DefaultRPCPort = 9332;
          public const int DefaultAPIPort = 9331;
-         public const int DefaultSignalRPort = 9330;
          public const int PubKeyAddress = 111;
          public const int ScriptAddress = 196;
          public const int SecretAddress = 239;
@@ -119,7 +117,6 @@ namespace AMS
          public const int DefaultPort = 9333;
          public const int DefaultRPCPort = 9332;
          public const int DefaultAPIPort = 9331;
-         public const int DefaultSignalRPort = 9330;
          public const int PubKeyAddress = 111;
          public const int ScriptAddress = 196;
          public const int SecretAddress = 239;

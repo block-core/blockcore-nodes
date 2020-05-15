@@ -19,7 +19,6 @@ namespace Solaris.Networks
          DefaultPort = SolarisSetup.RegTest.DefaultPort;
          DefaultRPCPort = SolarisSetup.RegTest.DefaultRPCPort;
          DefaultAPIPort = SolarisSetup.RegTest.DefaultAPIPort;
-         DefaultSignalRPort = SolarisSetup.RegTest.DefaultSignalRPort;
 
          var consensusFactory = new PosConsensusFactory();
 

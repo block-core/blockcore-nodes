@@ -31,7 +31,6 @@ namespace X42
          public const int DefaultPort = 52342;
          public const int DefaultRPCPort = 52343;
          public const int DefaultAPIPort = 42220;
-         public const int DefaultSignalRPort = 9330;
          public const int PubKeyAddress = 75; // B https://en.bitcoin.it/wiki/List_of_address_prefixes
          public const int ScriptAddress = 125; // b
          public const int SecretAddress = 203;
@@ -73,7 +72,6 @@ namespace X42
          public const int DefaultPort = 9333;
          public const int DefaultRPCPort = 9332;
          public const int DefaultAPIPort = 9331;
-         public const int DefaultSignalRPort = 9330;
          public const int PubKeyAddress = 111;
          public const int ScriptAddress = 196;
          public const int SecretAddress = 239;
@@ -115,7 +113,6 @@ namespace X42
          public const int DefaultPort = 9333;
          public const int DefaultRPCPort = 9332;
          public const int DefaultAPIPort = 9331;
-         public const int DefaultSignalRPort = 9330;
          public const int PubKeyAddress = 111;
          public const int ScriptAddress = 196;
          public const int SecretAddress = 239;

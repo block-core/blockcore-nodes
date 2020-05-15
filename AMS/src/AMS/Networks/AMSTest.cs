@@ -19,7 +19,6 @@ namespace AMS.Networks
          DefaultPort = AMSSetup.Test.DefaultPort;
          DefaultRPCPort = AMSSetup.Test.DefaultRPCPort;
          DefaultAPIPort = AMSSetup.Test.DefaultAPIPort;
-         DefaultSignalRPort = AMSSetup.Test.DefaultSignalRPort;
 
          var consensusFactory = new PosConsensusFactory();
 

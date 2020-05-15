@@ -19,7 +19,6 @@ namespace X42.Networks
          DefaultPort = X42Setup.RegTest.DefaultPort;
          DefaultRPCPort = X42Setup.RegTest.DefaultRPCPort;
          DefaultAPIPort = X42Setup.RegTest.DefaultAPIPort;
-         DefaultSignalRPort = X42Setup.RegTest.DefaultSignalRPort;
 
          var consensusFactory = new PosConsensusFactory();
 

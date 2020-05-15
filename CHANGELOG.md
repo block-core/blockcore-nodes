@@ -1,3 +1,19 @@
+## <small>1.0.10 (2020-05-06)</small>
+
+* Add Amsterdamcoin to reference nodes ([1eb68d8](https://github.com/block-core/blockcore-nodes/commit/1eb68d8))
+* Add the CHANGELOG for blockcore-nodes repo ([f9b579c](https://github.com/block-core/blockcore-nodes/commit/f9b579c))
+* Added X42 reference node ([dac6a84](https://github.com/block-core/blockcore-nodes/commit/dac6a84))
+* Ensure that Workstation GC is used for the nodes ([39bfcdd](https://github.com/block-core/blockcore-nodes/commit/39bfcdd))
+* Fix bech32 prefix for all Blockcore Reference Nodes ([3fd6c3d](https://github.com/block-core/blockcore-nodes/commit/3fd6c3d))
+* Fix XLR bug ([67fa1cd](https://github.com/block-core/blockcore-nodes/commit/67fa1cd))
+* Lowercase ticker for Solaris ([ad9e6b9](https://github.com/block-core/blockcore-nodes/commit/ad9e6b9))
+* remove .vscode directory ([0aabba5](https://github.com/block-core/blockcore-nodes/commit/0aabba5))
+* Update City Node from new template ([10d1ba3](https://github.com/block-core/blockcore-nodes/commit/10d1ba3))
+* Upgrade Blockcore packages for all Reference Nodes ([8ebfc0c](https://github.com/block-core/blockcore-nodes/commit/8ebfc0c))
+* Upgraded x42 to Blockcore 1.0.6 and fixed settings ([81bc823](https://github.com/block-core/blockcore-nodes/commit/81bc823))
+
+
+
 ## <small>1.0.9 (2020-04-24)</small>
 
 * Add new features to City Node and upgrade packages ([dbdfdf5](https://github.com/block-core/blockcore-nodes/commit/dbdfdf5))

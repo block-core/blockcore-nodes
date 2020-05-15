@@ -22,19 +22,17 @@
    </PropertyGroup>
 
    <ItemGroup>
-      <PackageReference Include="Blockcore.Core" Version="1.0.7" />
-      <PackageReference Include="Blockcore.Features.Api" Version="1.0.7" />
-      <PackageReference Include="Blockcore.Features.BlockStore" Version="1.0.7" />
-      <PackageReference Include="Blockcore.Features.ColdStaking" Version="1.0.7" />
-      <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.7" />
-      <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.0.7" />
-      <PackageReference Include="Blockcore.Features.Miner" Version="1.0.7" />
-      <PackageReference Include="Blockcore.Features.RPC" Version="1.0.7" />
-      <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.7" />
-      <PackageReference Include="Blockcore.NBitcoin" Version="1.0.7" />
+      <PackageReference Include="Blockcore.Core" Version="1.0.8" />
+      <PackageReference Include="Blockcore.Features.BlockStore" Version="1.0.8" />
+      <PackageReference Include="Blockcore.Features.ColdStaking" Version="1.0.8" />
+      <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.8" />
+      <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.0.8" />
+      <PackageReference Include="Blockcore.Features.Miner" Version="1.0.8" />
+      <PackageReference Include="Blockcore.Features.NodeHost" Version="1.0.8" />
+      <PackageReference Include="Blockcore.Features.RPC" Version="1.0.8" />
+      <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.8" />
+      <PackageReference Include="Blockcore.NBitcoin" Version="1.0.8" />
+      <PackageReference Include="Blockcore.Networks.Xds" Version="1.0.8" />
    </ItemGroup>
 
-   <ItemGroup>
-      <ProjectReference Include="..\Blockcore.Networks.Xds\Blockcore.Networks.Xds.csproj" />
-   </ItemGroup>
 </Project>

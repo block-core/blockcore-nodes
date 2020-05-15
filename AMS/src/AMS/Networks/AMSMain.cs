@@ -26,7 +26,6 @@ namespace AMS.Networks
          DefaultPort = AMSSetup.Main.DefaultPort;
          DefaultRPCPort = AMSSetup.Main.DefaultRPCPort;
          DefaultAPIPort = AMSSetup.Main.DefaultAPIPort;
-         DefaultSignalRPort = AMSSetup.Main.DefaultSignalRPort;
 
          DefaultMaxOutboundConnections = 16;
          DefaultMaxInboundConnections = 109;

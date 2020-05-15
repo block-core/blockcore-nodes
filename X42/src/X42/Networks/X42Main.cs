@@ -26,7 +26,6 @@ namespace X42.Networks
          DefaultPort = X42Setup.Main.DefaultPort;
          DefaultRPCPort = X42Setup.Main.DefaultRPCPort;
          DefaultAPIPort = X42Setup.Main.DefaultAPIPort;
-         DefaultSignalRPort = X42Setup.Main.DefaultSignalRPort;
 
          DefaultMaxOutboundConnections = 16;
          DefaultMaxInboundConnections = 109;

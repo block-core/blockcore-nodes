@@ -26,7 +26,6 @@ namespace Impleum.Networks
          DefaultPort = ImpleumSetup.Main.DefaultPort;
          DefaultRPCPort = ImpleumSetup.Main.DefaultRPCPort;
          DefaultAPIPort = ImpleumSetup.Main.DefaultAPIPort;
-         DefaultSignalRPort = ImpleumSetup.Main.DefaultSignalRPort;
 
          DefaultMaxOutboundConnections = 16;
          DefaultMaxInboundConnections = 109;
