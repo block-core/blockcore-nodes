@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blockcore.Networks.Xds", "src\Blockcore.Networks.Xds\Blockcore.Networks.Xds.csproj", "{1E72B95A-997E-42C4-AACA-13CEF17C4186}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XdsD", "src\XdsD\XdsD.csproj", "{2151334C-EBBD-4327-9656-4AB0DFE23B51}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1E72B95A-997E-42C4-AACA-13CEF17C4186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E72B95A-997E-42C4-AACA-13CEF17C4186}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E72B95A-997E-42C4-AACA-13CEF17C4186}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E72B95A-997E-42C4-AACA-13CEF17C4186}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2151334C-EBBD-4327-9656-4AB0DFE23B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2151334C-EBBD-4327-9656-4AB0DFE23B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2151334C-EBBD-4327-9656-4AB0DFE23B51}.Release|Any CPU.ActiveCfg = Release|Any CPU

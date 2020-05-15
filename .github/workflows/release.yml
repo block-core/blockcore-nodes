@@ -13,10 +13,14 @@ jobs:
         os: [ ubuntu-latest ]
         chain: ['AMS','CITY','IMPL', 'STRAT', 'XDS', 'XLR']
         include:
+          - chain: AMS
+            name: "ams"
+            assembly: "AMS.Node.dll"
+            ports: "50000 51000 63000"
           - chain: CITY
             name: "city"
             assembly: "City.Node.dll"
-            ports: "4333 4334 4335 4336"
+            ports: "4333 4334 4335"
           - chain: IMPL
             name: "impl"
             assembly: "Impleum.Node.dll"
@@ -24,7 +28,7 @@ jobs:
           - chain: STRAT
             name: "strat"
             assembly: "Stratis.Node.dll"
-            ports: "16178 16174 37221 38824"
+            ports: "16178 16174 37221"
           - chain: XDS
             name: "xds"
             assembly: "blockcore.xdsd.dll"
@@ -32,7 +36,7 @@ jobs:
           - chain: XLR
             name: "xlr"
             assembly: "Solaris.Node.dll"
-            ports: "60000 61000 62000 63000"
+            ports: "60000 61000 62000"
 
       fail-fast: false
 

@@ -15,6 +15,10 @@ jobs:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
         chain: ['AMS','CITY','IMPL', 'STRAT', 'XDS', 'XLR']
         include:
+          - chain: AMS
+            name: "AMS"
+            solution: "AMS/AMS.sln"
+            project: "AMS/src/AMS.Node/AMS.Node.csproj"
           - chain: CITY
             name: "CITY"
             solution: "CITY/City.sln"
