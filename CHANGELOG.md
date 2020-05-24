@@ -1,3 +1,9 @@
+## <small>1.0.12 (2020-05-24)</small>
+
+* Update nodes to use major version instead of fixed ([5b95b65](https://github.com/block-core/blockcore-nodes/commit/5b95b65))
+
+
+
 ## <small>1.0.11 (2020-05-15)</small>
 
 * Add AMS to the workflows ([4cddc75](https://github.com/block-core/blockcore-nodes/commit/4cddc75))
