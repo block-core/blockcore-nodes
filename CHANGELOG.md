@@ -1,3 +1,10 @@
+## <small>1.0.11 (2020-05-15)</small>
+
+* Add AMS to the workflows ([4cddc75](https://github.com/block-core/blockcore-nodes/commit/4cddc75))
+* Upgrade Blockcore Reference Nodes to latest release ([65b6e3a](https://github.com/block-core/blockcore-nodes/commit/65b6e3a))
+
+
+
 ## <small>1.0.10 (2020-05-06)</small>
 
 * Add Amsterdamcoin to reference nodes ([1eb68d8](https://github.com/block-core/blockcore-nodes/commit/1eb68d8))

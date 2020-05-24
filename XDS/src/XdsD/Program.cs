@@ -20,9 +20,7 @@ namespace StratisD
       {
          try
          {
-            var nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.Xds.Networks.Xds,
-                protocolVersion: ProtocolVersion.PROVEN_HEADER_VERSION,
-                args: args);
+            var nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.Xds.Networks.Xds, args: args);
 
             IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
                 .UseNodeSettings(nodeSettings)

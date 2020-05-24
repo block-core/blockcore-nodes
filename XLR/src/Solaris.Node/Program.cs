@@ -23,11 +23,7 @@ namespace Solaris.Daemon
       {
          try
          {
-            var nodeSettings = new NodeSettings(networksSelector: Networks.Networks.Solaris,
-                protocolVersion: ProtocolVersion.PROVEN_HEADER_VERSION, args: args)
-            {
-               MinProtocolVersion = ProtocolVersion.ALT_PROTOCOL_VERSION
-            };
+            var nodeSettings = new NodeSettings(networksSelector: Networks.Networks.Solaris, args: args);
 
             IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
                 .UseNodeSettings(nodeSettings)

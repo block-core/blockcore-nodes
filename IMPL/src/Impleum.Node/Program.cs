@@ -23,11 +23,7 @@ namespace Impleum.Daemon
       {
          try
          {
-            var nodeSettings = new NodeSettings(networksSelector: Networks.Networks.Impleum,
-                protocolVersion: ProtocolVersion.PROVEN_HEADER_VERSION, args: args)
-            {
-               MinProtocolVersion = ProtocolVersion.ALT_PROTOCOL_VERSION
-            };
+            var nodeSettings = new NodeSettings(networksSelector: Networks.Networks.Impleum, args: args);
 
             IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
                 .UseNodeSettings(nodeSettings)
