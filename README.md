@@ -11,7 +11,7 @@ Reference implementations of Blockcore based blockchains.
 - IMPL - [Impleum](https://impleum.com/)
 - STRAT - [Stratis](https://stratisplatform.com/)
 - X42 - [x42 Protocol](https://www.x42.tech/)
-- XDS
+- XDS - [XDS](https://github.com/sonofsatoshi2020/xds)
 - XLR - [Solaris](https://www.solariscoin.com/)
 
 ## Download
