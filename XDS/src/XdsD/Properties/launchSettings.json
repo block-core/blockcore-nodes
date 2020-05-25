@@ -1,8 +1,43 @@
 {
-  "profiles": {
-    "Xds": {
-      "commandName": "Project",
-      "commandLineArgs": "-addnode=159.65.148.135"
-    }
-  }
+   "profiles": {
+      "XDS": {
+         "commandName": "Project",
+         "commandLineArgs": "-addnode=159.65.148.135"
+      },
+      "XDS (MAIN)": {
+         "commandName": "Project"
+      },
+      "XDS (TEST)": {
+         "commandName": "Project",
+         "commandLineArgs": "-testnet"
+      },
+      "XDS (MAIN/RPC)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser"
+      },
+      "XDS (TEST/RPC)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -testnet"
+      },
+      "XDS (MAIN/LOCAL/RPC)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata"
+      },
+      "XDS (TEST/LOCAL/RPC)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -testnet"
+      },
+      "XDS (MAIN/LOCAL/RPC/DEFAULT)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -defaultwalletname=default -defaultwalletpassword=default -unlockdefaultwallet -server"
+      },
+      "XDS (TEST/LOCAL/RPC/DEFAULT)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -defaultwalletname=default -defaultwalletpassword=default -unlockdefaultwallet -server -testnet"
+      },
+      "XDS (TEST/NO ASSUME VALID)": {
+         "commandName": "Project",
+         "commandLineArgs": "-testnet -assumevalid=0 -checkpoints=false"
+      }
+   }
 }

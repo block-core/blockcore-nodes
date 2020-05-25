@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{6072E7D2-1FCE-4CC6-9516-47B653DF2F49}") = "Stratis.Node", "src\Stratis.Node\Stratis.Node.csproj", "{72C9C5AE-77A5-48AD-9866-2FD17BF68FF0}"
-EndProject
-Project("{6072E7D2-1FCE-4CC6-9516-47B653DF2F49}") = "Stratis", "src\Stratis\Stratis.csproj", "{8C3CDCFC-E130-4C01-833D-809E7FA477C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stratis.Node", "src\Stratis.Node\Stratis.Node.csproj", "{72C9C5AE-77A5-48AD-9866-2FD17BF68FF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{72C9C5AE-77A5-48AD-9866-2FD17BF68FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72C9C5AE-77A5-48AD-9866-2FD17BF68FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72C9C5AE-77A5-48AD-9866-2FD17BF68FF0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8C3CDCFC-E130-4C01-833D-809E7FA477C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C3CDCFC-E130-4C01-833D-809E7FA477C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C3CDCFC-E130-4C01-833D-809E7FA477C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C3CDCFC-E130-4C01-833D-809E7FA477C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

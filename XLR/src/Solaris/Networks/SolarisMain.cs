@@ -26,7 +26,6 @@ namespace Solaris.Networks
          DefaultPort = SolarisSetup.Main.DefaultPort;
          DefaultRPCPort = SolarisSetup.Main.DefaultRPCPort;
          DefaultAPIPort = SolarisSetup.Main.DefaultAPIPort;
-         DefaultSignalRPort = SolarisSetup.Main.DefaultSignalRPort;
 
          DefaultMaxOutboundConnections = 16;
          DefaultMaxInboundConnections = 109;

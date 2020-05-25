@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Blockcore.Builder;
 using Blockcore.Configuration;
-using Blockcore.Features.Api;
+using Blockcore.Features.NodeHost;
 using Blockcore.Features.BlockStore;
 using Blockcore.Features.ColdStaking;
 using Blockcore.Features.Consensus;
@@ -12,7 +12,7 @@ using Blockcore.Features.RPC;
 using Blockcore.Utilities;
 using NBitcoin.Protocol;
 
-namespace Blockcore
+namespace StratisD
 {
    public class Program
    {
@@ -20,9 +20,7 @@ namespace Blockcore
       {
          try
          {
-            var nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.Xds.Networks.Xds,
-                protocolVersion: ProtocolVersion.PROVEN_HEADER_VERSION,
-                args: args);
+            var nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.Xds.Networks.Xds, args: args);
 
             IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
                 .UseNodeSettings(nodeSettings)
@@ -31,7 +29,7 @@ namespace Blockcore
                 .UseMempool()
                 .UseColdStakingWallet()
                 .AddPowPosMining()
-                .UseApi()
+                .UseNodeHost()
                 .AddRPC();
 
             await nodeBuilder.Build().RunAsync();

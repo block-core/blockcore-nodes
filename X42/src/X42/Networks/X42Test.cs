@@ -19,7 +19,6 @@ namespace X42.Networks
          DefaultPort = X42Setup.Test.DefaultPort;
          DefaultRPCPort = X42Setup.Test.DefaultRPCPort;
          DefaultAPIPort = X42Setup.Test.DefaultAPIPort;
-         DefaultSignalRPort = X42Setup.Test.DefaultSignalRPort;
 
          var consensusFactory = new PosConsensusFactory();
 
@@ -94,7 +93,7 @@ namespace X42.Networks
          Base58Prefixes[(int)Base58Type.ASSET_ID] = new byte[] { 115 };
 
          Bech32Encoders = new Bech32Encoder[2];
-         var encoder = new Bech32Encoder(X42Setup.RegTest.CoinTicker);
+         var encoder = new Bech32Encoder(X42Setup.RegTest.CoinTicker.ToLowerInvariant());
          Bech32Encoders[(int)Bech32Type.WITNESS_PUBKEY_ADDRESS] = encoder;
          Bech32Encoders[(int)Bech32Type.WITNESS_SCRIPT_ADDRESS] = encoder;
 

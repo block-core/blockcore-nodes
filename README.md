@@ -6,12 +6,17 @@ Reference implementations of Blockcore based blockchains.
 
 ## Available for these blockchains
 
-- XDS
+- AMS - [Amsterdam Coin](https://amsterdamcoin.com/)
 - CITY - [City Chain](https://www.city-chain.org)
+- IMPL - [Impleum](https://impleum.com/)
+- STRAT - [Stratis](https://stratisplatform.com/)
+- X42 - [x42 Protocol](https://www.x42.tech/)
+- XDS - [XDS](https://github.com/sonofsatoshi2020/xds)
+- XLR - [Solaris](https://www.solariscoin.com/)
 
 ## Download
 
-Go to the [release] page to find the packaged nodes for various chains. Separate downloads for Windows, Linux and macOS is available.
+Go to the [releases](releases) page to find the packaged nodes for various chains. Separate downloads for Windows, Linux and macOS is available.
 
 ## Docker
 

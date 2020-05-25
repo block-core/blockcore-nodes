@@ -31,7 +31,6 @@ namespace Impleum
          public const int DefaultPort = 16171;
          public const int DefaultRPCPort = 16172;
          public const int DefaultAPIPort = 38222;
-         public const int DefaultSignalRPort = 63000;
          public const int PubKeyAddress = 102; // B https://en.bitcoin.it/wiki/List_of_address_prefixes
          public const int ScriptAddress = 125; // b
          public const int SecretAddress = 191;
@@ -73,7 +72,6 @@ namespace Impleum
          public const int DefaultPort = 16171;
          public const int DefaultRPCPort = 16172;
          public const int DefaultAPIPort = 38222;
-         public const int DefaultSignalRPort = 63000;
          public const int PubKeyAddress = 111;
          public const int ScriptAddress = 196;
          public const int SecretAddress = 239;
@@ -115,7 +113,6 @@ namespace Impleum
          public const int DefaultPort = 16171;
          public const int DefaultRPCPort = 16172;
          public const int DefaultAPIPort = 38222;
-         public const int DefaultSignalRPort = 63000;
          public const int PubKeyAddress = 111;
          public const int ScriptAddress = 196;
          public const int SecretAddress = 239;

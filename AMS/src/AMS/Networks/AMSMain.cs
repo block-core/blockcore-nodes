@@ -26,7 +26,6 @@ namespace AMS.Networks
          DefaultPort = AMSSetup.Main.DefaultPort;
          DefaultRPCPort = AMSSetup.Main.DefaultRPCPort;
          DefaultAPIPort = AMSSetup.Main.DefaultAPIPort;
-         DefaultSignalRPort = AMSSetup.Main.DefaultSignalRPort;
 
          DefaultMaxOutboundConnections = 16;
          DefaultMaxInboundConnections = 109;
@@ -121,7 +120,7 @@ namespace AMS.Networks
          Base58Prefixes[(int)Base58Type.COLORED_ADDRESS] = new byte[] { 0x13 };
 
          Bech32Encoders = new Bech32Encoder[2];
-         var encoder = new Bech32Encoder(AMSSetup.Main.CoinTicker);
+         var encoder = new Bech32Encoder(AMSSetup.Main.CoinTicker.ToLowerInvariant());
          Bech32Encoders[(int)Bech32Type.WITNESS_PUBKEY_ADDRESS] = encoder;
          Bech32Encoders[(int)Bech32Type.WITNESS_SCRIPT_ADDRESS] = encoder;
 

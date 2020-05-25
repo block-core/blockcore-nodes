@@ -31,7 +31,6 @@ namespace Solaris
          public const int DefaultPort = 60000;
          public const int DefaultRPCPort = 61000;
          public const int DefaultAPIPort = 62000;
-         public const int DefaultSignalRPort = 63000;
          public const int PubKeyAddress = 75; // B https://en.bitcoin.it/wiki/List_of_address_prefixes
          public const int ScriptAddress = 125; // b
          public const int SecretAddress = 191;
@@ -81,7 +80,6 @@ namespace Solaris
          public const int DefaultPort = 60008;
          public const int DefaultRPCPort = 61008;
          public const int DefaultAPIPort = 62008;
-         public const int DefaultSignalRPort = 63008;
          public const int PubKeyAddress = 111;
          public const int ScriptAddress = 196;
          public const int SecretAddress = 239;
@@ -123,7 +121,6 @@ namespace Solaris
          public const int DefaultPort = 60009;
          public const int DefaultRPCPort = 61009;
          public const int DefaultAPIPort = 62009;
-         public const int DefaultSignalRPort = 63009;
          public const int PubKeyAddress = 111;
          public const int ScriptAddress = 196;
          public const int SecretAddress = 239;
