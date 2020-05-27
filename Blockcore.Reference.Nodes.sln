@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMS.Node", "AMS\src\AMS.Nod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XdsD", "XDS\src\XdsD\XdsD.csproj", "{AC12DE42-CDAF-4B53-A7E1-A8301CC32954}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xds-ui", "XDS\src\Xds-ui\Xds-ui.csproj", "{985D2992-BA24-422F-B644-85FA532A5281}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{AC12DE42-CDAF-4B53-A7E1-A8301CC32954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC12DE42-CDAF-4B53-A7E1-A8301CC32954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC12DE42-CDAF-4B53-A7E1-A8301CC32954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{985D2992-BA24-422F-B644-85FA532A5281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{985D2992-BA24-422F-B644-85FA532A5281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{985D2992-BA24-422F-B644-85FA532A5281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{985D2992-BA24-422F-B644-85FA532A5281}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

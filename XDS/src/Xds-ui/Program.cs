@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Reflection;
+using System.Threading.Tasks;
 using Blockcore.Builder;
 using Blockcore.Configuration;
 using Blockcore.Features.Api;
@@ -23,9 +24,7 @@ namespace Blockcore
       {
          try
          {
-            var nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.Xds.Networks.Xds,
-                protocolVersion: ProtocolVersion.PROVEN_HEADER_VERSION,
-                args: args);
+            var nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.Xds.Networks.Xds, args: args);
 
             IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
                 .UseNodeSettings(nodeSettings)
@@ -37,18 +36,32 @@ namespace Blockcore
                 .UseApi()
                 .AddRPC();
 
-            var node = nodeBuilder.Build();
-            var nodeTask = node.RunAsync();
-
+            var window = new WebWindow("Blockcore");
+            window.NavigateToString("<h1>Blockcore node loading....</h1> ");
             WriteResourceToFile("Xds-ui.favicon.ico", "Xds-ui.favicon.ico");
-
-            var window = new WebWindow(node.Network.CoinTicker + " Node");
-            window.NavigateToUrl(node.NodeService<ApiSettings>().ApiUri.ToString());
-            window.Size = new System.Drawing.Size(1050, 650);
             window.SetIconFile("Xds-ui.favicon.ico");
-            window.WaitForExit();
 
-            node.Dispose();
+            IFullNode node = null;
+
+            Task.Run(() =>
+            {
+               try
+               {
+                  node = nodeBuilder.Build();
+                  var nodeTask = node.RunAsync();
+               }
+               catch (Exception ex)
+               {
+                  window.NavigateToString("There was a problem initializing the node. <br> see the log file " + nodeSettings.DataFolder.LogPath + " " + ex.ToString());
+                  return;
+               }
+
+               window.Title = node.Network.CoinTicker + " Node";
+               window.NavigateToUrl(node.NodeService<ApiSettings>().ApiUri.ToString());
+            });
+
+            window.WaitForExit();
+            node?.Dispose();
          }
          catch (Exception ex)
          {
