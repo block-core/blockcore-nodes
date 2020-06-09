@@ -5,6 +5,7 @@ using Blockcore.Features.Consensus.Rules.ProvenHeaderRules;
 using Blockcore.Features.Consensus.Rules.UtxosetRules;
 using Blockcore.Features.MemoryPool.Rules;
 using Solaris.Networks.Policies;
+using Solaris.Networks.Deployments;
 using Solaris.Networks.Rules;
 using NBitcoin;
 using NBitcoin.BouncyCastle.Math;
@@ -66,6 +67,11 @@ namespace Solaris.Networks
             [BuriedDeployments.BIP66] = 0
          };
 
+         var bip9Deployments = new SolarisBIP9Deployments
+         {
+               [SolarisBIP9Deployments.ColdStaking] = new BIP9DeploymentsParameters("ColdStaking",2, BIP9DeploymentsParameters.AlwaysActive, 999999999,BIP9DeploymentsParameters.DefaultMainnetThreshold)
+         };
+
          Consensus = new NBitcoin.Consensus(
              consensusFactory: consensusFactory,
              consensusOptions: consensusOptions,
@@ -76,7 +82,7 @@ namespace Solaris.Networks
              majorityRejectBlockOutdated: 950,
              majorityWindow: 1000,
              buriedDeployments: buriedDeployments,
-             bip9Deployments: new NoBIP9Deployments(),
+             bip9Deployments: bip9Deployments,
              bip34Hash: null,
              minerConfirmationWindow: 2016, // nPowTargetTimespan / nPowTargetSpacing
              maxReorgLength: 500,
