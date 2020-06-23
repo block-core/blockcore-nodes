@@ -12,10 +12,9 @@ using Blockcore.Features.MemoryPool;
 using Blockcore.Features.Miner;
 using Blockcore.Features.RPC;
 using Blockcore.Utilities;
-using NBitcoin;
-using NBitcoin.Protocol;
+using x42.Networks;
 
-namespace X42.Daemon
+namespace X42.Node
 {
    public class Program
    {
@@ -23,7 +22,7 @@ namespace X42.Daemon
       {
          try
          {
-            var nodeSettings = new NodeSettings(networksSelector: Networks.Networks.X42, args: args);
+            var nodeSettings = new NodeSettings(networksSelector: Networks.x42, args: args);
 
             IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
                 .UseNodeSettings(nodeSettings)
