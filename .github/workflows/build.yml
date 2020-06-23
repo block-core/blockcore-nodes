@@ -41,7 +41,7 @@ jobs:
             project: "XLR/src/Solaris.Node/Solaris.Node.csproj"
           - chain: X42
             name: "X42"
-            solution: "X42/Solaris.sln"
+            solution: "X42/X42.sln"
             project: "X42/src/X42.Node/X42.Node.csproj"
 
           - os: windows-latest
