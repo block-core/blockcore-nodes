@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        chain: ['AMS','CITY','IMPL', 'STRAT', 'XDS', 'XLR']
+        chain: ['AMS','CITY','IMPL', 'STRAT', 'XDS', 'XLR', 'X42']
         include:
           - chain: AMS
             name: "ams"
@@ -37,6 +37,10 @@ jobs:
             name: "xlr"
             assembly: "Solaris.Node.dll"
             ports: "60000 61000 62000"
+          - chain: X42
+            name: "x42"
+            assembly: "X42.Node.dll"
+            ports: "52342 52343 42220"
 
       fail-fast: false
 

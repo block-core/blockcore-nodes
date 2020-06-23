@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['AMS','CITY','IMPL', 'STRAT', 'XDS', 'XLR']
+        chain: ['AMS','CITY','IMPL', 'STRAT', 'XDS', 'XLR', 'X42']
         include:
           - chain: AMS
             name: "AMS"
@@ -39,6 +39,10 @@ jobs:
             name: "XLR"
             solution: "XLR/Solaris.sln"
             project: "XLR/src/Solaris.Node/Solaris.Node.csproj"
+          - chain: X42
+            name: "X42"
+            solution: "X42/Solaris.sln"
+            project: "X42/src/X42.Node/X42.Node.csproj"
 
           - os: windows-latest
             extension: ".zip"
