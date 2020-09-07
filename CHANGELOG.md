@@ -1,5 +1,32 @@
-## <small>1.0.12 (2020-05-24)</small>
+## <small>1.0.15 (2020-09-07)</small>
 
+* Fix the reference on X42 to not be specific version ([cafffb8](https://github.com/block-core/blockcore-nodes/commit/cafffb8))
+
+
+
+## <small>1.0.14 (2020-06-23)</small>
+
+* Add build support for X42 ([393bce3](https://github.com/block-core/blockcore-nodes/commit/393bce3))
+* Add coldstaking activation ([90958f3](https://github.com/block-core/blockcore-nodes/commit/90958f3))
+* Fix X42 solution reference ([0266c5c](https://github.com/block-core/blockcore-nodes/commit/0266c5c))
+* Fixed x42 (#6) ([a61efdc](https://github.com/block-core/blockcore-nodes/commit/a61efdc)), closes [#6](https://github.com/block-core/blockcore-nodes/issues/6)
+
+
+
+## <small>1.0.13 (2020-06-04)</small>
+
+* Make the package references accept all revisions, but not minor versions ([b302a4e](https://github.com/block-core/blockcore-nodes/commit/b302a4e))
+* Remove WS parameters for chain generation ([6c663b1](https://github.com/block-core/blockcore-nodes/commit/6c663b1))
+* Update network defitions to use updated initialization for options ([da9cf95](https://github.com/block-core/blockcore-nodes/commit/da9cf95))
+* Update release workflow to only trigger once ([52239f7](https://github.com/block-core/blockcore-nodes/commit/52239f7))
+* Update version for next release ([84ce981](https://github.com/block-core/blockcore-nodes/commit/84ce981))
+
+
+
+## <small>1.0.12 (2020-05-25)</small>
+
+* Add link to XDS repo ([845bc77](https://github.com/block-core/blockcore-nodes/commit/845bc77))
+* Update CHANGELOG.md ([4a5f1b1](https://github.com/block-core/blockcore-nodes/commit/4a5f1b1))
 * Update nodes to use major version instead of fixed ([5b95b65](https://github.com/block-core/blockcore-nodes/commit/5b95b65))
 
 
