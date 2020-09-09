@@ -23,7 +23,7 @@
       <PackageReference Include="Blockcore.Features.RPC" Version="1.0.*" />
       <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.*" />
       <PackageReference Include="Blockcore.NBitcoin" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.Bitcoin" Version="1.0.13" />
+      <PackageReference Include="Blockcore.Networks.Bitcoin" Version="1.0.*" />
    </ItemGroup>
 
 </Project>
