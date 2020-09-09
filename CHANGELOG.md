@@ -1,6 +1,13 @@
+## <small>1.0.16 (2020-09-09)</small>
+
+* Add a bitcoin network node (#7) ([a9622c9](https://github.com/block-core/blockcore-nodes/commit/a9622c9)), closes [#7](https://github.com/block-core/blockcore-nodes/issues/7)
+
+
+
 ## <small>1.0.15 (2020-09-07)</small>
 
 * Fix the reference on X42 to not be specific version ([cafffb8](https://github.com/block-core/blockcore-nodes/commit/cafffb8))
+* Update the changelog for Reference Nodes ([dafc365](https://github.com/block-core/blockcore-nodes/commit/dafc365))
 
 
 
