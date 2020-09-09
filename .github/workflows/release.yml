@@ -11,12 +11,16 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        chain: ['AMS','CITY','IMPL', 'STRAT', 'XDS', 'XLR', 'X42']
+        chain: ['AMS','BTC','CITY','IMPL', 'STRAT', 'XDS', 'XLR', 'X42']
         include:
           - chain: AMS
             name: "ams"
             assembly: "AMS.Node.dll"
             ports: "50000 51000 63000"
+          - chain: BTC
+            name: "btc"
+            assembly: "Bitcoin.Node.dll"
+            ports: "8332 8333 37220"
           - chain: CITY
             name: "city"
             assembly: "City.Node.dll"
