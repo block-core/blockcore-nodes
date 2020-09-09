@@ -13,12 +13,16 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['AMS','CITY','IMPL', 'STRAT', 'XDS', 'XLR', 'X42']
+        chain: ['AMS','BTC','CITY','IMPL', 'STRAT', 'XDS', 'XLR', 'X42']
         include:
           - chain: AMS
             name: "AMS"
             solution: "AMS/AMS.sln"
             project: "AMS/src/AMS.Node/AMS.Node.csproj"
+          - chain: BTC
+            name: "BTC"
+            solution: "BTC/Bitcoin.sln"
+            project: "BTC/src/Bitcoin.Node/Bitcoin.Node.csproj"
           - chain: CITY
             name: "CITY"
             solution: "CITY/City.sln"
