@@ -25,6 +25,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XdsD", "XDS\src\XdsD\XdsD.c
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bitcoin.Node", "BTC\src\Bitcoin.Node\Bitcoin.Node.csproj", "{5EC072A9-AE13-4583-932D-92A123AE48B3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rutanio.Node", "RUTA\src\Rutanio.Node\Rutanio.Node.csproj", "{7717A5F2-0EF1-4B40-B18B-5DB18B68EAAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenExo.Node", "EXOS\src\OpenExo.Node\OpenExo.Node.csproj", "{3C4D8B4A-848C-408A-A957-FCDD98F26438}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{5EC072A9-AE13-4583-932D-92A123AE48B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EC072A9-AE13-4583-932D-92A123AE48B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EC072A9-AE13-4583-932D-92A123AE48B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7717A5F2-0EF1-4B40-B18B-5DB18B68EAAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7717A5F2-0EF1-4B40-B18B-5DB18B68EAAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7717A5F2-0EF1-4B40-B18B-5DB18B68EAAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7717A5F2-0EF1-4B40-B18B-5DB18B68EAAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C4D8B4A-848C-408A-A957-FCDD98F26438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C4D8B4A-848C-408A-A957-FCDD98F26438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C4D8B4A-848C-408A-A957-FCDD98F26438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C4D8B4A-848C-408A-A957-FCDD98F26438}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

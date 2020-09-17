@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['AMS','BTC','CITY','IMPL', 'STRAT', 'XDS', 'XLR', 'X42']
+        chain: ['AMS','BTC','CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42']
         include:
           - chain: AMS
             name: "AMS"
@@ -27,10 +27,18 @@ jobs:
             name: "CITY"
             solution: "CITY/City.sln"
             project: "CITY/src/City.Node/City.Node.csproj"
+          - chain: EXOS
+            name: "EXOS"
+            solution: "EXOS/OpenExo.sln"
+            project: "EXOS/src/OpenExo.Node/OpenExo.Node.csproj"
           - chain: IMPL
             name: "IMPL"
             solution: "IMPL/Impleum.sln"
             project: "IMPL/src/Impleum.Node/Impleum.Node.csproj"
+          - chain: RUTA
+            name: "RUTA"
+            solution: "RUTA/Rutanio.sln"
+            project: "RUTA/src/Rutanio.Node/Rutanio.Node.csproj"
           - chain: STRAT
             name: "STRAT"
             solution: "STRAT/Stratis.sln"

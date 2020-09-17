@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        chain: ['AMS','BTC','CITY','IMPL', 'STRAT', 'XDS', 'XLR', 'X42']
+        chain: ['AMS','BTC','CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42']
         include:
           - chain: AMS
             name: "ams"
@@ -25,10 +25,18 @@ jobs:
             name: "city"
             assembly: "City.Node.dll"
             ports: "4333 4334 4335"
+          - chain: EXOS
+            name: "exos"
+            assembly: "OpenExo.Node.dll"
+            ports: "4562 4561 39120"
           - chain: IMPL
             name: "impl"
             assembly: "Impleum.Node.dll"
             ports: "16171 16172 38222"
+          - chain: RUTA
+            name: "ruta"
+            assembly: "Rutanio.Node.dll"
+            ports: "6782 6781 39220"
           - chain: STRAT
             name: "strat"
             assembly: "Stratis.Node.dll"

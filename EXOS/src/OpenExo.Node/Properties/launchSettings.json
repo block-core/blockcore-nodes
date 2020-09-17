@@ -1,0 +1,39 @@
+{
+   "profiles": {
+      "EXOS (MAIN)": {
+         "commandName": "Project"
+      },
+      "EXOS (TEST)": {
+         "commandName": "Project",
+         "commandLineArgs": "-testnet"
+      },
+      "EXOS (MAIN/RPC)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser"
+      },
+      "EXOS (TEST/RPC)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -testnet"
+      },
+      "EXOS (MAIN/LOCAL/RPC)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata"
+      },
+      "EXOS (TEST/LOCAL/RPC)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -testnet"
+      },
+      "EXOS (MAIN/LOCAL/RPC/DEFAULT)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -defaultwalletname=default -defaultwalletpassword=default -unlockdefaultwallet -server"
+      },
+      "EXOS (TEST/LOCAL/RPC/DEFAULT)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -defaultwalletname=default -defaultwalletpassword=default -unlockdefaultwallet -server -testnet"
+      },
+      "EXOS (TEST/NO ASSUME VALID)": {
+         "commandName": "Project",
+         "commandLineArgs": "-testnet -assumevalid=0 -checkpoints=false"
+      }
+   }
+}
