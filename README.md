@@ -8,7 +8,9 @@ Reference implementations of Blockcore based blockchains.
 
 - AMS - [Amsterdam Coin](https://amsterdamcoin.com/)
 - CITY - [City Chain](https://www.city-chain.org)
+- EXOS - [ExO Economy](https://economy.openexo.com/)
 - IMPL - [Impleum](https://impleum.com/)
+- RUTA - [Rutanio](https://www.rutanio.com/)
 - STRAT - [Stratis](https://stratisplatform.com/)
 - X42 - [x42 Protocol](https://www.x42.tech/)
 - XDS - [XDS](https://github.com/sonofsatoshi2020/xds)
@@ -24,12 +26,12 @@ All our Blockcore Reference Nodes is published to our [Docker Hub](https://hub.d
 
 It is super easy to spin up a new instance of any of the nodes, they all follow the same syntax (name and version).
 
-*We advice on using specific version when using docker, like our example below.*
+*We advice on using specific version when using docker, like our example below. The "latest" tag can also be used.*
 
 Run the Blockcore Reference Node for XDS blockchain in interactive mode:
 
 ```sh
-docker run blockcore/node-xds:1.0.4
+docker run blockcore/node-xds:1.0.18
 ```
 
 To spin up a docker container instance in the background, apply the "-d" tag.
@@ -37,7 +39,7 @@ To spin up a docker container instance in the background, apply the "-d" tag.
 Run the Blockcore Reference Node for City Chain blockchain in background:
 
 ```sh
-docker run blockcore/node-city:1.0.4
+docker run blockcore/node-city:1.0.18 -d
 ```
 
 ## Support and compatibility
