@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using Blockcore.Consensus.Checkpoints;
+using Blockcore.P2P;
 using NBitcoin;
 using NBitcoin.Protocol;
 

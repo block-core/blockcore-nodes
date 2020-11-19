@@ -6,6 +6,7 @@ on:
       - master
   repository_dispatch:
     types: [publish-nodes]
+  workflow_dispatch:
 
 jobs:
 
@@ -88,8 +89,8 @@ jobs:
 
     - name: Variables
       run: |
-        echo "::set-env name=VERSION::$(npm run version --silent)"
-        echo "::set-env name=RELEASE_CONFIGURATION::${{ matrix.runtime }}"
+        echo VERSION=$(npm run version --silent) >> $GITHUB_ENV
+      shell: bash
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
@@ -100,20 +101,21 @@ jobs:
       run: dotnet restore ${{env.SOLUTION_PATH}}
 
     - name: Build
-      run: dotnet build -c ${{env.BUILD_CONFIGURATION}} -r ${{env.RELEASE_CONFIGURATION}} -v m ${{env.SOLUTION_PATH}}
+      run: dotnet build -c ${{env.BUILD_CONFIGURATION}} -r ${{matrix.runtime}} -v m ${{env.SOLUTION_PATH}}
 
     - name: Publish
-      run: dotnet publish -c ${{env.BUILD_CONFIGURATION}} -r ${{env.RELEASE_CONFIGURATION}} -v m -o ./bin/publish ${{env.PROJECT_PATH}}
+      run: dotnet publish -c ${{env.BUILD_CONFIGURATION}} -r ${{matrix.runtime}} -v m -o ./bin/publish ${{env.PROJECT_PATH}}
 
     - name: Package Name
       run: |
-        echo "::set-env name=RELEASE_NAME::${{ env.PROJECT_NAME }}-${{ env.VERSION }}-${{ env.RELEASE_CONFIGURATION }}${{ matrix.extension }}"
-        echo "::set-env name=RELEASE_PATH::${{ env.PROJECT_NAME }}-${{ env.VERSION }}-${{ env.RELEASE_CONFIGURATION }}${{ matrix.extension }}"
+        echo RELEASE_NAME=${{ env.PROJECT_NAME }}-${{ env.VERSION }}-${{ matrix.runtime }}${{ matrix.extension }} >> $GITHUB_ENV
+        echo RELEASE_PATH=${{ env.PROJECT_NAME }}-${{ env.VERSION }}-${{ matrix.runtime }}${{ matrix.extension }} >> $GITHUB_ENV
+      shell: bash
 
     - name: Package (Linux)
       if: matrix.os == 'ubuntu-latest'
       run: |
-        echo "::set-env name=RELEASE_PATH::./bin/publish/${{env.RELEASE_NAME}}"
+        echo RELEASE_PATH=./bin/publish/${{env.RELEASE_NAME}} >> $GITHUB_ENV
         cd ./bin/publish/
         tar cvzf ${{env.RELEASE_NAME}} *
 

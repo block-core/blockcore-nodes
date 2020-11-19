@@ -31,7 +31,7 @@
       <PackageReference Include="Blockcore.Features.NodeHost" Version="1.0.*" />
       <PackageReference Include="Blockcore.Features.RPC" Version="1.0.*" />
       <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.*" />
-      <PackageReference Include="Blockcore.NBitcoin" Version="1.0.*" />
+      <PackageReference Include="Blockcore.Core" Version="1.0.*" />
       <PackageReference Include="Blockcore.Networks.Xds" Version="1.0.*" />
    </ItemGroup>
 

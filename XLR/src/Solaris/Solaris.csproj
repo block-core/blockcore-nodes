@@ -14,7 +14,7 @@
    <ItemGroup>
       <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.*" />
       <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.0.*" />
-      <PackageReference Include="Blockcore.NBitcoin" Version="1.0.*" />
+      <PackageReference Include="Blockcore.Core" Version="1.0.*" />
    </ItemGroup>
 
 </Project>
