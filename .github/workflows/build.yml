@@ -101,8 +101,8 @@ jobs:
     - name: Restore
       run: dotnet restore ${{env.SOLUTION_PATH}}
 
-    - name: Build
-      run: dotnet build -c ${{env.BUILD_CONFIGURATION}} -r ${{matrix.runtime}} -v m ${{env.SOLUTION_PATH}}
+    # - name: Build
+    #   run: dotnet build -c ${{env.BUILD_CONFIGURATION}} -r ${{matrix.runtime}} -v m ${{env.SOLUTION_PATH}}
 
     - name: Publish
       run: dotnet publish -c ${{env.BUILD_CONFIGURATION}} -r ${{matrix.runtime}} -v m -o ./bin/publish ${{env.PROJECT_PATH}}
