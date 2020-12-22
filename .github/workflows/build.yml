@@ -14,7 +14,8 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['AMS','BTC','CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42']
+        #chain: ['AMS','BTC','CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42']
+        chain: ['CITY']
         include:
           - chain: AMS
             name: "AMS"
@@ -92,10 +93,10 @@ jobs:
         echo VERSION=$(npm run version --silent) >> $GITHUB_ENV
       shell: bash
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.101
+    # - name: Setup .NET
+    #   uses: actions/setup-dotnet@v1
+    #   with:
+    #     dotnet-version: 3.1.101
 
     - name: Restore
       run: dotnet restore ${{env.SOLUTION_PATH}}
