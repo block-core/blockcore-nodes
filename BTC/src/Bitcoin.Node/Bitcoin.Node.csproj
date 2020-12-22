@@ -24,6 +24,8 @@
       <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.*" />
       <PackageReference Include="Blockcore.Core" Version="1.0.*" />
       <PackageReference Include="Blockcore.Networks.Bitcoin" Version="1.0.*" />
+      <PackageReference Include="Blockcore.Features.Persistence.LevelDb.CorePackage" Version="1.0.*" />
+      <PackageReference Include="Blockcore.Features.Persistence.Rocksdb.CorePackage" Version="1.0.*" />
    </ItemGroup>
 
 </Project>
