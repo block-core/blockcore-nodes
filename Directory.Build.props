@@ -5,13 +5,5 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <IsPackable>false</IsPackable>
     <Authors>Blockcore</Authors>
-    <!-- <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://www.blockcore.net</PackageProjectUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>git://github.com/block-core/blockcore-nodes</RepositoryUrl>
-    <PackageIcon></PackageIcon>
-    <PackageIconUrl>https://www.blockcore.net/assets/blockcore-256x256.png</PackageIconUrl>
-    <PackageTags>blockchain;cryptocurrency;crypto;C#;.NET;bitcoin;blockcore</PackageTags>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile> -->
   </PropertyGroup>
 </Project>

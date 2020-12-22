@@ -14,49 +14,48 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        #chain: ['AMS','BTC','CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42']
-        chain: ['CITY']
+        chain: ['AMS','BTC','CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42']
         include:
-          # - chain: AMS
-          #   name: "AMS"
-          #   solution: "AMS/AMS.sln"
-          #   project: "AMS/src/AMS.Node/AMS.Node.csproj"
-          # - chain: BTC
-          #   name: "BTC"
-          #   solution: "BTC/Bitcoin.sln"
-          #   project: "BTC/src/Bitcoin.Node/Bitcoin.Node.csproj"
+          - chain: AMS
+            name: "AMS"
+            solution: "AMS/AMS.sln"
+            project: "AMS/src/AMS.Node/AMS.Node.csproj"
+          - chain: BTC
+            name: "BTC"
+            solution: "BTC/Bitcoin.sln"
+            project: "BTC/src/Bitcoin.Node/Bitcoin.Node.csproj"
           - chain: CITY
             name: "CITY"
             solution: "CITY/City.sln"
             project: "CITY/src/City.Node/City.Node.csproj"
-          # - chain: EXOS
-          #   name: "EXOS"
-          #   solution: "EXOS/OpenExo.sln"
-          #   project: "EXOS/src/OpenExo.Node/OpenExo.Node.csproj"
-          # - chain: IMPL
-          #   name: "IMPL"
-          #   solution: "IMPL/Impleum.sln"
-          #   project: "IMPL/src/Impleum.Node/Impleum.Node.csproj"
-          # - chain: RUTA
-          #   name: "RUTA"
-          #   solution: "RUTA/Rutanio.sln"
-          #   project: "RUTA/src/Rutanio.Node/Rutanio.Node.csproj"
-          # - chain: STRAT
-          #   name: "STRAT"
-          #   solution: "STRAT/Stratis.sln"
-          #   project: "STRAT/src/Stratis.Node/Stratis.Node.csproj"
-          # - chain: XDS
-          #   name: "XDS"
-          #   solution: "XDS/Blockcore.Xds.sln"
-          #   project: "XDS/src/XdsD/XdsD.csproj"
-          # - chain: XLR
-          #   name: "XLR"
-          #   solution: "XLR/Solaris.sln"
-          #   project: "XLR/src/Solaris.Node/Solaris.Node.csproj"
-          # - chain: X42
-          #   name: "X42"
-          #   solution: "X42/X42.sln"
-          #   project: "X42/src/X42.Node/X42.Node.csproj"
+          - chain: EXOS
+            name: "EXOS"
+            solution: "EXOS/OpenExo.sln"
+            project: "EXOS/src/OpenExo.Node/OpenExo.Node.csproj"
+          - chain: IMPL
+            name: "IMPL"
+            solution: "IMPL/Impleum.sln"
+            project: "IMPL/src/Impleum.Node/Impleum.Node.csproj"
+          - chain: RUTA
+            name: "RUTA"
+            solution: "RUTA/Rutanio.sln"
+            project: "RUTA/src/Rutanio.Node/Rutanio.Node.csproj"
+          - chain: STRAT
+            name: "STRAT"
+            solution: "STRAT/Stratis.sln"
+            project: "STRAT/src/Stratis.Node/Stratis.Node.csproj"
+          - chain: XDS
+            name: "XDS"
+            solution: "XDS/Blockcore.Xds.sln"
+            project: "XDS/src/XdsD/XdsD.csproj"
+          - chain: XLR
+            name: "XLR"
+            solution: "XLR/Solaris.sln"
+            project: "XLR/src/Solaris.Node/Solaris.Node.csproj"
+          - chain: X42
+            name: "X42"
+            solution: "X42/X42.sln"
+            project: "X42/src/X42.Node/X42.Node.csproj"
 
           - os: windows-latest
             extension: ".zip"
