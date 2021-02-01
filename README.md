@@ -9,7 +9,7 @@ Reference implementations of Blockcore based blockchains.
 - AMS - [Amsterdam Coin](https://amsterdamcoin.com/)
 - CITY - [City Chain](https://www.city-chain.org)
 - EXOS - [ExO Economy](https://economy.openexo.com/)
-- IMPL - [Impleum](https://impleum.com/)
+- IMPLX - [Impleum](https://impleum.com/)
 - RUTA - [Rutanio](https://www.rutanio.com/)
 - STRAT - [Stratis](https://stratisplatform.com/)
 - X42 - [x42 Protocol](https://www.x42.tech/)

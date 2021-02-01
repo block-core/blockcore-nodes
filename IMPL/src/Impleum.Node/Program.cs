@@ -14,6 +14,7 @@ using Blockcore.Features.RPC;
 using Blockcore.Utilities;
 using NBitcoin;
 using NBitcoin.Protocol;
+using Blockcore.Networks.Impleum;
 
 namespace Impleum.Daemon
 {
@@ -23,7 +24,7 @@ namespace Impleum.Daemon
       {
          try
          {
-            var nodeSettings = new NodeSettings(networksSelector: Networks.Networks.Impleum, args: args);
+            var nodeSettings = new NodeSettings(networksSelector: Networks.Impleum, args: args);
 
             IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
                 .UseNodeSettings(nodeSettings)
