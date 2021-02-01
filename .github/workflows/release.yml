@@ -33,7 +33,7 @@ jobs:
           - chain: IMPL
             name: "impl"
             assembly: "Impleum.Node.dll"
-            ports: "16171 16172 38222"
+            ports: "18105 18104 18103"
           - chain: RUTA
             name: "ruta"
             assembly: "Rutanio.Node.dll"
