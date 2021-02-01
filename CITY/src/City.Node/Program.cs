@@ -15,6 +15,7 @@ using Blockcore.Features.RPC;
 using Blockcore.Features.WalletNotify;
 using Blockcore.Utilities;
 using NBitcoin.Protocol;
+using Blockcore.Networks.City.Networks;
 
 namespace City.Daemon
 {
@@ -24,7 +25,7 @@ namespace City.Daemon
       {
          try
          {
-            var nodeSettings = new NodeSettings(networksSelector: Networks.Networks.City, args: args);
+            var nodeSettings = new NodeSettings(networksSelector: Networks.City, args: args);
 
             IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
                 .UseNodeSettings(nodeSettings)

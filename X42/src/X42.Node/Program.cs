@@ -12,7 +12,7 @@ using Blockcore.Features.MemoryPool;
 using Blockcore.Features.Miner;
 using Blockcore.Features.RPC;
 using Blockcore.Utilities;
-using x42.Networks;
+using Blockcore.Networks.x42.Networks;
 
 namespace X42.Node
 {
