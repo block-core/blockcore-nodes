@@ -88,4 +88,4 @@ jobs:
       - name: Login and Push to Docker Registry
         run: |
           docker login -u "sondreb" -p "${{secrets.DockerHubSecret}}"
-          docker push blockcore/node-${{ matrix.name }}
+          docker push --all-tags blockcore/node-${{ matrix.name }}
