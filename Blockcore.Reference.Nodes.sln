@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rutanio.Node", "RUTA\src\Ru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenExo.Node", "EXOS\src\OpenExo.Node\OpenExo.Node.csproj", "{3C4D8B4A-848C-408A-A957-FCDD98F26438}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blockcore.MultiNode", "MULTI\src\Blockcore.MultiNode\Blockcore.MultiNode.csproj", "{1A21DF40-92A5-4572-BAB7-992292175261}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{3C4D8B4A-848C-408A-A957-FCDD98F26438}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C4D8B4A-848C-408A-A957-FCDD98F26438}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C4D8B4A-848C-408A-A957-FCDD98F26438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A21DF40-92A5-4572-BAB7-992292175261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A21DF40-92A5-4572-BAB7-992292175261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A21DF40-92A5-4572-BAB7-992292175261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A21DF40-92A5-4572-BAB7-992292175261}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

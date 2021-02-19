@@ -1,0 +1,92 @@
+{
+   "profiles": {
+      "AMS (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=AMS"
+      },
+      "AMS (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=AMS -datadir=data"
+      },
+      "BCP (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=BCP"
+      },
+      "BCP (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=BCP -datadir=data"
+      },
+      "BTC (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=BTCP"
+      },
+      "BTC (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=BTCP -datadir=data"
+      },
+      "CITY (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=CITY"
+      },
+      "CITY (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=CITY -datadir=data"
+      },
+      "SOLARIS (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=XLR"
+      },
+      "SOLARIS (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=XLR -datadir=data"
+      },
+      "STRAT (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=STRAT"
+      },
+      "STRAT (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=STRAT -datadir=data"
+      },
+      "X42 (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=X42"
+      },
+      "X42 (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=X42 -datadir=data"
+      },
+      "XDS (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=XDS"
+      },
+      "XDS (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=XDS -datadir=data"
+      },
+      "IMPLX (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=IMPLX"
+      },
+      "IMPLX (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=IMPLX -datadir=data"
+      },
+      "EXOS (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=EXOS"
+      },
+      "EXOS (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=EXOS -datadir=data"
+      },
+      "RUTA (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=RUTA"
+      },
+      "RUTA (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=RUTA -datadir=data"
+      }
+   }
+}

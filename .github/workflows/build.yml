@@ -14,8 +14,12 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['AMS','BTC','CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42']
+        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42']
         include:
+          - chain: MULTI
+            name: "MULTI"
+            solution: "MULTI/Blockcore.MultiNode.sln"
+            project: "MULTI/src/Blockcore.MultiNode/Blockcore.MultiNode.csproj"
           - chain: AMS
             name: "AMS"
             solution: "AMS/AMS.sln"
