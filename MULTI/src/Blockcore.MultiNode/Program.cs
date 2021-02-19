@@ -29,7 +29,19 @@ namespace Blockcore.Node
                .Select(arg => arg.Replace("--chain=", string.Empty, ignoreCase: true, CultureInfo.InvariantCulture))
                .FirstOrDefault();
 
+            if (string.IsNullOrWhiteSpace(chain))
+            {
+               chain = "BTC";
+            }
+
             NodeSettings nodeSettings = NetworkSelector.Create(chain, arguments.ToArray());
+
+            if (nodeSettings == null)
+            {
+               Console.WriteLine($"Please check your specified chain argument, it is currently not supported: {chain}. Exiting...");
+               return;
+            }
+
             IFullNodeBuilder nodeBuilder = NodeBuilder.Create(chain, nodeSettings);
 
             IFullNode node = nodeBuilder.Build();

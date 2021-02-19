@@ -18,11 +18,11 @@
       },
       "BTC (MAIN)": {
          "commandName": "Project",
-         "commandLineArgs": "--chain=BTCP"
+         "commandLineArgs": "--chain=BTC"
       },
       "BTC (MAIN/LOCAL)": {
          "commandName": "Project",
-         "commandLineArgs": "--chain=BTCP -datadir=data"
+         "commandLineArgs": "--chain=BTC -datadir=data"
       },
       "CITY (MAIN)": {
          "commandName": "Project",
