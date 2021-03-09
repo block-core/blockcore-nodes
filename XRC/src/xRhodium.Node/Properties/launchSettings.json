@@ -1,0 +1,12 @@
+{
+   "profiles": {
+      "XRC (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=XRC"
+      },
+      "XRC (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=XRC -datadir=data"
+      }
+   }
+}

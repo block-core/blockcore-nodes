@@ -29,6 +29,9 @@
       <PackageReference Include="Blockcore.Networks.Xds" Version="1.0.*" />
       <PackageReference Include="Blockcore.Networks.Bitcoin" Version="1.0.*" />
       <PackageReference Include="Blockcore.Networks.BCP" Version="1.0.*" />
+      <PackageReference Include="Blockcore.Networks.xRhodium" Version="1.0.*" />
+      <PackageReference Include="Blockcore.Networks.HomeCoin" Version="1.0.*" />
+      <PackageReference Include="Blockcore.Networks.X1" Version="1.0.*" />
    </ItemGroup>
 
    <ItemGroup>

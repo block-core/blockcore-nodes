@@ -87,6 +87,30 @@
       "RUTA (MAIN/LOCAL)": {
          "commandName": "Project",
          "commandLineArgs": "--chain=RUTA -datadir=data"
+      },
+      "X1 (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=X1"
+      },
+      "X1 (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=X1 -datadir=data"
+      },
+      "XRC (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=XRC"
+      },
+      "XRC (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=XRC -datadir=data"
+      },
+      "HOME (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=HOME"
+      },
+      "HOME (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=HOME -datadir=data"
       }
    }
 }

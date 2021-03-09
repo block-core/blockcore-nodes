@@ -13,6 +13,7 @@ using Blockcore.Features.Dns;
 using Blockcore.Persistence;
 using Blockcore.Features.BlockExplorer;
 using Blockcore.Features.WalletNotify;
+using Blockcore.Networks.X1.Components;
 
 namespace Blockcore.Node
 {
@@ -29,7 +30,11 @@ namespace Blockcore.Node
          switch (chain)
          {
             case "BTC":
+            case "XRC":
                nodeBuilder.UsePowConsensus().AddMining().UseWallet();
+               break;
+            case "X1":
+               nodeBuilder.UseX1Consensus().UseColdStakingWallet();
                break;
             case "AMS":
             case "X42":
@@ -41,6 +46,7 @@ namespace Blockcore.Node
             case "XDS":
             case "XLR":
             case "IMPLX":
+            case "HOME":
                nodeBuilder.UsePosConsensus().AddPowPosMining().UseColdStakingWallet();
                break;
          }

@@ -55,6 +55,18 @@ namespace Blockcore.Node
             case "XLR":
                nodeSettings = new NodeSettings(networksSelector: Solaris.Networks.Networks.Solaris, args: args);
                break;
+
+            case "X1":
+               nodeSettings = new NodeSettings(networksSelector: Networks.X1.Networks.X1, args: args);
+               break;
+
+            case "XRC":
+               nodeSettings = new NodeSettings(networksSelector: Networks.XRC.Networks.XRC, args: args);
+               break;
+
+            case "HOME":
+               nodeSettings = new NodeSettings(networksSelector: HomeCoin.Networks.Networks.HomeCoin, args: args);
+               break;
          }
 
          return nodeSettings;
