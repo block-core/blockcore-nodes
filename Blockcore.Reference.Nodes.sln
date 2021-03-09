@@ -29,9 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenExo.Node", "EXOS\src\Op
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blockcore.MultiNode", "MULTI\src\Blockcore.MultiNode\Blockcore.MultiNode.csproj", "{1A21DF40-92A5-4572-BAB7-992292175261}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blockcore.Features.BlockExplorer", "..\blockcore-features\Blockcore.Features.BlockExplorer\Blockcore.Features.BlockExplorer.csproj", "{E639B432-CD02-4FD5-BC86-5C6FDB4CBE01}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xRhodium.Node", "XRC\src\xRhodium.Node\xRhodium.Node.csproj", "{01BA8381-BCA9-4483-8DEA-D261A8FC8E1D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X1.Node", "X1\src\X1.Node\X1.Node.csproj", "{21FD978F-8E52-467B-A528-DDB921A5C9BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,14 +91,14 @@ Global
 		{1A21DF40-92A5-4572-BAB7-992292175261}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A21DF40-92A5-4572-BAB7-992292175261}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A21DF40-92A5-4572-BAB7-992292175261}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E639B432-CD02-4FD5-BC86-5C6FDB4CBE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E639B432-CD02-4FD5-BC86-5C6FDB4CBE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E639B432-CD02-4FD5-BC86-5C6FDB4CBE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E639B432-CD02-4FD5-BC86-5C6FDB4CBE01}.Release|Any CPU.Build.0 = Release|Any CPU
 		{01BA8381-BCA9-4483-8DEA-D261A8FC8E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{01BA8381-BCA9-4483-8DEA-D261A8FC8E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01BA8381-BCA9-4483-8DEA-D261A8FC8E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01BA8381-BCA9-4483-8DEA-D261A8FC8E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21FD978F-8E52-467B-A528-DDB921A5C9BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21FD978F-8E52-467B-A528-DDB921A5C9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21FD978F-8E52-467B-A528-DDB921A5C9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21FD978F-8E52-467B-A528-DDB921A5C9BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
