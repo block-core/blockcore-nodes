@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOME']
+        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN']
         include:
           - chain: MULTI
             name: "MULTI"
@@ -68,7 +68,7 @@ jobs:
             name: "XRC"
             solution: "XRC/xRhodium.sln"
             project: "XRC/src/xRhodium.Node/xRhodium.Node.csproj"
-          - chain: HOME
+          - chain: HOMECOIN
             name: "HOMECOIN"
             solution: "HOME/HomeCoin.sln"
             project: "HOME/src/HomeCoin.Node/HomeCoin.Node.csproj"
