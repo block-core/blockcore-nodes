@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42']
+        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOME']
         include:
           - chain: MULTI
             name: "MULTI"
@@ -60,6 +60,18 @@ jobs:
             name: "X42"
             solution: "X42/X42.sln"
             project: "X42/src/X42.Node/X42.Node.csproj"
+          - chain: X1
+            name: "X1"
+            solution: "X1/X1.sln"
+            project: "X1/src/X1.Node/X1.Node.csproj"
+          - chain: XRC
+            name: "XRC"
+            solution: "XRC/xRhodium.sln"
+            project: "XRC/src/xRhodium.Node/xRhodium.Node.csproj"
+          - chain: HOME
+            name: "HOMECOIN"
+            solution: "HOME/HomeCoin.sln"
+            project: "HOME/src/HomeCoin.Node/HomeCoin.Node.csproj"
 
           - os: windows-latest
             extension: ".zip"

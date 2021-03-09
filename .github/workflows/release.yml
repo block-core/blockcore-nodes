@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42']
+        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOME']
         include:
           - chain: MULTI
             name: "multi"
@@ -58,6 +58,18 @@ jobs:
             name: "x42"
             assembly: "X42.Node.dll"
             ports: "52342 52343 42220"
+          - chain: X1
+            name: "x1"
+            assembly: "X1.Node.dll"
+            ports: "23333 43333 43334"
+          - chain: XRC
+            name: "xrc"
+            assembly: "XRC.Node.dll"
+            ports: "37270 19660 37221"
+          - chain: HOME
+            name: "homecoin"
+            assembly: "xRhodium.Node.dll"
+            ports: "33331 33332 33333"
 
       fail-fast: false
 

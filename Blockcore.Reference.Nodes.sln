@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xRhodium.Node", "XRC\src\xR
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X1.Node", "X1\src\X1.Node\X1.Node.csproj", "{21FD978F-8E52-467B-A528-DDB921A5C9BB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeCoin.Node", "HOME\src\HomeCoin.Node\HomeCoin.Node.csproj", "{A7D27276-A402-43D1-8799-4D08895AA12B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{21FD978F-8E52-467B-A528-DDB921A5C9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21FD978F-8E52-467B-A528-DDB921A5C9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21FD978F-8E52-467B-A528-DDB921A5C9BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7D27276-A402-43D1-8799-4D08895AA12B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D27276-A402-43D1-8799-4D08895AA12B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D27276-A402-43D1-8799-4D08895AA12B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D27276-A402-43D1-8799-4D08895AA12B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
