@@ -64,7 +64,7 @@ jobs:
             ports: "23333 43333 43334"
           - chain: XRC
             name: "xrc"
-            assembly: "XRC.Node.dll"
+            assembly: "xRhodium.Node.dll"
             ports: "37270 19660 37221"
           - chain: HOMECOIN
             name: "homecoin"
