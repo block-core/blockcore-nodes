@@ -1,41 +1,37 @@
 {
    "profiles": {
-      "CITY (MAIN)": {
+      "SERF (MAIN)": {
          "commandName": "Project"
       },
-      "CITY (MAIN/ROCKSDB)": {
-         "commandName": "Project",
-         "commandLineArgs": "-dbtype=rocksdb"
-      },
-      "CITY (TEST)": {
+      "SERF (TEST)": {
          "commandName": "Project",
          "commandLineArgs": "-testnet"
       },
-      "CITY (MAIN/RPC)": {
+      "SERF (MAIN/RPC)": {
          "commandName": "Project",
          "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser"
       },
-      "CITY (TEST/RPC)": {
+      "SERF (TEST/RPC)": {
          "commandName": "Project",
          "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -testnet"
       },
-      "CITY (MAIN/LOCAL/RPC)": {
+      "SERF (MAIN/LOCAL/RPC)": {
          "commandName": "Project",
          "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata"
       },
-      "CITY (TEST/LOCAL/RPC)": {
+      "SERF (TEST/LOCAL/RPC)": {
          "commandName": "Project",
          "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -testnet"
       },
-      "CITY (MAIN/LOCAL/RPC/DEFAULT)": {
+      "SERF (MAIN/LOCAL/RPC/DEFAULT)": {
          "commandName": "Project",
          "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -defaultwalletname=default -defaultwalletpassword=default -unlockdefaultwallet -server"
       },
-      "CITY (TEST/LOCAL/RPC/DEFAULT)": {
+      "SERF (TEST/LOCAL/RPC/DEFAULT)": {
          "commandName": "Project",
          "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -defaultwalletname=default -defaultwalletpassword=default -unlockdefaultwallet -server -testnet"
       },
-      "CITY (TEST/NO ASSUME VALID)": {
+      "SERF (TEST/NO ASSUME VALID)": {
          "commandName": "Project",
          "commandLineArgs": "-testnet -assumevalid=0 -checkpoints=false"
       }

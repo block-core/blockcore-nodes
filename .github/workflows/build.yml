@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN']
+        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN', 'SERF']
         include:
           - chain: MULTI
             name: "MULTI"
@@ -72,6 +72,10 @@ jobs:
             name: "HOMECOIN"
             solution: "HOME/HomeCoin.sln"
             project: "HOME/src/HomeCoin.Node/HomeCoin.Node.csproj"
+          - chain: SERF
+            name: "SERF"
+            solution: "SERF/SERF.sln"
+            project: "SERF/src/SERF.Node/SERF.Node.csproj"
 
           - os: windows-latest
             extension: ".zip"
