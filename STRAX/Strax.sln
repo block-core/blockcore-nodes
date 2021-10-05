@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stratis.Node", "src\Stratis.Node\Stratis.Node.csproj", "{72C9C5AE-77A5-48AD-9866-2FD17BF68FF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strax.Node", "src\Strax.Node\Strax.Node.csproj", "{72C9C5AE-77A5-48AD-9866-2FD17BF68FF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
