@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN', 'SERF']
+        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'STRAX', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN', 'SERF']
         include:
           - chain: MULTI
             name: "MULTI"
@@ -48,6 +48,10 @@ jobs:
             name: "STRAT"
             solution: "STRAT/Stratis.sln"
             project: "STRAT/src/Stratis.Node/Stratis.Node.csproj"
+          - chain: STRAX
+            name: "STRAX"
+            solution: "STRAX/Strax.sln"
+            project: "STRAX/src/Strax.Node/Strax.Node.csproj"
           - chain: XDS
             name: "XDS"
             solution: "XDS/Blockcore.Xds.sln"

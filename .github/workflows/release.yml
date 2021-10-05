@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN', 'SERF']
+        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'STRAX', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN', 'SERF']
         include:
           - chain: MULTI
             name: "multi"
@@ -46,6 +46,10 @@ jobs:
             name: "strat"
             assembly: "Stratis.Node.dll"
             ports: "16178 16174 37221"
+          - chain: STRAX
+            name: "strax"
+            assembly: "Strax.Node.dll"
+            ports: "17105 17104 17103"
           - chain: XDS
             name: "xds"
             assembly: "blockcore.xdsd.dll"
