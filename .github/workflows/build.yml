@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'STRAX', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN', 'SERF']
+        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'CYBITS', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'STRAX', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN', 'SERF']
         include:
           - chain: MULTI
             name: "MULTI"
@@ -32,6 +32,10 @@ jobs:
             name: "CITY"
             solution: "CITY/City.sln"
             project: "CITY/src/City.Node/City.Node.csproj"
+          - chain: CYBITS
+            name: "CYBITS"
+            solution: "CYBITS/Cybits.sln"
+            project: "CYBITS/src/Cybits.Node/Cybits.Node.csproj"
           - chain: EXOS
             name: "EXOS"
             solution: "EXOS/OpenExo.sln"

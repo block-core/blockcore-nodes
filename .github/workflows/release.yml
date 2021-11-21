@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'STRAX', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN', 'SERF']
+        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'CYBITS', 'EXOS', 'IMPL', 'RUTA', 'STRAT', 'STRAX', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN', 'SERF']
         include:
           - chain: MULTI
             name: "multi"
@@ -30,6 +30,10 @@ jobs:
             name: "city"
             assembly: "City.Node.dll"
             ports: "4333 4334 4335"
+          - chain: CYBITS
+            name: "cybits"
+            assembly: "Cybits.Node.dll"
+            ports: "17771 17772 17773"
           - chain: EXOS
             name: "exos"
             assembly: "OpenExo.Node.dll"

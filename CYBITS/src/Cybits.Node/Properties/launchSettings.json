@@ -1,0 +1,39 @@
+{
+   "profiles": {
+      "CYBITS (MAIN)": {
+         "commandName": "Project"
+      },
+      "CYBITS (TEST)": {
+         "commandName": "Project",
+         "commandLineArgs": "-testnet"
+      },
+      "CYBITS (MAIN/RPC)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser"
+      },
+      "CYBITS (TEST/RPC)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -testnet"
+      },
+      "CYBITS (MAIN/LOCAL/RPC)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata"
+      },
+      "CYBITS (TEST/LOCAL/RPC)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -testnet"
+      },
+      "CYBITS (MAIN/LOCAL/RPC/DEFAULT)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -defaultwalletname=default -defaultwalletpassword=default -unlockdefaultwallet -server"
+      },
+      "CYBITS (TEST/LOCAL/RPC/DEFAULT)": {
+         "commandName": "Project",
+         "commandLineArgs": "-server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -defaultwalletname=default -defaultwalletpassword=default -unlockdefaultwallet -server -testnet"
+      },
+      "CYBITS (TEST/NO ASSUME VALID)": {
+         "commandName": "Project",
+         "commandLineArgs": "-testnet -assumevalid=0 -checkpoints=false"
+      }
+   }
+}
