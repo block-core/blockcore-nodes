@@ -31,7 +31,7 @@ It is super easy to spin up a new instance of any of the nodes, they all follow 
 Run the Blockcore Reference Node for XDS blockchain in interactive mode:
 
 ```sh
-docker run blockcore/node-xds:1.0.28
+docker run blockcore/node-xds:1.0.29
 ```
 
 To spin up a docker container instance in the background, apply the "-d" tag.
@@ -39,7 +39,7 @@ To spin up a docker container instance in the background, apply the "-d" tag.
 Run the Blockcore Reference Node for City Chain blockchain in background:
 
 ```sh
-docker run blockcore/node-city:1.0.28 -d
+docker run blockcore/node-city:1.0.29 -d
 ```
 
 ## Support and compatibility
