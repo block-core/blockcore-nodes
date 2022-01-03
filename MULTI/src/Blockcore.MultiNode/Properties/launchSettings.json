@@ -40,13 +40,13 @@
          "commandName": "Project",
          "commandLineArgs": "--chain=XLR -datadir=data"
       },
-      "STRAT (MAIN)": {
+      "STRAX (MAIN)": {
          "commandName": "Project",
-         "commandLineArgs": "--chain=STRAT"
+         "commandLineArgs": "--chain=STRAX"
       },
-      "STRAT (MAIN/LOCAL)": {
+      "STRAX (MAIN/LOCAL)": {
          "commandName": "Project",
-         "commandLineArgs": "--chain=STRAT -datadir=data"
+         "commandLineArgs": "--chain=STRAX -datadir=data"
       },
       "X42 (MAIN)": {
          "commandName": "Project",
@@ -111,6 +111,14 @@
       "HOME (MAIN/LOCAL)": {
          "commandName": "Project",
          "commandLineArgs": "--chain=HOME -datadir=data"
+      },
+      "SERF (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=SERF"
+      },
+      "SERF (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=SERF -datadir=data"
       }
    }
 }

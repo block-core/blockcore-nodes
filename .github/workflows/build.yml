@@ -14,72 +14,16 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'CYBITS', 'EXOS', 'IMPL', 'RUTA', 'STRAX', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN', 'SERF']
+        chain: ['MULTI', 'BTC']
         include:
           - chain: MULTI
             name: "MULTI"
             solution: "MULTI/Blockcore.MultiNode.sln"
             project: "MULTI/src/Blockcore.MultiNode/Blockcore.MultiNode.csproj"
-          - chain: AMS
-            name: "AMS"
-            solution: "AMS/AMS.sln"
-            project: "AMS/src/AMS.Node/AMS.Node.csproj"
           - chain: BTC
             name: "BTC"
             solution: "BTC/Bitcoin.sln"
             project: "BTC/src/Bitcoin.Node/Bitcoin.Node.csproj"
-          - chain: CITY
-            name: "CITY"
-            solution: "CITY/City.sln"
-            project: "CITY/src/City.Node/City.Node.csproj"
-          - chain: CYBITS
-            name: "CYBITS"
-            solution: "CYBITS/Cybits.sln"
-            project: "CYBITS/src/Cybits.Node/Cybits.Node.csproj"
-          - chain: EXOS
-            name: "EXOS"
-            solution: "EXOS/OpenExo.sln"
-            project: "EXOS/src/OpenExo.Node/OpenExo.Node.csproj"
-          - chain: IMPL
-            name: "IMPL"
-            solution: "IMPL/Impleum.sln"
-            project: "IMPL/src/Impleum.Node/Impleum.Node.csproj"
-          - chain: RUTA
-            name: "RUTA"
-            solution: "RUTA/Rutanio.sln"
-            project: "RUTA/src/Rutanio.Node/Rutanio.Node.csproj"
-          - chain: STRAX
-            name: "STRAX"
-            solution: "STRAX/Strax.sln"
-            project: "STRAX/src/Strax.Node/Strax.Node.csproj"
-          - chain: XDS
-            name: "XDS"
-            solution: "XDS/Blockcore.Xds.sln"
-            project: "XDS/src/XdsD/XdsD.csproj"
-          - chain: XLR
-            name: "XLR"
-            solution: "XLR/Solaris.sln"
-            project: "XLR/src/Solaris.Node/Solaris.Node.csproj"
-          - chain: X42
-            name: "X42"
-            solution: "X42/X42.sln"
-            project: "X42/src/X42.Node/X42.Node.csproj"
-          - chain: X1
-            name: "X1"
-            solution: "X1/X1.sln"
-            project: "X1/src/X1.Node/X1.Node.csproj"
-          - chain: XRC
-            name: "XRC"
-            solution: "XRC/xRhodium.sln"
-            project: "XRC/src/xRhodium.Node/xRhodium.Node.csproj"
-          - chain: HOMECOIN
-            name: "HOMECOIN"
-            solution: "HOME/HomeCoin.sln"
-            project: "HOME/src/HomeCoin.Node/HomeCoin.Node.csproj"
-          - chain: SERF
-            name: "SERF"
-            solution: "SERF/SERF.sln"
-            project: "SERF/src/SERF.Node/SERF.Node.csproj"
 
           - os: windows-latest
             extension: ".zip"

@@ -28,8 +28,8 @@ namespace Blockcore.Node
                nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.City.Networks.Networks.City, args: args);
                break;
 
-            case "STRAT":
-               nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.Stratis.Networks.Stratis, args: args);
+            case "STRAX":
+               nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.Strax.Networks.Strax, args: args);
                break;
 
             case "X42":
@@ -66,6 +66,14 @@ namespace Blockcore.Node
 
             case "HOME":
                nodeSettings = new NodeSettings(networksSelector: HomeCoin.Networks.Networks.HomeCoin, args: args);
+               break;
+
+            case "CYBITS":
+               nodeSettings = new NodeSettings(networksSelector: Networks.Cybits.Networks.Cybits, args: args);
+               break;
+
+            case "SERF":
+               nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.SERF.Networks.SERF, args: args);
                break;
          }
 
