@@ -7,6 +7,7 @@ Reference implementations of Blockcore based blockchains.
 ## Available for these blockchains
 
 - AMS - [Amsterdam Coin](https://amsterdamcoin.com/)
+- BTC - [Bitcoin](https://bitcoin.org/)
 - CITY - [City Chain](https://www.city-chain.org)
 - EXOS - [ExO Economy](https://economy.openexo.com/)
 - IMPLX - [Impleum](https://impleum.com/)
@@ -18,7 +19,7 @@ Reference implementations of Blockcore based blockchains.
 
 ## Download
 
-Go to the [releases](releases) page to find the packaged nodes for various chains. Separate downloads for Windows, Linux and macOS is available.
+Go to the [releases](releases) page to find a unified multi-chain node. Separate downloads for Windows, Linux and macOS is available.
 
 ## Docker
 
@@ -31,7 +32,7 @@ It is super easy to spin up a new instance of any of the nodes, they all follow 
 Run the Blockcore Reference Node for XDS blockchain in interactive mode:
 
 ```sh
-docker run blockcore/node-xds:1.0.29
+docker run blockcore/node-multi:latest --chain=XDS
 ```
 
 To spin up a docker container instance in the background, apply the "-d" tag.
@@ -39,7 +40,17 @@ To spin up a docker container instance in the background, apply the "-d" tag.
 Run the Blockcore Reference Node for City Chain blockchain in background:
 
 ```sh
-docker run blockcore/node-city:1.0.29 -d
+docker run blockcore/node-multi:latest -d --chain=CITY
+```
+
+If you want to access or expose the P2P port, RPC port or API port, you must do a port mapping that is specific for the chain you are launching.
+
+You can find the correct and default TCP port for each blockchain on:
+
+[https://chains.blockcore.net/](https://chains.blockcore.net/)
+
+```sh
+docker run blockcore/node-multi:latest -p 8080:4335 -d --chain=CITY -apiuri=http://0.0.0.0:4335
 ```
 
 ## Support and compatibility
