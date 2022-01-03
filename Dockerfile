@@ -10,6 +10,4 @@ RUN apt-get update \
 RUN curl -Ls https://github.com/block-core/blockcore-nodes/releases/download/#{VERSION}#/#{CHAIN}#-#{VERSION}#-linux-x64.tar.gz \
     | tar -xvz -C .
 
-EXPOSE #{PORTS}#
-
 ENTRYPOINT ["dotnet", "#{ASSEMBLY}#"]

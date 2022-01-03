@@ -1,12 +1,9 @@
-name: Build
+name: Pull Request
 
 on: 
-  push:
+  pull_request:
     branches:
       - master
-  repository_dispatch:
-    types: [publish-nodes]
-  workflow_dispatch:
 
 jobs:
 
@@ -68,40 +65,5 @@ jobs:
     - name: Restore
       run: dotnet restore ${{env.SOLUTION_PATH}}
 
-    # - name: Build
-    #   run: dotnet build -c ${{env.BUILD_CONFIGURATION}} -r ${{matrix.runtime}} -v m ${{env.SOLUTION_PATH}}
-
     - name: Publish
       run: dotnet publish -c ${{env.BUILD_CONFIGURATION}} -r ${{matrix.runtime}} -v m -o ./bin/publish ${{env.PROJECT_PATH}}
-
-    - name: Package Name
-      run: |
-        echo RELEASE_NAME=${{ env.PROJECT_NAME }}-${{ env.VERSION }}-${{ matrix.runtime }}${{ matrix.extension }} >> $GITHUB_ENV
-        echo RELEASE_PATH=${{ env.PROJECT_NAME }}-${{ env.VERSION }}-${{ matrix.runtime }}${{ matrix.extension }} >> $GITHUB_ENV
-      shell: bash
-
-    - name: Package (Linux)
-      if: matrix.os == 'ubuntu-latest'
-      run: |
-        echo RELEASE_PATH=./bin/publish/${{env.RELEASE_NAME}} >> $GITHUB_ENV
-        cd ./bin/publish/
-        tar cvzf ${{env.RELEASE_NAME}} *
-
-    - name: Package (Windows)
-      if: matrix.os == 'windows-latest'
-      run: Compress-Archive -Path .\bin\publish\* -DestinationPath .\${{env.RELEASE_NAME}}
-
-    - name: Package (Mac)
-      if: matrix.os == 'macos-latest'
-      run: zip -r ${{env.RELEASE_NAME}} ./bin/publish/
-
-    - name: Release
-      uses: sondreb/action-release@master
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        files: "${{env.RELEASE_PATH}}"
-        draft: true
-        prerelease: false
-        body: ''
-        name: "Blockcore Reference Nodes (Release ${{env.VERSION}})"
-        tag: ${{env.VERSION}}

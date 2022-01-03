@@ -12,72 +12,14 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        chain: ['MULTI', 'AMS', 'BTC', 'CITY', 'CYBITS', 'EXOS', 'IMPL', 'RUTA', 'STRAX', 'XDS', 'XLR', 'X42', 'X1', 'XRC', 'HOMECOIN', 'SERF']
+        chain: ['MULTI', 'BTC']
         include:
           - chain: MULTI
             name: "multi"
             assembly: "Blockcore.MultiNode.dll"
-            ports: "8332 8333 37220"
-          - chain: AMS
-            name: "ams"
-            assembly: "AMS.Node.dll"
-            ports: "50000 51000 63000"
           - chain: BTC
             name: "btc"
             assembly: "Bitcoin.Node.dll"
-            ports: "8332 8333 37220"
-          - chain: CITY
-            name: "city"
-            assembly: "City.Node.dll"
-            ports: "4333 4334 4335"
-          - chain: CYBITS
-            name: "cybits"
-            assembly: "Cybits.Node.dll"
-            ports: "17771 17772 17773"
-          - chain: EXOS
-            name: "exos"
-            assembly: "OpenExo.Node.dll"
-            ports: "4562 4561 39120"
-          - chain: IMPL
-            name: "impl"
-            assembly: "Impleum.Node.dll"
-            ports: "18105 18104 18103"
-          - chain: RUTA
-            name: "ruta"
-            assembly: "Rutanio.Node.dll"
-            ports: "6782 6781 39220"
-          - chain: STRAX
-            name: "strax"
-            assembly: "Strax.Node.dll"
-            ports: "17105 17104 17103"
-          - chain: XDS
-            name: "xds"
-            assembly: "blockcore.xdsd.dll"
-            ports: "38333 48333 48334"
-          - chain: XLR
-            name: "xlr"
-            assembly: "Solaris.Node.dll"
-            ports: "60000 61000 62000"
-          - chain: X42
-            name: "x42"
-            assembly: "X42.Node.dll"
-            ports: "52342 52343 42220"
-          - chain: X1
-            name: "x1"
-            assembly: "X1.Node.dll"
-            ports: "23333 43333 43334"
-          - chain: XRC
-            name: "xrc"
-            assembly: "xRhodium.Node.dll"
-            ports: "37270 19660 37221"
-          - chain: HOMECOIN
-            name: "homecoin"
-            assembly: "HomeCoin.Node.dll"
-            ports: "33331 33332 33333"
-          - chain: SERF
-            name: "serf"
-            assembly: "SERF.Node.dll"
-            ports: "15111 15112 15113"
 
       fail-fast: false
 

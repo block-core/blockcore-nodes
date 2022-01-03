@@ -40,13 +40,15 @@ namespace Blockcore.Node
             case "X42":
             case "BCP":
             case "CITY":
-            case "STRAT":
+            case "STRAX":
             case "RUTA":
             case "EXOS":
             case "XDS":
             case "XLR":
             case "IMPLX":
             case "HOME":
+            case "SERF":
+            case "CYBITS":
                nodeBuilder.UsePosConsensus().AddPowPosMining().UseColdStakingWallet();
                break;
          }
