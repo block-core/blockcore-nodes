@@ -1,0 +1,69 @@
+name: Build
+
+on: 
+  pull_request:
+    branches:
+      - master
+
+jobs:
+
+  build:
+    strategy:
+      matrix:
+        os: [ windows-latest, ubuntu-latest, macos-latest ]
+        chain: ['MULTI', 'BTC']
+        include:
+          - chain: MULTI
+            name: "MULTI"
+            solution: "MULTI/Blockcore.MultiNode.sln"
+            project: "MULTI/src/Blockcore.MultiNode/Blockcore.MultiNode.csproj"
+          - chain: BTC
+            name: "BTC"
+            solution: "BTC/Bitcoin.sln"
+            project: "BTC/src/Bitcoin.Node/Bitcoin.Node.csproj"
+
+          - os: windows-latest
+            extension: ".zip"
+            runtime: "win-x64"
+          - os: ubuntu-latest
+            extension: ".tar.gz"
+            runtime: "linux-x64"
+          - os: macos-latest
+            runtime: "osx-x64"
+            extension: ".zip"
+        node_version: [12.x]
+      fail-fast: false
+
+    runs-on: ${{ matrix.os }}
+
+    env:
+      PROJECT_NAME: '${{ matrix.name }}'
+      SOLUTION_PATH: '${{ matrix.solution }}'
+      PROJECT_PATH: '${{ matrix.project }}'
+      BUILD_CONFIGURATION: 'Release'
+
+    steps:
+
+    - uses: actions/checkout@v1
+      name: Checkout
+
+    - name: Setup Node.js (${{ matrix.node_version }})
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node_version }}
+
+    - name: Variables
+      run: |
+        echo VERSION=$(npm run version --silent) >> $GITHUB_ENV
+      shell: bash
+
+    # - name: Setup .NET
+    #   uses: actions/setup-dotnet@v1
+    #   with:
+    #     dotnet-version: 3.1.101
+
+    - name: Restore
+      run: dotnet restore ${{env.SOLUTION_PATH}}
+
+    - name: Publish
+      run: dotnet publish -c ${{env.BUILD_CONFIGURATION}} -r ${{matrix.runtime}} -v m -o ./bin/publish ${{env.PROJECT_PATH}}
