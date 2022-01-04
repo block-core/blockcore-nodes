@@ -1,0 +1,20 @@
+{
+  "profiles": {
+    "CIRRUS (MAIN)": {
+      "commandName": "Project",
+      "commandLineArgs": "--chain=CIRRUS -server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser"
+    },
+    "CIRRUS (MAIN/LOCAL)": {
+      "commandName": "Project",
+      "commandLineArgs": "--chain=CIRRUS -server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata"
+    },
+    "CIRRUS (TEST/LOCAL)": {
+      "commandName": "Project",
+      "commandLineArgs": "--chain=CIRRUS -server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -testnet"
+    },
+    "CIRRUS (REGTEST/LOCAL)": {
+      "commandName": "Project",
+      "commandLineArgs": "--chain=CIRRUS -server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata -regtest"
+    }
+  }
+}

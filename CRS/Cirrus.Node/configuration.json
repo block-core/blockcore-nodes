@@ -1,0 +1,7 @@
+{
+    "Azure": {
+        "AppInsights": {
+            "InstrumentationKey": ""
+        }
+    }
+}

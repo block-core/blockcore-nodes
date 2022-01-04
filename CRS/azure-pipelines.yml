@@ -1,0 +1,58 @@
+name: Opdex-Node
+trigger:
+- main
+
+resources:
+- repo: self
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  ARTIFACT_NAME: 'opdex-node'
+
+stages:
+- stage: CI
+  displayName: 'Continuous Integration'
+  jobs:
+  - job: Build
+    displayName: Build and Publish
+
+    variables:
+      SOLUTION: 'OpdexFullNode.sln'
+      BUILD_CONFIGURATION: 'Release'
+      IMAGE_REPOSITORY: 'opdex-node'
+      DOCKERFILE_PATH: 'src/Opdex.Cirrus/Dockerfile'
+      TAG: '$(Build.SourceVersion)'
+
+    steps:
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'restore'
+        projects: $(SOLUTION)
+      displayName: Restore
+
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'build'
+        projects: $(SOLUTION)
+        arguments: '--configuration $(BUILD_CONFIGURATION) --no-restore'
+      displayName: 'Build'
+
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'publish'
+        projects: $(SOLUTION)
+        publishWebProjects: False
+        arguments: '--configuration $(BUILD_CONFIGURATION) --no-build'
+        zipAfterPublish: False
+      displayName: Publish
+
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'acr-opdex'
+        repository: '$(IMAGE_REPOSITORY)'
+        command: 'buildAndPush'
+        Dockerfile: '$(DOCKERFILE_PATH)'
+        tags: '$(TAG)'
+      displayName: Docker
