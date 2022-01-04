@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bitcoin.Node", "BTC\src\Bitcoin.Node\Bitcoin.Node.csproj", "{C6E4A3F3-5806-4110-A260-47563476F21B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cirrus.Node", "CRS\Cirrus.Node\Cirrus.Node.csproj", "{EC5229F6-6A15-413B-81D9-249D3085FCDE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cirrus.Node.Features.KubernetesProbes", "CRS\Cirrus.Node.Features.KubernetesProbes\Cirrus.Node.Features.KubernetesProbes.csproj", "{E9CAA3B0-2E4C-4DA8-975B-E016560A6E80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,14 @@ Global
 		{C6E4A3F3-5806-4110-A260-47563476F21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6E4A3F3-5806-4110-A260-47563476F21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6E4A3F3-5806-4110-A260-47563476F21B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC5229F6-6A15-413B-81D9-249D3085FCDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC5229F6-6A15-413B-81D9-249D3085FCDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC5229F6-6A15-413B-81D9-249D3085FCDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC5229F6-6A15-413B-81D9-249D3085FCDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9CAA3B0-2E4C-4DA8-975B-E016560A6E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9CAA3B0-2E4C-4DA8-975B-E016560A6E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9CAA3B0-2E4C-4DA8-975B-E016560A6E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9CAA3B0-2E4C-4DA8-975B-E016560A6E80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

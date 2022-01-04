@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
-        chain: ['MULTI', 'BTC']
+        chain: ['MULTI', 'BTC', 'CRS']
         include:
           - chain: MULTI
             name: "MULTI"
@@ -21,6 +21,10 @@ jobs:
             name: "BTC"
             solution: "BTC/Bitcoin.sln"
             project: "BTC/src/Bitcoin.Node/Bitcoin.Node.csproj"
+          - chain: CRS
+            name: "CRS"
+            solution: "CRS/Cirrus.sln"
+            project: "CRS/Cirrus.Node/Cirrus.Node.csproj"
 
           - os: windows-latest
             extension: ".zip"

@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        chain: ['MULTI', 'BTC']
+        chain: ['MULTI', 'BTC', 'CRS']
         include:
           - chain: MULTI
             name: "multi"
@@ -20,6 +20,9 @@ jobs:
           - chain: BTC
             name: "btc"
             assembly: "Bitcoin.Node.dll"
+          - chain: CRS
+            name: "crs"
+            assembly: "Cirrus.Node.dll"
 
       fail-fast: false
 
