@@ -3,64 +3,87 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using Cirrus.Node.Models;
 using CSharpFunctionalExtensions;
 using Microsoft.AspNetCore.Mvc;
 using NBitcoin;
 using Stratis.Bitcoin.Controllers;
+using Stratis.Bitcoin.Features.SmartContracts;
 using Stratis.Bitcoin.Features.SmartContracts.Models;
 using Stratis.SmartContracts.CLR;
+using Stratis.SmartContracts.CLR.Caching;
 using Stratis.SmartContracts.CLR.Decompilation;
+using Stratis.SmartContracts.CLR.Serialization;
 using Stratis.SmartContracts.Core;
+using Stratis.SmartContracts.Core.Receipts;
 using Stratis.SmartContracts.Core.State;
 
 namespace Cirrus.Node.Controllers
 {
     [ApiVersion("1")]
-    [Route("api/indexer/contracts")]
+    [Route("api/indexer/contract")]
     public class IndexerContractsController : FeatureController
     {
         private readonly Network network;
         private readonly IStateRepositoryRoot stateRoot;
         private readonly CSharpContractDecompiler contractDecompiler;
+        private readonly IReceiptRepository receiptRepository;
+        private readonly IContractPrimitiveSerializer primitiveSerializer;
+        private readonly IContractAssemblyCache contractAssemblyCache;
 
         public IndexerContractsController(
             Network network,
             IStateRepositoryRoot stateRoot,
-            CSharpContractDecompiler contractDecompiler
+            CSharpContractDecompiler contractDecompiler,
+            IReceiptRepository receiptRepository,
+            IContractPrimitiveSerializer primitiveSerializer,
+            IContractAssemblyCache contractAssemblyCache
         )
         {
             this.network = network;
             this.stateRoot = stateRoot;
             this.contractDecompiler = contractDecompiler;
+            this.receiptRepository = receiptRepository;
+            this.primitiveSerializer = primitiveSerializer;
+            this.contractAssemblyCache = contractAssemblyCache;
         }
 
-        [Route("code")]
+        [Route("info")]
         [HttpGet]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public IActionResult GetDecompiledCode([FromQuery] string address)
+        public IActionResult GetContractInfo([FromQuery] string txHash)
         {
-            uint160 addressNumeric = address.ToUint160(this.network);
-            byte[] contractCode = this.stateRoot.GetCode(addressNumeric);
+            uint256 txHashNum = new uint256(txHash);
+            Receipt receipt = this.receiptRepository.Retrieve(txHashNum);
 
-            if (contractCode == null || !contractCode.Any())
+            if (receipt == null)
             {
-                return this.Json(new GetCodeResponse
-                {
-                    Message = $"No contract execution code exists at {address}"
-                });
+                return null;
             }
 
-            string typeName = this.stateRoot.GetContractType(addressNumeric);
+            uint160 address = receipt.NewContractAddress ?? receipt.To;
 
-            Result<string> sourceResult = this.contractDecompiler.GetSource(contractCode);
+            string typeName = null;
 
-            return this.Json(new GetCodeResponse
+            if (address != null)
             {
-                Message = $"Contract execution code retrieved at {address}",
-                Bytecode = contractCode.ToHexString(),
-                Type = typeName,
-                CSharp = sourceResult.IsSuccess ? sourceResult.Value : sourceResult.Error // Show the source, or the reason why the source couldn't be retrieved.
+                typeName = this.stateRoot.GetContractType(address);
+            }
+
+            List<LogResponse> logResponses = null;
+
+            if (receipt.Logs.Any())
+            {
+                var deserializer = new ApiLogDeserializer(this.primitiveSerializer, this.network, this.stateRoot, this.contractAssemblyCache);
+
+                logResponses = deserializer.MapLogResponses(receipt.Logs);
+            }
+
+            return this.Json(new ContractReceiptResponse(receipt, logResponses ?? new List<LogResponse>(), this.network)
+            {
+                ContractCodeType = typeName,
             });
         }
+
     }
 }
