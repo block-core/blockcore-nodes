@@ -108,6 +108,7 @@ namespace Cirrus.Node
                 .UseTransactionNotification()
                 .UseBlockNotification()
                 .UseApi()
+                .UseIndexerApi()
                 .AddRPC()
                 .UseKubernetesProbes();
             // .AddSignalR(options =>
