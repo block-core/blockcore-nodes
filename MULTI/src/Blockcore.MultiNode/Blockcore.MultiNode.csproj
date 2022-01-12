@@ -1,44 +1,38 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
    <PropertyGroup>
       <AssemblyName>Blockcore.MultiNode</AssemblyName>
       <OutputType>Exe</OutputType>
    </PropertyGroup>
-
    <ItemGroup>
-      <PackageReference Include="Blockcore.Features.BlockExplorer" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Features.BlockStore" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Features.ColdStaking" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Features.Consensus" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Features.Miner" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Features.NodeHost" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Features.Dns" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Features.RPC" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Features.Wallet" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Features.WalletNotify" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Features.Diagnostic" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Core" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Features.Persistence.Rocksdb.CorePackage" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.City" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.Impleum" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.OpenExo" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.Rutanio" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.Strax" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.x42" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.Xds" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.Bitcoin" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.BCP" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.xRhodium" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.HomeCoin" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.X1" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.SERF" Version="1.0.*" />
-      <PackageReference Include="Blockcore.Networks.Cybits" Version="1.0.*" />
+      <PackageReference Include="Blockcore.Features.BlockExplorer" Version="1.1.7" />
+      <PackageReference Include="Blockcore.Features.WalletNotify" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.Xds" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Features.ColdStaking" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Features.NodeHost" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Features.Dns" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Features.Diagnostic" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Features.Persistence.Rocksdb.CorePackage" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.City" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.Impleum" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.OpenExo" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.Rutanio" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.Strax" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.x42" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.Bitcoin" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.BCP" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.xRhodium" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.HomeCoin" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.X1" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.SERF" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.Cybits" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.SeniorBlockCoin" Version="1.1.*" />
+      <PackageReference Include="Blockcore.Networks.RoyalSportsCity" Version="1.1.*" />
+      <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.261602">
+         <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
    </ItemGroup>
-
    <ItemGroup>
       <ProjectReference Include="..\..\..\AMS\src\AMS\AMS.csproj" />
       <ProjectReference Include="..\..\..\XLR\src\Solaris\Solaris.csproj" />
    </ItemGroup>
-
 </Project>

@@ -75,6 +75,14 @@ namespace Blockcore.Node
             case "SERF":
                nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.SERF.Networks.SERF, args: args);
                break;
+
+            case "SBC":
+               nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.SERF.Networks.SERF, args: args);
+               break;
+
+            case "RSC":
+               nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.SERF.Networks.SERF, args: args);
+               break;
          }
 
          return nodeSettings;
