@@ -70,7 +70,7 @@ namespace Cirrus.Node.Controllers
                 typeName = this.stateRoot.GetContractType(address);
             }
 
-            List<LogResponse> logResponses = null;
+            List<LogResponse> logResponses = new List<LogResponse>();
 
             if (receipt.Logs.Any())
             {
@@ -79,11 +79,46 @@ namespace Cirrus.Node.Controllers
                 logResponses = deserializer.MapLogResponses(receipt.Logs);
             }
 
-            return this.Json(new ContractReceiptResponse(receipt, logResponses ?? new List<LogResponse>(), this.network)
+            EnrischLogs(receipt, typeName, logResponses);
+
+            return this.Json(new ContractReceiptResponse(receipt, logResponses, this.network)
             {
                 ContractCodeType = typeName,
             });
         }
 
+        private void EnrischLogs(Receipt receipt, string typeName, List<LogResponse> logResponses)
+        {
+            if (typeName == "StandardToken")
+            {
+                if (receipt.Success)
+                {
+                    if (receipt.MethodName == null && receipt.NewContractAddress != null)
+                    {
+                        // this is the constructor we want to fetch the name, symbol, decimals and total supply.
+                        IStateRepositoryRoot stateAtHeight = this.stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
+
+                        uint160 addressNumeric = receipt.NewContractAddress;
+
+                        byte[] tokenName = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Name"));
+                        byte[] tokenSymbole = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Symbol"));
+                        byte[] tokenTotalSupply = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("TotalSupply"));
+
+                        if (logResponses == null)
+                            logResponses = new List<LogResponse>();
+
+                        logResponses.Add(new LogResponse(new Log(addressNumeric, new List<byte[]>(), new byte[0]), this.network)
+                        {
+                            Log = new LogData("Constructor", new Dictionary<string, object>
+                            {
+                                { "tokenName", Encoding.UTF8.GetString(tokenName)},
+                                { "tokenSymbole", Encoding.UTF8.GetString(tokenSymbole)},
+                                { "tokenTotalSupply", Encoding.UTF8.GetString(tokenTotalSupply)}
+                            })
+                        });
+                    }
+                }
+            }
+        }
     }
 }
