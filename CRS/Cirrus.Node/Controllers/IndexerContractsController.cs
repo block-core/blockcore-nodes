@@ -104,16 +104,13 @@ namespace Cirrus.Node.Controllers
                         byte[] tokenSymbole = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Symbol"));
                         byte[] tokenTotalSupply = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("TotalSupply"));
 
-                        if (logResponses == null)
-                            logResponses = new List<LogResponse>();
-
                         logResponses.Add(new LogResponse(new Log(addressNumeric, new List<byte[]>(), new byte[0]), this.network)
                         {
                             Log = new LogData("Constructor", new Dictionary<string, object>
                             {
                                 { "tokenName", Encoding.UTF8.GetString(tokenName)},
                                 { "tokenSymbole", Encoding.UTF8.GetString(tokenSymbole)},
-                                { "tokenTotalSupply", Encoding.UTF8.GetString(tokenTotalSupply)}
+                                { "tokenTotalSupply", BitConverter.ToInt64(tokenTotalSupply)}
                             })
                         });
                     }
