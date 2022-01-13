@@ -40,10 +40,8 @@ namespace Cirrus.Node.Controllers
             IReceiptRepository receiptRepository,
             IContractPrimitiveSerializer primitiveSerializer,
             IContractAssemblyCache contractAssemblyCache,
-            ISmartContractEnrichmentFactory contractEnrichmentFactory)
-            IContractAssemblyCache contractAssemblyCache,
-            ISerializer serializer
-        )
+            ISmartContractEnrichmentFactory contractEnrichmentFactory,
+            ISerializer serializer)
         {
             this.network = network;
             this.stateRoot = stateRoot;
@@ -94,70 +92,6 @@ namespace Cirrus.Node.Controllers
             {
                 ContractCodeType = typeName,
             });
-        }
-
-        private void EnrischLogs(Receipt receipt, string typeName, List<LogResponse> logResponses)
-        {
-            if (typeName == "StandardToken")
-            {
-                if (receipt.Success)
-                {
-                    if (receipt.MethodName == null && receipt.NewContractAddress != null)
-                    {
-                        // this is the constructor we want to fetch the name, symbol, decimals and total supply.
-                        IStateRepositoryRoot stateAtHeight = this.stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
-
-                        uint160 addressNumeric = receipt.NewContractAddress;
-
-                        byte[] tokenName = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Name"));
-                        byte[] tokenSymbole = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Symbol"));
-                        byte[] tokenTotalSupply = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("TotalSupply"));
-                        byte[] tokenDecimals = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Decimals"));
-
-                        logResponses.Add(new LogResponse(new Log(addressNumeric, new List<byte[]>(), new byte[0]), this.network)
-                        {
-                            Log = new LogData("Constructor", new Dictionary<string, object>
-                            {
-                                { "tokenName", Encoding.UTF8.GetString(tokenName)},
-                                { "tokenSymbole", Encoding.UTF8.GetString(tokenSymbole)},
-                                { "tokenTotalSupply", serializer.ToInt64(tokenTotalSupply)},
-                                { "tokenDecimals", tokenDecimals?[0]}
-                            })
-                        });
-                    }
-                }
-            }
-
-            if (typeName == "NonFungibleToken")
-            {
-                if (receipt.Success)
-                {
-                    if (receipt.MethodName == null && receipt.NewContractAddress != null)
-                    {
-                        // this is the constructor we want to fetch the name, symbol, decimals and total supply.
-                        IStateRepositoryRoot stateAtHeight = this.stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
-
-                        uint160 addressNumeric = receipt.NewContractAddress;
-
-                        byte[] nftName = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Name"));
-                        byte[] nftSymbole = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Symbol"));
-                        byte[] nftOwner = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Owner"));
-                        byte[] nftOwnerOnlyMinting = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("OwnerOnlyMinting"));
-
-                        logResponses.Add(new LogResponse(new Log(addressNumeric, new List<byte[]>(), new byte[0]), this.network)
-                        {
-                            Log = new LogData("Constructor", new Dictionary<string, object>
-                            {
-                                { "nftName", serializer.ToString(nftName)},
-                                { "nftSymbole", serializer.ToString(nftSymbole)},
-                                { "nftOwner", serializer.ToAddress(nftOwner).ToUint160().ToBase58Address(this.network)},
-                                { "nftOwnerOnlyMinting", serializer.ToBool(nftOwnerOnlyMinting)}
-                            })
-                        });
-                    }
-                }
-            }
-
         }
     }
 }

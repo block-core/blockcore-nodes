@@ -10,8 +10,13 @@ namespace Cirrus.Node
         public static IFullNodeBuilder AddBlockcoreRegistrations(this IFullNodeBuilder fullNodeBuilder,
             Action<ApiFeatureOptions> optionsAction = null)
         {
-            fullNodeBuilder.Services.AddTransient<ISmartContractLogEnrichment, StandardTokenLogEnrichment>();
-            fullNodeBuilder.Services.AddTransient<ISmartContractEnrichmentFactory, SmartContractEnrichmentFactory>();
+            fullNodeBuilder.ConfigureServices((Action<IServiceCollection>) (service =>
+            {
+                //TODO check if add singleton is better in this case
+                service.AddTransient<ISmartContractLogEnrichment, StandardTokenLogEnrichment>();
+                service.AddTransient<ISmartContractLogEnrichment, NonFungibleTokenLogEnrichment>();
+                service.AddTransient<ISmartContractEnrichmentFactory, SmartContractEnrichmentFactory>();
+            }));
 
             return fullNodeBuilder;
         }
