@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using Cirrus.Node.Enrichment;
 using Cirrus.Node.Models;
-using CSharpFunctionalExtensions;
 using Microsoft.AspNetCore.Mvc;
 using NBitcoin;
 using Stratis.Bitcoin.Controllers;
 using Stratis.Bitcoin.Features.SmartContracts;
 using Stratis.Bitcoin.Features.SmartContracts.Models;
+using Stratis.SmartContracts;
 using Stratis.SmartContracts.CLR;
 using Stratis.SmartContracts.CLR.Caching;
 using Stratis.SmartContracts.CLR.Decompilation;
 using Stratis.SmartContracts.CLR.Serialization;
-using Stratis.SmartContracts.Core;
 using Stratis.SmartContracts.Core.Receipts;
 using Stratis.SmartContracts.Core.State;
 
@@ -30,6 +30,8 @@ namespace Cirrus.Node.Controllers
         private readonly IReceiptRepository receiptRepository;
         private readonly IContractPrimitiveSerializer primitiveSerializer;
         private readonly IContractAssemblyCache contractAssemblyCache;
+        private readonly ISerializer serializer;
+        private readonly ISmartContractEnrichmentFactory contractEnrichmentFactory;
 
         public IndexerContractsController(
             Network network,
@@ -37,8 +39,9 @@ namespace Cirrus.Node.Controllers
             CSharpContractDecompiler contractDecompiler,
             IReceiptRepository receiptRepository,
             IContractPrimitiveSerializer primitiveSerializer,
-            IContractAssemblyCache contractAssemblyCache
-        )
+            IContractAssemblyCache contractAssemblyCache,
+            ISmartContractEnrichmentFactory contractEnrichmentFactory,
+            ISerializer serializer)
         {
             this.network = network;
             this.stateRoot = stateRoot;
@@ -46,6 +49,8 @@ namespace Cirrus.Node.Controllers
             this.receiptRepository = receiptRepository;
             this.primitiveSerializer = primitiveSerializer;
             this.contractAssemblyCache = contractAssemblyCache;
+            this.serializer = serializer;
+            this.contractEnrichmentFactory = contractEnrichmentFactory;
         }
 
         [Route("info")]
@@ -70,7 +75,7 @@ namespace Cirrus.Node.Controllers
                 typeName = this.stateRoot.GetContractType(address);
             }
 
-            List<LogResponse> logResponses = null;
+            List<LogResponse> logResponses = new List<LogResponse>();
 
             if (receipt.Logs.Any())
             {
@@ -79,11 +84,14 @@ namespace Cirrus.Node.Controllers
                 logResponses = deserializer.MapLogResponses(receipt.Logs);
             }
 
-            return this.Json(new ContractReceiptResponse(receipt, logResponses ?? new List<LogResponse>(), this.network)
+            var logEnrichment = contractEnrichmentFactory.GetLogEnrichment(typeName);
+
+            logEnrichment?.EnrichLogs(receipt,logResponses);
+
+            return this.Json(new ContractReceiptResponse(receipt, logResponses, this.network)
             {
                 ContractCodeType = typeName,
             });
         }
-
     }
 }

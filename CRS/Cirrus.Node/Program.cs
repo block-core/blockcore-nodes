@@ -110,7 +110,8 @@ namespace Cirrus.Node
                 .UseApi()
                 .UseIndexerApi()
                 .AddRPC()
-                .UseKubernetesProbes();
+                .UseKubernetesProbes()
+                .AddBlockcoreRegistrations();
             // .AddSignalR(options =>
             // {
             //     DaemonConfiguration.ConfigureSignalRForCirrus(options);
