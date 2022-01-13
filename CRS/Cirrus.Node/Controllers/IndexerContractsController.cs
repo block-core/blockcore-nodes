@@ -116,7 +116,7 @@ namespace Cirrus.Node.Controllers
                                 { "tokenName", Encoding.UTF8.GetString(tokenName)},
                                 { "tokenSymbole", Encoding.UTF8.GetString(tokenSymbole)},
                                 { "tokenTotalSupply", serializer.ToInt64(tokenTotalSupply)},
-                                { "tokenDecimals", tokenDecimals[0]}
+                                { "tokenDecimals", tokenDecimals?[0]}
                             })
                         });
                     }
@@ -145,7 +145,7 @@ namespace Cirrus.Node.Controllers
                             {
                                 { "nftName", serializer.ToString(nftName)},
                                 { "nftSymbole", serializer.ToString(nftSymbole)},
-                                { "nftOwner", serializer.ToAddress(nftOwner)},
+                                { "nftOwner", serializer.ToAddress(nftOwner).ToUint160().ToBase58Address(this.network)},
                                 { "nftOwnerOnlyMinting", serializer.ToBool(nftOwnerOnlyMinting)}
                             })
                         });
