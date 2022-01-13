@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Cirrus.Node
+namespace Cirrus.Node.Enrichment
 {
     public class SmartContractEnrichmentFactory : ISmartContractEnrichmentFactory
     {
@@ -14,7 +14,7 @@ namespace Cirrus.Node
 
         public ISmartContractLogEnrichment GetLogEnrichment(string typeName)
         {
-            return this.enrichmentList.First(_ => _.IsSmartContractSupported(typeName));
+            return this.enrichmentList.FirstOrDefault(_ => _.IsSmartContractSupported(typeName));
         }
     }
 }

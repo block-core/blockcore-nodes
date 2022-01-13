@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Stratis.Bitcoin.Features.SmartContracts.Models;
 using Stratis.SmartContracts.Core.Receipts;
 
-namespace Cirrus.Node
+namespace Cirrus.Node.Enrichment
 {
     public interface ISmartContractLogEnrichment
     {

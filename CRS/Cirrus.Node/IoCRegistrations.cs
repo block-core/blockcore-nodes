@@ -1,4 +1,5 @@
 using System;
+using Cirrus.Node.Enrichment;
 using Microsoft.Extensions.DependencyInjection;
 using Stratis.Bitcoin.Builder;
 using Stratis.Bitcoin.Features.Api;

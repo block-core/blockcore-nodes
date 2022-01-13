@@ -1,4 +1,4 @@
-namespace Cirrus.Node
+namespace Cirrus.Node.Enrichment
 {
     public interface ISmartContractEnrichmentFactory
     {

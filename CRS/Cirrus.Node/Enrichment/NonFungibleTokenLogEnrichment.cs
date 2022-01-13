@@ -1,33 +1,31 @@
-using System;
 using System.Collections.Generic;
 using System.Text;
 using NBitcoin;
 using Stratis.Bitcoin.Features.SmartContracts.Models;
 using Stratis.SmartContracts;
+using Stratis.SmartContracts.CLR;
 using Stratis.SmartContracts.Core.Receipts;
 using Stratis.SmartContracts.Core.State;
 
-namespace Cirrus.Node
+namespace Cirrus.Node.Enrichment
 {
-    public class StandardTokenLogEnrichment : ISmartContractLogEnrichment
+    public class NonFungibleTokenLogEnrichment : ISmartContractLogEnrichment
     {
         private readonly IStateRepositoryRoot stateRoot;
         private readonly Network network;
         private readonly ISerializer serializer;
 
-        private const string TypeName = "StandardToken";
-
-        public StandardTokenLogEnrichment(IStateRepositoryRoot stateRoot, Network network, ISerializer serializer)
+        public NonFungibleTokenLogEnrichment(IStateRepositoryRoot stateRoot, Network network)
         {
             this.stateRoot = stateRoot;
             this.network = network;
-            this.serializer = serializer;
         }
 
+        private const string typeName = "NonFungibleToken";
 
         public bool IsSmartContractSupported(string typeName)
         {
-            return typeName == TypeName;
+            return typeName == NonFungibleTokenLogEnrichment.typeName;
         }
 
         public void EnrichLogs(Receipt receipt, List<LogResponse> logResponses)
@@ -40,19 +38,19 @@ namespace Cirrus.Node
 
             uint160 addressNumeric = receipt.NewContractAddress;
 
-            byte[] tokenName = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Name"));
-            byte[] tokenSymbole = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Symbol"));
-            byte[] tokenTotalSupply = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("TotalSupply"));
-            byte[] tokenDecimals = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Decimals"));
+            byte[] nftName = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Name"));
+            byte[] nftSymbole = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Symbol"));
+            byte[] nftOwner = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Owner"));
+            byte[] nftOwnerOnlyMinting = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("OwnerOnlyMinting"));
 
             logResponses.Add(new LogResponse(new Log(addressNumeric, new List<byte[]>(), new byte[0]), this.network)
             {
                 Log = new LogData("Constructor", new Dictionary<string, object>
                 {
-                    { "tokenName", Encoding.UTF8.GetString(tokenName)},
-                    { "tokenSymbole", Encoding.UTF8.GetString(tokenSymbole)},
-                    { "tokenTotalSupply", serializer.ToInt64(tokenTotalSupply)},
-                    { "tokenDecimals", tokenDecimals?[0]}
+                    { "nftName", serializer.ToString(nftName)},
+                    { "nftSymbole", serializer.ToString(nftSymbole)},
+                    { "nftOwner", serializer.ToAddress(nftOwner).ToUint160().ToBase58Address(this.network)},
+                    { "nftOwnerOnlyMinting", serializer.ToBool(nftOwnerOnlyMinting)}
                 })
             });
         }

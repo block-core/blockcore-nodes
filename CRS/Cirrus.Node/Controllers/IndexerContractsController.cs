@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using Cirrus.Node.Enrichment;
 using Cirrus.Node.Models;
 using Microsoft.AspNetCore.Mvc;
 using NBitcoin;
@@ -30,7 +31,6 @@ namespace Cirrus.Node.Controllers
         private readonly IContractPrimitiveSerializer primitiveSerializer;
         private readonly IContractAssemblyCache contractAssemblyCache;
         private readonly ISerializer serializer;
-
         private readonly ISmartContractEnrichmentFactory contractEnrichmentFactory;
 
         public IndexerContractsController(
