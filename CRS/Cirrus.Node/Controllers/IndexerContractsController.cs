@@ -10,6 +10,7 @@ using NBitcoin;
 using Stratis.Bitcoin.Controllers;
 using Stratis.Bitcoin.Features.SmartContracts;
 using Stratis.Bitcoin.Features.SmartContracts.Models;
+using Stratis.SmartContracts;
 using Stratis.SmartContracts.CLR;
 using Stratis.SmartContracts.CLR.Caching;
 using Stratis.SmartContracts.CLR.Decompilation;
@@ -30,6 +31,7 @@ namespace Cirrus.Node.Controllers
         private readonly IReceiptRepository receiptRepository;
         private readonly IContractPrimitiveSerializer primitiveSerializer;
         private readonly IContractAssemblyCache contractAssemblyCache;
+        private readonly ISerializer serializer;
 
         public IndexerContractsController(
             Network network,
@@ -37,7 +39,8 @@ namespace Cirrus.Node.Controllers
             CSharpContractDecompiler contractDecompiler,
             IReceiptRepository receiptRepository,
             IContractPrimitiveSerializer primitiveSerializer,
-            IContractAssemblyCache contractAssemblyCache
+            IContractAssemblyCache contractAssemblyCache,
+            ISerializer serializer
         )
         {
             this.network = network;
@@ -46,6 +49,7 @@ namespace Cirrus.Node.Controllers
             this.receiptRepository = receiptRepository;
             this.primitiveSerializer = primitiveSerializer;
             this.contractAssemblyCache = contractAssemblyCache;
+            this.serializer = serializer;
         }
 
         [Route("info")]
@@ -103,6 +107,7 @@ namespace Cirrus.Node.Controllers
                         byte[] tokenName = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Name"));
                         byte[] tokenSymbole = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Symbol"));
                         byte[] tokenTotalSupply = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("TotalSupply"));
+                        byte[] tokenDecimals = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Decimals"));
 
                         logResponses.Add(new LogResponse(new Log(addressNumeric, new List<byte[]>(), new byte[0]), this.network)
                         {
@@ -110,12 +115,44 @@ namespace Cirrus.Node.Controllers
                             {
                                 { "tokenName", Encoding.UTF8.GetString(tokenName)},
                                 { "tokenSymbole", Encoding.UTF8.GetString(tokenSymbole)},
-                                { "tokenTotalSupply", BitConverter.ToInt64(tokenTotalSupply)}
+                                { "tokenTotalSupply", serializer.ToInt64(tokenTotalSupply)},
+                                { "tokenDecimals", tokenDecimals[0]}
                             })
                         });
                     }
                 }
             }
+
+            if (typeName == "NonFungibleToken")
+            {
+                if (receipt.Success)
+                {
+                    if (receipt.MethodName == null && receipt.NewContractAddress != null)
+                    {
+                        // this is the constructor we want to fetch the name, symbol, decimals and total supply.
+                        IStateRepositoryRoot stateAtHeight = this.stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
+
+                        uint160 addressNumeric = receipt.NewContractAddress;
+
+                        byte[] nftName = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Name"));
+                        byte[] nftSymbole = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Symbol"));
+                        byte[] nftOwner = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Owner"));
+                        byte[] nftOwnerOnlyMinting = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("OwnerOnlyMinting"));
+
+                        logResponses.Add(new LogResponse(new Log(addressNumeric, new List<byte[]>(), new byte[0]), this.network)
+                        {
+                            Log = new LogData("Constructor", new Dictionary<string, object>
+                            {
+                                { "nftName", serializer.ToString(nftName)},
+                                { "nftSymbole", serializer.ToString(nftSymbole)},
+                                { "nftOwner", serializer.ToAddress(nftOwner)},
+                                { "nftOwnerOnlyMinting", serializer.ToBool(nftOwnerOnlyMinting)}
+                            })
+                        });
+                    }
+                }
+            }
+
         }
     }
 }
