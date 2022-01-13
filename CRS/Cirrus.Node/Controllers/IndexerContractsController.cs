@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using Cirrus.Node.Models;
-using CSharpFunctionalExtensions;
 using Microsoft.AspNetCore.Mvc;
 using NBitcoin;
 using Stratis.Bitcoin.Controllers;
@@ -15,7 +14,6 @@ using Stratis.SmartContracts.CLR;
 using Stratis.SmartContracts.CLR.Caching;
 using Stratis.SmartContracts.CLR.Decompilation;
 using Stratis.SmartContracts.CLR.Serialization;
-using Stratis.SmartContracts.Core;
 using Stratis.SmartContracts.Core.Receipts;
 using Stratis.SmartContracts.Core.State;
 
@@ -33,12 +31,16 @@ namespace Cirrus.Node.Controllers
         private readonly IContractAssemblyCache contractAssemblyCache;
         private readonly ISerializer serializer;
 
+        private readonly ISmartContractEnrichmentFactory contractEnrichmentFactory;
+
         public IndexerContractsController(
             Network network,
             IStateRepositoryRoot stateRoot,
             CSharpContractDecompiler contractDecompiler,
             IReceiptRepository receiptRepository,
             IContractPrimitiveSerializer primitiveSerializer,
+            IContractAssemblyCache contractAssemblyCache,
+            ISmartContractEnrichmentFactory contractEnrichmentFactory)
             IContractAssemblyCache contractAssemblyCache,
             ISerializer serializer
         )
@@ -50,6 +52,7 @@ namespace Cirrus.Node.Controllers
             this.primitiveSerializer = primitiveSerializer;
             this.contractAssemblyCache = contractAssemblyCache;
             this.serializer = serializer;
+            this.contractEnrichmentFactory = contractEnrichmentFactory;
         }
 
         [Route("info")]
@@ -83,7 +86,9 @@ namespace Cirrus.Node.Controllers
                 logResponses = deserializer.MapLogResponses(receipt.Logs);
             }
 
-            EnrischLogs(receipt, typeName, logResponses);
+            var logEnrichment = contractEnrichmentFactory.GetLogEnrichment(typeName);
+
+            logEnrichment?.EnrichLogs(receipt,logResponses);
 
             return this.Json(new ContractReceiptResponse(receipt, logResponses, this.network)
             {
