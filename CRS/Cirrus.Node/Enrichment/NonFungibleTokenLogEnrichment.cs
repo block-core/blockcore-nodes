@@ -15,10 +15,11 @@ namespace Cirrus.Node.Enrichment
         private readonly Network network;
         private readonly ISerializer serializer;
 
-        public NonFungibleTokenLogEnrichment(IStateRepositoryRoot stateRoot, Network network)
+        public NonFungibleTokenLogEnrichment(IStateRepositoryRoot stateRoot, Network network, ISerializer serializer)
         {
             this.stateRoot = stateRoot;
             this.network = network;
+            this.serializer = serializer;
         }
 
         private const string typeName = "NonFungibleToken";
