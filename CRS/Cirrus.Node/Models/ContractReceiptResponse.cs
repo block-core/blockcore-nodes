@@ -11,6 +11,9 @@ namespace Cirrus.Node.Models
     {
         public string MethodName { get; set; }
         public string ContractCodeType { get; set; }
+        public string ContractBytecode { get; set; }
+        public string ContractCodeHash { get; set; }
+        public string ContractCSharp { get; set; }
 
         public ContractReceiptResponse(Receipt receipt, List<LogResponse> logs, Network network)
             : base(receipt, logs, network)

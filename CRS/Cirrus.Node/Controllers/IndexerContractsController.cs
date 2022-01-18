@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using Cirrus.Node.Enrichment;
 using Cirrus.Node.Models;
+using CSharpFunctionalExtensions;
 using Microsoft.AspNetCore.Mvc;
 using NBitcoin;
 using Stratis.Bitcoin.Controllers;
@@ -15,6 +16,7 @@ using Stratis.SmartContracts.CLR;
 using Stratis.SmartContracts.CLR.Caching;
 using Stratis.SmartContracts.CLR.Decompilation;
 using Stratis.SmartContracts.CLR.Serialization;
+using Stratis.SmartContracts.Core;
 using Stratis.SmartContracts.Core.Receipts;
 using Stratis.SmartContracts.Core.State;
 
@@ -69,10 +71,26 @@ namespace Cirrus.Node.Controllers
             uint160 address = receipt.NewContractAddress ?? receipt.To;
 
             string typeName = null;
+            byte[] contractCode = null;
+            uint256 codeHash = null;
+            string csharpCode = null;
 
             if (address != null)
             {
-                typeName = this.stateRoot.GetContractType(address);
+                AccountState accountState = this.stateRoot.GetAccountState(address);
+
+                if (accountState != null)
+                {
+                    typeName = accountState.TypeName;
+
+                    if (receipt.NewContractAddress != null)
+                    {
+                        codeHash = new uint256(accountState.CodeHash);
+                        contractCode = this.stateRoot.GetCode(receipt.NewContractAddress);
+                        Result<string> sourceResult = this.contractDecompiler.GetSource(contractCode);
+                        csharpCode = sourceResult.IsSuccess ? sourceResult.Value : sourceResult.Error;
+                    }
+                }
             }
 
             List<LogResponse> logResponses = new List<LogResponse>();
@@ -91,6 +109,9 @@ namespace Cirrus.Node.Controllers
             return this.Json(new ContractReceiptResponse(receipt, logResponses, this.network)
             {
                 ContractCodeType = typeName,
+                ContractCodeHash = codeHash?.ToString(),
+                ContractBytecode = contractCode?.ToHexString(),
+                ContractCSharp = csharpCode
             });
         }
     }
