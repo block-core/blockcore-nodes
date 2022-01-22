@@ -16,6 +16,8 @@ Reference implementations of Blockcore based blockchains.
 - X42 - [x42 Protocol](https://www.x42.tech/)
 - XDS - [XDS](https://github.com/sonofsatoshi2020/xds)
 - XLR - [Solaris](https://www.solariscoin.com/)
+- SBC - [Senior Block Coin](https://seniorblockchain.io/)
+- RSC - [Royal Sports City](https://www.royalsportscity.com/)
 
 ## Download
 
