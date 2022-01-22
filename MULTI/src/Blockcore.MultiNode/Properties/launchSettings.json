@@ -119,6 +119,22 @@
       "SERF (MAIN/LOCAL)": {
          "commandName": "Project",
          "commandLineArgs": "--chain=SERF -datadir=data"
+      },
+      "SBC (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=SBC"
+      },
+      "SBC (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=SBC -datadir=data"
+      },
+      "RSC (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=RSC"
+      },
+      "RSC (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=RSC -datadir=data"
       }
    }
 }
