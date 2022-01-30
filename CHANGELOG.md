@@ -1,6 +1,145 @@
+## <small>1.1.34 (2022-01-30)</small>
+
+* Add SBC and RSC to launchSettings (#12) ([52976d7](https://github.com/block-core/blockcore-nodes/commit/52976d7)), closes [#12](https://github.com/block-core/blockcore-nodes/issues/12)
+* Add serializer to constructor ([b982dc9](https://github.com/block-core/blockcore-nodes/commit/b982dc9))
+* Adding contract code to the response ([1a7c482](https://github.com/block-core/blockcore-nodes/commit/1a7c482))
+
+
+
+## <small>1.1.33 (2022-01-14)</small>
+
+* Standard token and nft richer logs (#11) ([31f41d9](https://github.com/block-core/blockcore-nodes/commit/31f41d9)), closes [#11](https://github.com/block-core/blockcore-nodes/issues/11)
+* Update to build new version with updated network packages ([4940320](https://github.com/block-core/blockcore-nodes/commit/4940320))
+
+
+
+## <small>1.1.32 (2022-01-12)</small>
+
+* Bug: Fixes the network selection bug for RSC and SBC ([15f1e21](https://github.com/block-core/blockcore-nodes/commit/15f1e21))
+
+
+
+## <small>1.0.31 (2022-01-12)</small>
+
+* api for contracts to return method name and contract type (#10) ([5fd834b](https://github.com/block-core/blockcore-nodes/commit/5fd834b)), closes [#10](https://github.com/block-core/blockcore-nodes/issues/10)
+* Specify branch for action ([881ec7a](https://github.com/block-core/blockcore-nodes/commit/881ec7a))
+* Upgrades to .NET 6 ([5740ab3](https://github.com/block-core/blockcore-nodes/commit/5740ab3))
+
+
+
+## <small>1.0.30 (2022-01-04)</small>
+
+* Add CRS as a reference node (#9) ([6f45ef2](https://github.com/block-core/blockcore-nodes/commit/6f45ef2)), closes [#9](https://github.com/block-core/blockcore-nodes/issues/9)
+* Migrate away from individual reference nodes (#8) ([9869795](https://github.com/block-core/blockcore-nodes/commit/9869795)), closes [#8](https://github.com/block-core/blockcore-nodes/issues/8)
+* Update README with new instructions using the multi-node image ([976eec6](https://github.com/block-core/blockcore-nodes/commit/976eec6))
+
+
+
+## <small>1.0.29 (2022-01-03)</small>
+
+* Upgrade the dockerfile base ([305bf4f](https://github.com/block-core/blockcore-nodes/commit/305bf4f))
+
+
+
+## <small>1.0.28 (2021-11-27)</small>
+
+* Add additional libraries ([82aee14](https://github.com/block-core/blockcore-nodes/commit/82aee14))
+* Prepare next release and remove Stratis (replaced with Strax) ([88a2e4b](https://github.com/block-core/blockcore-nodes/commit/88a2e4b))
+
+
+
+## <small>1.0.27 (2021-11-21)</small>
+
+* Add Cybits reference node ([43d1980](https://github.com/block-core/blockcore-nodes/commit/43d1980))
+* Ensure correct release for reference nodes ([a621f59](https://github.com/block-core/blockcore-nodes/commit/a621f59))
+
+
+
+## <small>1.0.26 (2021-10-05)</small>
+
+* Add Strax reference node ([52c3574](https://github.com/block-core/blockcore-nodes/commit/52c3574))
+* Fix path in Strax solution ([a313af7](https://github.com/block-core/blockcore-nodes/commit/a313af7))
+* Update for new release with Strax support ([bb3472d](https://github.com/block-core/blockcore-nodes/commit/bb3472d))
+
+
+
+## <small>1.0.25 (2021-07-05)</small>
+
+* Upgrade the Reference Nodes ([22eb168](https://github.com/block-core/blockcore-nodes/commit/22eb168))
+
+
+
+## <small>1.0.24 (2021-04-24)</small>
+
+* Add SERF node ([f3803f5](https://github.com/block-core/blockcore-nodes/commit/f3803f5))
+
+
+
+## <small>1.0.23 (2021-03-10)</small>
+
+* Add HomeCoinNode and X1Node ([61c978d](https://github.com/block-core/blockcore-nodes/commit/61c978d))
+* Add new chains to MultiNode and XRC ([6f7f63f](https://github.com/block-core/blockcore-nodes/commit/6f7f63f))
+* Add new chains to workflow ([7798812](https://github.com/block-core/blockcore-nodes/commit/7798812))
+* Add props to solution items ([155279e](https://github.com/block-core/blockcore-nodes/commit/155279e))
+* Fix for HOMECOIN ([aea2055](https://github.com/block-core/blockcore-nodes/commit/aea2055))
+* Important fix for XRC, which won't work until next release ([ba446e2](https://github.com/block-core/blockcore-nodes/commit/ba446e2))
+* Update version for next release ([034a07b](https://github.com/block-core/blockcore-nodes/commit/034a07b))
+
+
+
+## <small>1.0.22 (2021-02-19)</small>
+
+* Add a multinode reference node ([6e7b7e2](https://github.com/block-core/blockcore-nodes/commit/6e7b7e2))
+* Ensure that all tags are published to Docker Hub ([3bf71aa](https://github.com/block-core/blockcore-nodes/commit/3bf71aa))
+* Fix BTC launch settings ([fde271a](https://github.com/block-core/blockcore-nodes/commit/fde271a))
+
+
+
+## <small>1.0.21 (2021-02-01)</small>
+
+* Add libc-dev dependency for rocksdb ([c85fd04](https://github.com/block-core/blockcore-nodes/commit/c85fd04))
+* Fixing x42 and city which had refactoring changes in packages ([bfdd051](https://github.com/block-core/blockcore-nodes/commit/bfdd051))
+* Make the IMPL node use NuGet network definition ([f364e11](https://github.com/block-core/blockcore-nodes/commit/f364e11))
+* Update the Impleum ports ([cb515b5](https://github.com/block-core/blockcore-nodes/commit/cb515b5))
+* Upgrade runtime version ([b2b1ed0](https://github.com/block-core/blockcore-nodes/commit/b2b1ed0))
+
+
+
+## <small>1.0.20 (2020-12-22)</small>
+
+* Add Directory.Build.props to ensure that Runtime Framework Version is set on individual project ([9f80669](https://github.com/block-core/blockcore-nodes/commit/9f80669))
+* Attempt to not install dotnet tooling ([a6b8b52](https://github.com/block-core/blockcore-nodes/commit/a6b8b52))
+* Only run one chain temporarily ([9d0c85a](https://github.com/block-core/blockcore-nodes/commit/9d0c85a))
+* Skip the build step which specifies solution and not project file. ([832089c](https://github.com/block-core/blockcore-nodes/commit/832089c))
+* Update build.yml ([cfae049](https://github.com/block-core/blockcore-nodes/commit/cfae049))
+* Update Reference Nodes to latest NuGet packages ([2a01e86](https://github.com/block-core/blockcore-nodes/commit/2a01e86))
+* Use root properties for all reference nodes ([f562d69](https://github.com/block-core/blockcore-nodes/commit/f562d69))
+
+
+
+## <small>1.0.19 (2020-11-19)</small>
+
+* Update the README and version for nodes. ([ee82a23](https://github.com/block-core/blockcore-nodes/commit/ee82a23))
+* Updates reference nodes to be compatible with latest Blockcore packages ([abb0218](https://github.com/block-core/blockcore-nodes/commit/abb0218))
+
+
+
+## <small>1.0.18 (2020-09-17)</small>
+
+* Add EXOS and RUTA reference nodes ([6de3911](https://github.com/block-core/blockcore-nodes/commit/6de3911))
+
+
+
+## <small>1.0.17 (2020-09-15)</small>
+
+* Improve support for TipBot by using latest NuGet packages ([47c62ba](https://github.com/block-core/blockcore-nodes/commit/47c62ba))
+
+
+
 ## <small>1.0.16 (2020-09-09)</small>
 
 * Add a bitcoin network node (#7) ([a9622c9](https://github.com/block-core/blockcore-nodes/commit/a9622c9)), closes [#7](https://github.com/block-core/blockcore-nodes/issues/7)
+* Update CHANGELOG.md ([189e72d](https://github.com/block-core/blockcore-nodes/commit/189e72d))
 
 
 
@@ -98,19 +237,19 @@
 * Add section on support and compatibility ([726e62d](https://github.com/block-core/blockcore-nodes/commit/726e62d))
 * Add STRAT to the Blockcore Reference Nodes ([f569711](https://github.com/block-core/blockcore-nodes/commit/f569711))
 * Add XLR Reference Node ([3729906](https://github.com/block-core/blockcore-nodes/commit/3729906))
-* Docker tags must be lower-case ([28ec5ee](https://github.com/block-core/blockcore-nodes/commit/28ec5ee))
-* Perhaps Docker Hub doesn't support deeper path ([07dc02b](https://github.com/block-core/blockcore-nodes/commit/07dc02b))
 * Remove "edited" event trigger from action ([46d802c](https://github.com/block-core/blockcore-nodes/commit/46d802c))
 * Set the volume in docker file ([3de59fd](https://github.com/block-core/blockcore-nodes/commit/3de59fd))
-* Update Dockerfile ([e13e371](https://github.com/block-core/blockcore-nodes/commit/e13e371))
-* Update release.yml ([316ba21](https://github.com/block-core/blockcore-nodes/commit/316ba21))
 * Upgrade packages for XLR ([d92f59a](https://github.com/block-core/blockcore-nodes/commit/d92f59a))
 
 
 
-## <small>1.0.4 (2020-04-19)</small>
+## <small>1.0.4 (2020-04-20)</small>
 
 * Add Dockerfile and workflow to build and publish to Docker Hub. ([fbb437e](https://github.com/block-core/blockcore-nodes/commit/fbb437e))
+* Docker tags must be lower-case ([28ec5ee](https://github.com/block-core/blockcore-nodes/commit/28ec5ee))
+* Perhaps Docker Hub doesn't support deeper path ([07dc02b](https://github.com/block-core/blockcore-nodes/commit/07dc02b))
+* Update Dockerfile ([e13e371](https://github.com/block-core/blockcore-nodes/commit/e13e371))
+* Update release.yml ([316ba21](https://github.com/block-core/blockcore-nodes/commit/316ba21))
 * Updates Reference Nodes to latest Blockcore release ([ed3af3b](https://github.com/block-core/blockcore-nodes/commit/ed3af3b))
 
 
