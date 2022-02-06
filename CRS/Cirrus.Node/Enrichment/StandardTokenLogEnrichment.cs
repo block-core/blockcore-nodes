@@ -49,8 +49,8 @@ namespace Cirrus.Node.Enrichment
             {
                 Log = new LogData("Constructor", new Dictionary<string, object>
                 {
-                    { "tokenName", Encoding.UTF8.GetString(tokenName)},
-                    { "tokenSymbole", Encoding.UTF8.GetString(tokenSymbole)},
+                    { "tokenName", serializer.ToString(tokenName)},
+                    { "tokenSymbole", serializer.ToString(tokenSymbole)},
                     { "tokenTotalSupply", serializer.ToInt64(tokenTotalSupply)},
                     { "tokenDecimals", tokenDecimals?[0]}
                 })

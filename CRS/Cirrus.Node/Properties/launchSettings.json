@@ -4,6 +4,10 @@
       "commandName": "Project",
       "commandLineArgs": "--chain=CIRRUS -server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser"
     },
+    "CIRRUS (TEST)": {
+      "commandName": "Project",
+      "commandLineArgs": "--chain=CIRRUS -server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -testnet"
+    },
     "CIRRUS (MAIN/LOCAL)": {
       "commandName": "Project",
       "commandLineArgs": "--chain=CIRRUS -server -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1 -rpcpassword=rpcpassword -rpcuser=rpcuser -datadir=nodedata"
