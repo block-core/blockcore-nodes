@@ -48,7 +48,7 @@ namespace Cirrus.Node
         {
             string[] devModeArgs = new[] { "-bootstrap=1", "-dbtype=rocksdb", "-defaultwalletname=cirrusdev", "-defaultwalletpassword=password" }.Concat(args).ToArray();
 
-            var nodeSettings = new NodeSettings(new CirrusDev(), protocolVersion: ProtocolVersion.CIRRUS_VERSION, args: devModeArgs)
+            var nodeSettings = new NodeSettings(networksSelector: CirrusNetwork.NetworksSelector, protocolVersion: ProtocolVersion.CIRRUS_VERSION, args: devModeArgs)
             {
                 MinProtocolVersion = ProtocolVersion.ALT_PROTOCOL_VERSION
             };
