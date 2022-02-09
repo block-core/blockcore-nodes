@@ -1,8 +1,25 @@
+## <small>1.1.36 (2022-02-09)</small>
+
+* Add exception handling to the controller and use the correct serialziation freamwork ([5da50ff](https://github.com/block-core/blockcore-nodes/commit/5da50ff))
+* Add the ability to select networks on Cirrus ([562df33](https://github.com/block-core/blockcore-nodes/commit/562df33))
+* Update version ([bbb6d22](https://github.com/block-core/blockcore-nodes/commit/bbb6d22))
+* Upgrade packages for Multinode and Kubernetes Probe ([d517e1a](https://github.com/block-core/blockcore-nodes/commit/d517e1a))
+* Upgrade stratis nuget packages ([cfe8a74](https://github.com/block-core/blockcore-nodes/commit/cfe8a74))
+
+
+
+## <small>1.1.35 (2022-02-06)</small>
+
+* Update for next release ([87418b4](https://github.com/block-core/blockcore-nodes/commit/87418b4))
+
+
+
 ## <small>1.1.34 (2022-01-30)</small>
 
 * Add SBC and RSC to launchSettings (#12) ([52976d7](https://github.com/block-core/blockcore-nodes/commit/52976d7)), closes [#12](https://github.com/block-core/blockcore-nodes/issues/12)
 * Add serializer to constructor ([b982dc9](https://github.com/block-core/blockcore-nodes/commit/b982dc9))
 * Adding contract code to the response ([1a7c482](https://github.com/block-core/blockcore-nodes/commit/1a7c482))
+* Update for release ([8d5835f](https://github.com/block-core/blockcore-nodes/commit/8d5835f))
 
 
 
