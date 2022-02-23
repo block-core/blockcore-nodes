@@ -1,3 +1,10 @@
+## <small>1.1.37 (2022-02-23)</small>
+
+* Update changelog and version ([f3b519e](https://github.com/block-core/blockcore-nodes/commit/f3b519e))
+* Updating CRS node with new mandatory packages from Stratis ([a888dfc](https://github.com/block-core/blockcore-nodes/commit/a888dfc))
+
+
+
 ## <small>1.1.36 (2022-02-09)</small>
 
 * Add exception handling to the controller and use the correct serialziation freamwork ([5da50ff](https://github.com/block-core/blockcore-nodes/commit/5da50ff))
