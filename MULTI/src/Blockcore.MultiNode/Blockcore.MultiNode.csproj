@@ -4,7 +4,7 @@
       <OutputType>Exe</OutputType>
    </PropertyGroup>
    <ItemGroup>
-      <PackageReference Include="Blockcore.Features.BlockExplorer" Version="1.1.7" />
+      <PackageReference Include="Blockcore.Features.BlockExplorer" Version="1.1.*" />
       <PackageReference Include="Blockcore.Features.WalletNotify" Version="1.1.*" />
       <PackageReference Include="Blockcore.Networks.Xds" Version="1.1.*" />
       <PackageReference Include="Blockcore.Features.ColdStaking" Version="1.1.*" />
@@ -27,9 +27,6 @@
       <PackageReference Include="Blockcore.Networks.Cybits" Version="1.1.*" />
       <PackageReference Include="Blockcore.Networks.SeniorBlockCoin" Version="1.1.*" />
       <PackageReference Include="Blockcore.Networks.RoyalSportsCity" Version="1.1.*" />
-      <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.261602">
-         <PrivateAssets>all</PrivateAssets>
-      </PackageReference>
    </ItemGroup>
    <ItemGroup>
       <ProjectReference Include="..\..\..\AMS\src\AMS\AMS.csproj" />

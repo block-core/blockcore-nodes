@@ -7,13 +7,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.NLogTarget" Version="2.20.0" />
-    <PackageReference Include="Stratis.Features.Api" Version="1.2.0" />
-    <PackageReference Include="Stratis.Features.Collateral" Version="4.0.5" />
-    <PackageReference Include="Stratis.Features.Notifications" Version="1.2.0" />
-    <PackageReference Include="Stratis.Features.SQLiteWalletRepository" Version="1.2.0" />
-    <PackageReference Include="Stratis.Features.SmartContracts" Version="1.2.0" />
-    <PackageReference Include="Stratis.Features.Wallet" Version="1.2.0" />
-    <PackageReference Include="Stratis.Sidechains.Networks" Version="1.2.0" />
+    <PackageReference Include="Stratis.Features.Api" Version="1.2.1" />
+    <PackageReference Include="Stratis.Features.Collateral" Version="4.0.6" />
+    <PackageReference Include="Stratis.Features.Notifications" Version="1.2.1" />
+    <PackageReference Include="Stratis.Features.SQLiteWalletRepository" Version="1.2.1" />
+    <PackageReference Include="Stratis.Features.SmartContracts" Version="1.2.1" />
+    <PackageReference Include="Stratis.Features.Wallet" Version="1.2.1" />
+    <PackageReference Include="Stratis.Sidechains.Networks" Version="1.2.1" />
     <PackageReference Include="Stratis.SmartContracts.CLR" Version="2.0.2" />
     <PackageReference Include="Stratis.SmartContracts.Core" Version="2.0.3" />
     <PackageReference Include="Stratis.SmartContracts.Networks" Version="2.0.3" />
