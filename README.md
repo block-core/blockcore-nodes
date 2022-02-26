@@ -9,6 +9,7 @@ Reference implementations of Blockcore based blockchains.
 - AMS - [Amsterdam Coin](https://amsterdamcoin.com/)
 - BTC - [Bitcoin](https://bitcoin.org/)
 - CITY - [City Chain](https://www.city-chain.org)
+- CY - [Cybits](https://www.cybits.org)
 - EXOS - [ExO Economy](https://economy.openexo.com/)
 - IMPLX - [Impleum](https://impleum.com/)
 - RUTA - [Rutanio](https://www.rutanio.com/)
