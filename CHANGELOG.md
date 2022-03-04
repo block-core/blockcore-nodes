@@ -1,3 +1,11 @@
+## <small>1.1.38 (2022-03-04)</small>
+
+* Add amount and gas price ([ae567c3](https://github.com/block-core/blockcore-nodes/commit/ae567c3))
+* Added Cybits to the readme (#14) ([0c75e98](https://github.com/block-core/blockcore-nodes/commit/0c75e98)), closes [#14](https://github.com/block-core/blockcore-nodes/issues/14)
+* Update changelog and version ([437233f](https://github.com/block-core/blockcore-nodes/commit/437233f))
+
+
+
 ## <small>1.1.37 (2022-02-23)</small>
 
 * Update changelog and version ([f3b519e](https://github.com/block-core/blockcore-nodes/commit/f3b519e))
