@@ -32,12 +32,11 @@ namespace Cirrus.Node.Enrichment
         public void EnrichLogs(Receipt receipt, List<LogResponse> logResponses)
         {
             if (!receipt.Success) return;
-            if (receipt.MethodName != null || receipt.NewContractAddress == null) return;
 
             // this is the constructor we want to fetch the name, symbol, decimals and total supply.
             IStateRepositoryRoot stateAtHeight = this.stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
 
-            uint160 addressNumeric = receipt.NewContractAddress;
+            uint160 addressNumeric  =  receipt.MethodName != null || receipt.NewContractAddress == null ? receipt.To: receipt.NewContractAddress;
 
             byte[] owner = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Owner"));
             byte[] whiteListCount = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("WhitelistedCount"));
@@ -46,15 +45,16 @@ namespace Cirrus.Node.Enrichment
             byte[] lastProposalId = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("LastProposalId"));
 
 
+
             logResponses.Add(new LogResponse(new Log(addressNumeric, new List<byte[]>(), new byte[0]), this.network)
             {
                 Log = new LogData("Constructor", new Dictionary<string, object>
                 {
-                    { "Owner", serializer.ToBytes(owner)},
-                    { "WhitelistedCount", serializer.ToString(whiteListCount)},
-                    { "MinVotingDuration", serializer.ToInt64(minVotingDuration)},
-                    { "MaxVotingDuration", serializer.ToInt64(maxVotingDuration)},
-                    { "LastProposalId", serializer.ToInt64(lastProposalId)},
+                    { "Owner", serializer.ToAddress(owner)},
+                    { "WhitelistedCount", whiteListCount == null ? 0 : serializer.ToUInt32(whiteListCount)},
+                    { "MinVotingDuration", serializer.ToUInt32(minVotingDuration)},
+                    { "MaxVotingDuration", serializer.ToUInt32(maxVotingDuration)},
+                    { "LastProposalId", serializer.ToUInt32(lastProposalId)},
                 })
             });
         }
