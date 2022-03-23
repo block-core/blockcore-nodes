@@ -14,8 +14,9 @@ namespace Cirrus.Node
             fullNodeBuilder.ConfigureServices((Action<IServiceCollection>) (service =>
             {
                 //TODO check if add singleton is better in this case
-                service.AddTransient<ISmartContractLogEnrichment, StandardTokenLogEnrichment>();
-                service.AddTransient<ISmartContractLogEnrichment, NonFungibleTokenLogEnrichment>();
+                 service.AddTransient<ISmartContractLogEnrichment, StandardTokenLogEnrichment>();
+                 service.AddTransient<ISmartContractLogEnrichment, NonFungibleTokenLogEnrichment>();
+                 service.AddTransient<ISmartContractLogEnrichment, DAOLogEnrichment>();
                 service.AddTransient<ISmartContractEnrichmentFactory, SmartContractEnrichmentFactory>();
             }));
 
