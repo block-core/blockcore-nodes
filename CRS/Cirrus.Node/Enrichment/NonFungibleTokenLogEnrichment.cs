@@ -32,26 +32,60 @@ namespace Cirrus.Node.Enrichment
         public void EnrichLogs(Receipt receipt, List<LogResponse> logResponses)
         {
             if (!receipt.Success) return;
+
+            switch (receipt.MethodName) //TODO this needs to move into a factory
+            {
+                case null: AddCreateDataToLog(receipt, logResponses);
+                    break;
+                case "Mint":
+                    AddMintTokenDataToLog(receipt, logResponses);
+                    break;
+            }
+
+        }
+
+        private void AddCreateDataToLog(Receipt receipt, List<LogResponse> logResponses)
+        {
             if (receipt.MethodName != null || receipt.NewContractAddress == null) return;
 
             // this is the constructor we want to fetch the name, symbol, decimals and total supply.
-            IStateRepositoryRoot stateAtHeight = this.stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
+            IStateRepositoryRoot stateAtHeight = stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
 
             uint160 addressNumeric = receipt.NewContractAddress;
 
             byte[] nftName = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Name"));
             byte[] nftSymbole = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Symbol"));
             byte[] nftOwner = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("Owner"));
-            byte[] nftOwnerOnlyMinting = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("OwnerOnlyMinting"));
+            byte[] nftOwnerOnlyMinting =
+                stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes("OwnerOnlyMinting"));
 
             logResponses.Add(new LogResponse(new Log(addressNumeric, new List<byte[]>(), new byte[0]), this.network)
             {
                 Log = new LogData("Constructor", new Dictionary<string, object>
                 {
-                    { "nftName", serializer.ToString(nftName)},
-                    { "nftSymbole", serializer.ToString(nftSymbole)},
-                    { "nftOwner", serializer.ToAddress(nftOwner).ToUint160().ToBase58Address(this.network)},
-                    { "nftOwnerOnlyMinting", serializer.ToBool(nftOwnerOnlyMinting)}
+                    { "nftName", serializer.ToString(nftName) },
+                    { "nftSymbole", serializer.ToString(nftSymbole) },
+                    { "nftOwner", serializer.ToAddress(nftOwner).ToUint160().ToBase58Address(this.network) },
+                    { "nftOwnerOnlyMinting", serializer.ToBool(nftOwnerOnlyMinting) }
+                })
+            });
+        }
+
+        private void AddMintTokenDataToLog(Receipt receipt, List<LogResponse> logResponses)
+        {
+            // this is the constructor we want to fetch the name, symbol, decimals and total supply.
+            IStateRepositoryRoot stateAtHeight = stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
+
+            uint160 addressNumeric = receipt.To;
+
+
+            byte[] tokenUri = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes($"URI:{receipt.Result}"));
+
+            logResponses.Add(new LogResponse(new Log(addressNumeric, new List<byte[]>(), new byte[0]), this.network)
+            {
+                Log = new LogData("MintExtract", new Dictionary<string, object>
+                {
+                    { "tokenUri", serializer.ToString(tokenUri) },
                 })
             });
         }
