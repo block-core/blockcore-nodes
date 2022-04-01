@@ -1,4 +1,12 @@
-## <small>1.1.38 (2022-03-04)</small>
+## <small>1.1.39 (2022-04-01)</small>
+
+* Added DAO contract to  the log enrichment endpoint (#15) ([b7a97b1](https://github.com/block-core/blockcore-nodes/commit/b7a97b1)), closes [#15](https://github.com/block-core/blockcore-nodes/issues/15)
+* Added extracting token URI from the store and adding to log (#16) ([f775652](https://github.com/block-core/blockcore-nodes/commit/f775652)), closes [#16](https://github.com/block-core/blockcore-nodes/issues/16)
+* Update version and changelog ([76b1746](https://github.com/block-core/blockcore-nodes/commit/76b1746))
+
+
+
+## <small>1.1.38 (2022-02-27)</small>
 
 * Add amount and gas price ([ae567c3](https://github.com/block-core/blockcore-nodes/commit/ae567c3))
 * Added Cybits to the readme (#14) ([0c75e98](https://github.com/block-core/blockcore-nodes/commit/0c75e98)), closes [#14](https://github.com/block-core/blockcore-nodes/issues/14)
