@@ -35,9 +35,11 @@ namespace Cirrus.Node.Enrichment
 
             switch (receipt.MethodName) //TODO this needs to move into a factory
             {
-                case null: AddCreateDataToLog(receipt, logResponses);
+                case null:
+                    AddCreateDataToLog(receipt, logResponses);
                     break;
                 case "Mint":
+                case "SafeMint":
                     AddMintTokenDataToLog(receipt, logResponses);
                     break;
             }
@@ -65,7 +67,7 @@ namespace Cirrus.Node.Enrichment
                 {
                     { "nftName", serializer.ToString(nftName) },
                     { "nftSymbole", serializer.ToString(nftSymbole) },
-                    { "nftOwner", serializer.ToAddress(nftOwner).ToUint160().ToBase58Address(this.network) },
+                    { "nftOwner", serializer.ToAddress(nftOwner) },
                     { "nftOwnerOnlyMinting", serializer.ToBool(nftOwnerOnlyMinting) }
                 })
             });
