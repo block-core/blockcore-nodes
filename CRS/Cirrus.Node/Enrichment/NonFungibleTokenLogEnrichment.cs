@@ -40,7 +40,7 @@ namespace Cirrus.Node.Enrichment
                     break;
                 case "Mint":
                 case "SafeMint":
-                    AddMintTokenDataToLog(receipt, logResponses);
+                case null: AddCreateDataToLog(receipt, logResponses);
                     break;
             }
 
