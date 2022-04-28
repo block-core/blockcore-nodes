@@ -84,12 +84,13 @@ namespace Cirrus.Node.Controllers
 
                 if (address != null)
                 {
-                    AccountState accountState = this.stateRoot.GetAccountState(address);
+                    IStateRepositoryRoot stateAtHeight = this.stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
+                    AccountState accountState = stateAtHeight.GetAccountState(address);
 
                     if (accountState != null)
                     {
                         typeName = accountState.TypeName;
-                        balance = this.stateRoot.GetCurrentBalance(address);
+                        balance = stateAtHeight.GetCurrentBalance(address);
 
                         if (receipt.NewContractAddress != null)
                         {
