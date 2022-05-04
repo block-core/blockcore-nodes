@@ -80,14 +80,17 @@ namespace Cirrus.Node.Controllers
                 byte[] contractCode = null;
                 uint256 codeHash = null;
                 string csharpCode = null;
+                ulong balance = 0;
 
                 if (address != null)
                 {
-                    AccountState accountState = this.stateRoot.GetAccountState(address);
+                    IStateRepositoryRoot stateAtHeight = this.stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
+                    AccountState accountState = stateAtHeight.GetAccountState(address);
 
                     if (accountState != null)
                     {
                         typeName = accountState.TypeName;
+                        balance = stateAtHeight.GetCurrentBalance(address);
 
                         if (receipt.NewContractAddress != null)
                         {
@@ -115,6 +118,7 @@ namespace Cirrus.Node.Controllers
                 return this.Json(new ContractReceiptResponse(receipt, logResponses, this.network)
                 {
                     ContractCodeType = typeName,
+                    ContractBalance = balance,
                     ContractCodeHash = codeHash?.ToString(),
                     ContractBytecode = contractCode?.ToHexString(),
                     ContractCSharp = csharpCode

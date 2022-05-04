@@ -16,6 +16,7 @@ namespace Cirrus.Node.Models
         public string ContractCSharp { get; set; }
         public ulong GasPrice { get; set; }
         public ulong Amount { get; set; }
+        public ulong ContractBalance { get; set; }
 
         public ContractReceiptResponse(Receipt receipt, List<LogResponse> logs, Network network)
             : base(receipt, logs, network)
