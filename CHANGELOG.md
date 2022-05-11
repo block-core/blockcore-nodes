@@ -1,3 +1,11 @@
+## <small>1.1.40 (2022-05-10)</small>
+
+* Added NFT log enrichment  (#17) ([9f2e5df](https://github.com/block-core/blockcore-nodes/commit/9f2e5df)), closes [#17](https://github.com/block-core/blockcore-nodes/issues/17)
+* Fetch the current balance of a contract (#18) ([bfce82d](https://github.com/block-core/blockcore-nodes/commit/bfce82d)), closes [#18](https://github.com/block-core/blockcore-nodes/issues/18)
+* Update version and changelog ([74efcfe](https://github.com/block-core/blockcore-nodes/commit/74efcfe))
+
+
+
 ## <small>1.1.39 (2022-04-01)</small>
 
 * Added DAO contract to  the log enrichment endpoint (#15) ([b7a97b1](https://github.com/block-core/blockcore-nodes/commit/b7a97b1)), closes [#15](https://github.com/block-core/blockcore-nodes/issues/15)
