@@ -84,6 +84,8 @@ namespace Cirrus.Node.Controllers
 
                 if (address != null)
                 {
+                    typeName = this.stateRoot.GetAccountState(address).TypeName;
+
                     IStateRepositoryRoot stateAtHeight = this.stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
                     AccountState accountState = stateAtHeight.GetAccountState(address);
 
