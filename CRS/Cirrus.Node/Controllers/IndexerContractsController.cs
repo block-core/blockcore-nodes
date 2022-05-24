@@ -100,6 +100,10 @@ namespace Cirrus.Node.Controllers
                             csharpCode = sourceResult.IsSuccess ? sourceResult.Value : sourceResult.Error;
                         }
                     }
+                    else
+                    {
+                        typeName = this.stateRoot.GetAccountState(address).TypeName;
+                    }
                 }
 
                 List<LogResponse> logResponses = new List<LogResponse>();
