@@ -84,8 +84,6 @@ namespace Cirrus.Node.Controllers
 
                 if (address != null)
                 {
-                    typeName = this.stateRoot.GetAccountState(address).TypeName;
-
                     IStateRepositoryRoot stateAtHeight = this.stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
                     AccountState accountState = stateAtHeight.GetAccountState(address);
 
@@ -101,6 +99,10 @@ namespace Cirrus.Node.Controllers
                             Result<string> sourceResult = this.contractDecompiler.GetSource(contractCode);
                             csharpCode = sourceResult.IsSuccess ? sourceResult.Value : sourceResult.Error;
                         }
+                    }
+                    else
+                    {
+                        typeName = this.stateRoot.GetAccountState(address).TypeName;
                     }
                 }
 
