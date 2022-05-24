@@ -1,4 +1,17 @@
-## <small>1.1.40 (2022-05-10)</small>
+## <small>1.1.42 (2022-05-24)</small>
+
+* Fixed issues with the call to get logs for smart contract ([ce37edc](https://github.com/block-core/blockcore-nodes/commit/ce37edc)), closes [#19](https://github.com/block-core/blockcore-nodes/issues/19)
+* Update version ([372a670](https://github.com/block-core/blockcore-nodes/commit/372a670))
+
+
+
+## <small>1.1.41 (2022-05-11)</small>
+
+* Update version and changelog ([5beb3d8](https://github.com/block-core/blockcore-nodes/commit/5beb3d8))
+
+
+
+## <small>1.1.40 (2022-05-04)</small>
 
 * Added NFT log enrichment  (#17) ([9f2e5df](https://github.com/block-core/blockcore-nodes/commit/9f2e5df)), closes [#17](https://github.com/block-core/blockcore-nodes/issues/17)
 * Fetch the current balance of a contract (#18) ([bfce82d](https://github.com/block-core/blockcore-nodes/commit/bfce82d)), closes [#18](https://github.com/block-core/blockcore-nodes/issues/18)
