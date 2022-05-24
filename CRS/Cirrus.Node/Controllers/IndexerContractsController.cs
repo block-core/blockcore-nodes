@@ -102,7 +102,7 @@ namespace Cirrus.Node.Controllers
                     }
                     else
                     {
-                        typeName = this.stateRoot.GetAccountState(address).TypeName;
+                        typeName = this.stateRoot.GetAccountState(address)?.TypeName;
                     }
                 }
 
