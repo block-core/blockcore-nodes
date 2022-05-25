@@ -6,7 +6,6 @@ Reference implementations of Blockcore based blockchains.
 
 ## Available for these blockchains
 
-- AMS - [Amsterdam Coin](https://amsterdamcoin.com/)
 - BTC - [Bitcoin](https://bitcoin.org/)
 - CITY - [City Chain](https://www.city-chain.org)
 - CY - [Cybits](https://www.cybits.org)
