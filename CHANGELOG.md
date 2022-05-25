@@ -1,3 +1,10 @@
+## <small>1.1.43 (2022-05-25)</small>
+
+* Added nullable for cases where the account state doesn't exist (#21) ([09de7e5](https://github.com/block-core/blockcore-nodes/commit/09de7e5)), closes [#21](https://github.com/block-core/blockcore-nodes/issues/21)
+* Update version and changelog ([7dd2b1c](https://github.com/block-core/blockcore-nodes/commit/7dd2b1c))
+
+
+
 ## <small>1.1.42 (2022-05-24)</small>
 
 * Fixed issues with the call to get logs for smart contract ([ce37edc](https://github.com/block-core/blockcore-nodes/commit/ce37edc)), closes [#19](https://github.com/block-core/blockcore-nodes/issues/19)
