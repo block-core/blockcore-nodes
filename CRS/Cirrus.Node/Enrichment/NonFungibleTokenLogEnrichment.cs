@@ -66,8 +66,8 @@ namespace Cirrus.Node.Enrichment
                 Log = new LogData("Constructor", new Dictionary<string, object>
                 {
                     { "nftName", serializer.ToString(nftName) },
-                    { "nftSymbole", serializer.ToString(nftSymbole) },
-                    { "nftOwner", serializer.ToAddress(nftOwner) },
+                    { "nftSymbol", serializer.ToString(nftSymbole) },
+                    { "nftOwner", serializer.ToAddress(nftOwner).ToUint160().ToBase58Address(this.network) },
                     { "nftOwnerOnlyMinting", serializer.ToBool(nftOwnerOnlyMinting) }
                 })
             });

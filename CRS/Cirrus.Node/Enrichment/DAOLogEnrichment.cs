@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Text;
-using DBreeze.Utils;
 using NBitcoin;
 using Stratis.Bitcoin.Features.SmartContracts.Models;
 using Stratis.SmartContracts;
+using Stratis.SmartContracts.CLR;
 using Stratis.SmartContracts.Core.Receipts;
 using Stratis.SmartContracts.Core.State;
 
@@ -50,7 +50,7 @@ namespace Cirrus.Node.Enrichment
             {
                 Log = new LogData("Constructor", new Dictionary<string, object>
                 {
-                    { "Owner", serializer.ToAddress(owner)},
+                    { "Owner",serializer.ToAddress(owner).ToUint160().ToBase58Address(this.network)},
                     { "WhitelistedCount", whiteListCount == null ? 0 : serializer.ToUInt32(whiteListCount)},
                     { "MinVotingDuration", serializer.ToUInt32(minVotingDuration)},
                     { "MaxVotingDuration", serializer.ToUInt32(maxVotingDuration)},
