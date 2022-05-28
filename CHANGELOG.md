@@ -1,4 +1,10 @@
-## <small>1.1.43 (2022-05-25)</small>
+## <small>1.1.44 (2022-05-25)</small>
+
+* Bumped up version ([9d4bc308](https://github.com/block-core/blockcore-nodes/commit/9d4bc308))
+* Changed the address presentation in the logs and fixed typo (#21) ([080ffd98](https://github.com/block-core/blockcore-nodes/commit/080ffd98))
+
+
+## <small>1.1.43 (2022-05-24)</small>
 
 * Added nullable for cases where the account state doesn't exist (#21) ([09de7e5](https://github.com/block-core/blockcore-nodes/commit/09de7e5)), closes [#21](https://github.com/block-core/blockcore-nodes/issues/21)
 * Update version and changelog ([7dd2b1c](https://github.com/block-core/blockcore-nodes/commit/7dd2b1c))
