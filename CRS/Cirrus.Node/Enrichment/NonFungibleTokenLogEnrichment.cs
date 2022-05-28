@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.Extensions.Logging;
 using NBitcoin;
 using Stratis.Bitcoin.Features.SmartContracts.Models;
 using Stratis.SmartContracts;
@@ -14,12 +15,14 @@ namespace Cirrus.Node.Enrichment
         private readonly IStateRepositoryRoot stateRoot;
         private readonly Network network;
         private readonly ISerializer serializer;
+        private readonly ILogger logger;
 
-        public NonFungibleTokenLogEnrichment(IStateRepositoryRoot stateRoot, Network network, ISerializer serializer)
+        public NonFungibleTokenLogEnrichment(IStateRepositoryRoot stateRoot, Network network, ISerializer serializer, ILoggerFactory loggerFactory)
         {
             this.stateRoot = stateRoot;
             this.network = network;
             this.serializer = serializer;
+            logger = loggerFactory.CreateLogger(this.GetType().FullName);
         }
 
         private const string typeName = "NonFungibleToken";
@@ -41,6 +44,9 @@ namespace Cirrus.Node.Enrichment
                 case "Mint":
                 case "SafeMint":
                     AddMintTokenDataToLog(receipt, logResponses);
+                    break;
+                default:
+                    logger.LogDebug($"Couldn't find a data to log method for {receipt.MethodName}");
                     break;
             }
 
