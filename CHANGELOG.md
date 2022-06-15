@@ -1,7 +1,19 @@
-## <small>1.1.44 (2022-05-25)</small>
+## <small>1.1.45 (2022-06-15)</small>
 
-* Bumped up version ([9d4bc308](https://github.com/block-core/blockcore-nodes/commit/9d4bc308))
-* Changed the address presentation in the logs and fixed typo (#21) ([080ffd98](https://github.com/block-core/blockcore-nodes/commit/080ffd98))
+* Update Stratis packages ([cd2621e](https://github.com/block-core/blockcore-nodes/commit/cd2621e))
+* Upgrade the Cirrus Node to .NET 6 ([5c738a4](https://github.com/block-core/blockcore-nodes/commit/5c738a4))
+
+
+
+## <small>1.1.44 (2022-05-28)</small>
+
+* Added logging of methods not mapped (#22) ([561e42d](https://github.com/block-core/blockcore-nodes/commit/561e42d)), closes [#22](https://github.com/block-core/blockcore-nodes/issues/22)
+* Bumped up version ([9d4bc30](https://github.com/block-core/blockcore-nodes/commit/9d4bc30))
+* Changed the address presentation in the logs and fixed typo ([080ffd9](https://github.com/block-core/blockcore-nodes/commit/080ffd9))
+* Remove AMS which is no longer active ([353a516](https://github.com/block-core/blockcore-nodes/commit/353a516))
+* Update CHANGELOG.md ([01a1f66](https://github.com/block-core/blockcore-nodes/commit/01a1f66))
+* Updated the changelog ([986773b](https://github.com/block-core/blockcore-nodes/commit/986773b))
+
 
 
 ## <small>1.1.43 (2022-05-24)</small>
