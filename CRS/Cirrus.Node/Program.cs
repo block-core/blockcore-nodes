@@ -37,46 +37,9 @@ namespace Cirrus.Node
 
             var isLaunchedWithDevMode = args.Any(a => a.Contains($"-{NodeSettings.DevModeParam}", StringComparison.InvariantCultureIgnoreCase));
 
-            IFullNode fullNode = isLaunchedWithDevMode
-                ? BuildCirrusDevNode(args)
-                : BuildCirrusLiveNode(args);
+            IFullNode fullNode = BuildCirrusLiveNode(args);
 
             await fullNode.RunAsync();
-        }
-
-        private static IFullNode BuildCirrusDevNode(string[] args)
-        {
-            string[] devModeArgs = new[] { "-bootstrap=1", "-dbtype=rocksdb", "-defaultwalletname=cirrusdev", "-defaultwalletpassword=password" }.Concat(args).ToArray();
-
-            var nodeSettings = new NodeSettings(networksSelector: CirrusNetwork.NetworksSelector, protocolVersion: ProtocolVersion.CIRRUS_VERSION, args: devModeArgs)
-            {
-                MinProtocolVersion = ProtocolVersion.ALT_PROTOCOL_VERSION
-            };
-
-            DbType dbType = nodeSettings.GetDbType();
-
-            IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
-                .UseNodeSettings(nodeSettings, dbType)
-                .UseBlockStore(dbType)
-                .AddPoAFeature()
-                .UsePoAConsensus(dbType)
-                .AddPoAMiningCapability<SmartContractPoABlockDefinition>()
-                .UseTransactionNotification()
-                .UseBlockNotification()
-                .UseApi()
-                .UseIndexerApi()
-                .UseMempool()
-                .AddRPC()
-                .AddSmartContracts(options =>
-                {
-                    options.UseReflectionExecutor();
-                    options.UsePoAWhitelistedContracts(true);
-                })
-                .UseSmartContractWallet()
-                .AddSQLiteWalletRepository()
-                .UseKubernetesProbes();
-
-            return nodeBuilder.Build();
         }
 
         private static IFullNode BuildCirrusLiveNode(string[] args)
@@ -111,6 +74,7 @@ namespace Cirrus.Node
                 .UseIndexerApi()
                 .AddRPC()
                 .UseKubernetesProbes()
+                .AddDynamicMemberhip()
                 .AddBlockcoreRegistrations();
             // .AddSignalR(options =>
             // {
