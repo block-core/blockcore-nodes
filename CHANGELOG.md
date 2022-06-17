@@ -1,3 +1,10 @@
+## <small>1.1.46 (2022-06-17)</small>
+
+* Add the "AddDynamicMemberhip" feature that listens for federation changes ([0ee1ed4](https://github.com/block-core/blockcore-nodes/commit/0ee1ed4))
+* Update version and changelog ([219d259](https://github.com/block-core/blockcore-nodes/commit/219d259))
+
+
+
 ## <small>1.1.45 (2022-06-15)</small>
 
 * Update Stratis packages ([cd2621e](https://github.com/block-core/blockcore-nodes/commit/cd2621e))
