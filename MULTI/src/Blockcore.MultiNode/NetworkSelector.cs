@@ -72,6 +72,10 @@ namespace Blockcore.Node
                nodeSettings = new NodeSettings(networksSelector: Networks.Cybits.Networks.Cybits, args: args);
                break;
 
+            case "CY":
+               nodeSettings = new NodeSettings(networksSelector: Networks.Cybits.Networks.Cybits, args: args);
+               break;
+
             case "SERF":
                nodeSettings = new NodeSettings(networksSelector: Blockcore.Networks.SERF.Networks.SERF, args: args);
                break;

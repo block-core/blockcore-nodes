@@ -49,6 +49,7 @@ namespace Blockcore.Node
             case "HOME":
             case "SERF":
             case "CYBITS":
+            case "CY":
             case "SBC":
             case "RSC":
                nodeBuilder.UsePosConsensus().AddPowPosMining().UseColdStakingWallet();
