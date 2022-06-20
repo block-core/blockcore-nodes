@@ -1,3 +1,10 @@
+## <small>1.1.47 (2022-06-20)</small>
+
+* Add support for "CY" as alternative to "CYBITS" ([dec54ee](https://github.com/block-core/blockcore-nodes/commit/dec54ee))
+* Update version and changelog ([daae4bd](https://github.com/block-core/blockcore-nodes/commit/daae4bd))
+
+
+
 ## <small>1.1.46 (2022-06-17)</small>
 
 * Add the "AddDynamicMemberhip" feature that listens for federation changes ([0ee1ed4](https://github.com/block-core/blockcore-nodes/commit/0ee1ed4))
