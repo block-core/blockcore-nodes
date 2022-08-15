@@ -1,3 +1,11 @@
+## <small>1.1.48 (2022-08-15)</small>
+
+* Update Node.js version for workflow ([92a2533](https://github.com/block-core/blockcore-nodes/commit/92a2533))
+* Update Stratis packages for Cirrus Node ([169fd05](https://github.com/block-core/blockcore-nodes/commit/169fd05))
+* Update version and changelog ([b173351](https://github.com/block-core/blockcore-nodes/commit/b173351))
+
+
+
 ## <small>1.1.47 (2022-06-20)</small>
 
 * Add support for "CY" as alternative to "CYBITS" ([dec54ee](https://github.com/block-core/blockcore-nodes/commit/dec54ee))
