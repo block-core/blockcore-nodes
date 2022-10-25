@@ -52,6 +52,7 @@ namespace Blockcore.Node
             case "CY":
             case "SBC":
             case "RSC":
+            case "MOL":
                nodeBuilder.UsePosConsensus().AddPowPosMining().UseColdStakingWallet();
                break;
          }

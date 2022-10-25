@@ -135,6 +135,14 @@
       "RSC (MAIN/LOCAL)": {
          "commandName": "Project",
          "commandLineArgs": "--chain=RSC -datadir=data"
+      },
+      "MOL (MAIN)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=MOL"
+      },
+      "MOL (MAIN/LOCAL)": {
+         "commandName": "Project",
+         "commandLineArgs": "--chain=MOL -datadir=data"
       }
    }
 }
