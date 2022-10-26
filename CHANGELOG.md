@@ -1,3 +1,18 @@
+## <small>1.1.51 (2022-10-26)</small>
+
+* Add reference to Molie network ([bf2a4a0](https://github.com/block-core/blockcore-nodes/commit/bf2a4a0))
+* Add support for MOL ([45552fd](https://github.com/block-core/blockcore-nodes/commit/45552fd))
+* Update version ([28cbdf6](https://github.com/block-core/blockcore-nodes/commit/28cbdf6))
+
+
+
+## <small>1.1.50 (2022-08-26)</small>
+
+* Bump version ([ba8a46e](https://github.com/block-core/blockcore-nodes/commit/ba8a46e))
+* Update version and changelog ([2bfd71a](https://github.com/block-core/blockcore-nodes/commit/2bfd71a))
+
+
+
 ## <small>1.1.48 (2022-08-15)</small>
 
 * Update Node.js version for workflow ([92a2533](https://github.com/block-core/blockcore-nodes/commit/92a2533))
