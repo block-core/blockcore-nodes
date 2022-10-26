@@ -11,6 +11,7 @@ Reference implementations of Blockcore based blockchains.
 - CY - [Cybits](https://www.cybits.org)
 - EXOS - [ExO Economy](https://economy.openexo.com/)
 - IMPLX - [Impleum](https://impleum.com/)
+- MOL - [Molie](https://molie.chat/)
 - RUTA - [Rutanio](https://www.rutanio.com/)
 - STRAT - [Stratis](https://stratisplatform.com/)
 - X42 - [x42 Protocol](https://www.x42.tech/)
