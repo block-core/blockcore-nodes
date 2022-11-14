@@ -1,4 +1,13 @@
-## <small>1.1.51 (2022-10-26)</small>
+## <small>1.1.52 (2022-11-14)</small>
+
+* Fix for Windows CRS build ([57bb35f](https://github.com/block-core/blockcore-nodes/commit/57bb35f))
+* Update list of network packages ([1241d18](https://github.com/block-core/blockcore-nodes/commit/1241d18))
+* Update Stratis packages ([6174f97](https://github.com/block-core/blockcore-nodes/commit/6174f97))
+* Update version and changelog ([35f7d25](https://github.com/block-core/blockcore-nodes/commit/35f7d25))
+
+
+
+## <small>1.1.51 (2022-10-25)</small>
 
 * Add reference to Molie network ([bf2a4a0](https://github.com/block-core/blockcore-nodes/commit/bf2a4a0))
 * Add support for MOL ([45552fd](https://github.com/block-core/blockcore-nodes/commit/45552fd))
