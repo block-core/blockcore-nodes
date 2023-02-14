@@ -1,3 +1,10 @@
+## <small>1.1.53 (2023-02-14)</small>
+
+* Fix for cases of missing token URI ([f7eec49](https://github.com/block-core/blockcore-nodes/commit/f7eec49))
+* Update version and changelog ([4eba489](https://github.com/block-core/blockcore-nodes/commit/4eba489))
+
+
+
 ## <small>1.1.52 (2022-11-14)</small>
 
 * Fix for Windows CRS build ([57bb35f](https://github.com/block-core/blockcore-nodes/commit/57bb35f))
