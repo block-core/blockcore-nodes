@@ -1,7 +1,14 @@
+## <small>1.1.55 (2023-04-16)</small>
+
+* trigger build ([89cfce6](https://github.com/block-core/blockcore-nodes/commit/89cfce6))
+
+
+
 ## <small>1.1.53 (2023-02-14)</small>
 
 * Fix for cases of missing token URI ([f7eec49](https://github.com/block-core/blockcore-nodes/commit/f7eec49))
 * Update version and changelog ([4eba489](https://github.com/block-core/blockcore-nodes/commit/4eba489))
+* Updated the changelog ([5a48eee](https://github.com/block-core/blockcore-nodes/commit/5a48eee))
 
 
 
