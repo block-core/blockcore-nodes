@@ -10,7 +10,7 @@ using Blockcore.Utilities;
 namespace Blockcore.Node
 {
    public class Program
-   {
+   { 
       public static async Task Main(string[] args)
       {
          try
