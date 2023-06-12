@@ -82,12 +82,13 @@ namespace Cirrus.Node.Enrichment
         private void AddMintTokenDataToLog(Receipt receipt, List<LogResponse> logResponses)
         {
             // this is the constructor we want to fetch the name, symbol, decimals and total supply.
-            IStateRepositoryRoot stateAtHeight = stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
+            var stateAtHeight = stateRoot.GetSnapshotTo(receipt.PostState.ToBytes());
 
-            uint160 addressNumeric = receipt.To;
+            var addressNumeric = receipt.To;
+            var tokenId = receipt.Result;
 
-
-            byte[] tokenUri = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes($"URI:{receipt.Result}"));
+            var tokenUri = stateAtHeight.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes($"URI:{tokenId}")) ??
+                           stateRoot.GetStorageValue(addressNumeric, Encoding.UTF8.GetBytes($"URI:{tokenId}"));
 
             logResponses.Add(new LogResponse(new Log(addressNumeric, new List<byte[]>(), new byte[0]), this.network)
             {
