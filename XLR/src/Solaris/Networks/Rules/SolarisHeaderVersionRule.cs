@@ -4,7 +4,7 @@ using Blockcore.Consensus.Rules;
 using Blockcore.Features.Consensus.Rules.CommonRules;
 using Blockcore.Utilities;
 using Microsoft.Extensions.Logging;
-using NBitcoin;
+using Blockcore.NBitcoin;
 
 namespace Solaris.Networks.Rules
 {

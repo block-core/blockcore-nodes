@@ -1,5 +1,5 @@
 using Blockcore.Networks;
-using NBitcoin;
+using Blockcore.NBitcoin;
 
 namespace AMS.Networks
 {

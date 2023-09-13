@@ -5,8 +5,8 @@ using System.Net;
 using System.Text;
 using Blockcore.Consensus.Checkpoints;
 using Blockcore.P2P;
-using NBitcoin;
-using NBitcoin.Protocol;
+using Blockcore.NBitcoin;
+using Blockcore.NBitcoin.Protocol;
 
 namespace AMS
 {
