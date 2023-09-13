@@ -13,6 +13,7 @@
     <PackageReference Include="Stratis.Features.SQLiteWalletRepository" Version="1.3.2.4" />
     <PackageReference Include="Stratis.Features.SmartContracts" Version="1.3.2.4" />
     <PackageReference Include="Stratis.Features.Wallet" Version="1.3.2.4" />
+    <PackageReference Include="Stratis.SCL" Version="2.0.3-PreRelease" />
     <PackageReference Include="Stratis.Sidechains.Networks" Version="1.3.2.4" />
     <PackageReference Include="Stratis.SmartContracts.CLR" Version="2.0.2" />
     <PackageReference Include="Stratis.SmartContracts.Core" Version="2.0.3" />
