@@ -1,8 +1,8 @@
 using System;
 using Solaris.Networks.Policies;
-using NBitcoin;
-using NBitcoin.BouncyCastle.Math;
-using NBitcoin.DataEncoders;
+using Blockcore.NBitcoin;
+using Blockcore.NBitcoin.BouncyCastle.math;
+using Blockcore.NBitcoin.DataEncoders;
 using Blockcore.Consensus.BlockInfo;
 using Blockcore.Consensus;
 using Blockcore.Base.Deployments;
@@ -37,7 +37,7 @@ namespace Solaris.Networks
          Genesis = genesisBlock;
 
          // Taken from StratisX.
-         var consensusOptions = new PosConsensusOptions { 
+         var consensusOptions = new PosConsensusOptions {
              MaxBlockBaseSize = 1_000_000,
              MaxStandardVersion = 2,
              MaxStandardTxWeight = 100_000,

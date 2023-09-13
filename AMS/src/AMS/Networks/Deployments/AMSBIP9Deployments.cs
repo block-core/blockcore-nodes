@@ -1,7 +1,7 @@
 using Blockcore.Base.Deployments;
 using Blockcore.Consensus.ScriptInfo;
 using Blockcore.Consensus.TransactionInfo;
-using NBitcoin;
+using Blockcore.NBitcoin;
 
 namespace AMS.Networks.Deployments
 {

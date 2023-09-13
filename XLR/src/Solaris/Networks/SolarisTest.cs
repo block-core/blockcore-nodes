@@ -1,8 +1,8 @@
 using System;
 using Solaris.Networks.Policies;
-using NBitcoin;
-using NBitcoin.BouncyCastle.Math;
-using NBitcoin.DataEncoders;
+using Blockcore.NBitcoin;
+using Blockcore.NBitcoin.BouncyCastle.math;
+using Blockcore.NBitcoin.DataEncoders;
 using Blockcore.Networks;
 using Blockcore.Consensus.BlockInfo;
 using Blockcore.Consensus;
