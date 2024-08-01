@@ -24,6 +24,14 @@ Reference implementations of Blockcore based blockchains.
 
 Go to the [releases](releases) page to find a unified multi-chain node. Separate downloads for Windows, Linux and macOS is available.
 
+## Requirements
+
+Download the .NET runtime:
+https://aka.ms/dotnet-core-applaunch?missing_runtime=true&arch=x64&rid=win-x64&os=win10&apphost_version=8.0.4
+
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.AspNetCore.App&framework_version=8.0.0&arch=x64&rid=win-x64&os=win10
+
 ## Docker
 
 All our Blockcore Reference Nodes is published to our [Docker Hub](https://hub.docker.com/orgs/blockcore/repositories).
