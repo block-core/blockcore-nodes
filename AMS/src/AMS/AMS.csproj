@@ -9,9 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blockcore.Features.Consensus" Version="1.1.*" />
-    <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.1.*" />
-    <PackageReference Include="Blockcore.Core" Version="1.1.*" />
+    <PackageReference Include="Blockcore.Features.Consensus" Version="1.2.42" />
+    <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.2.42" />
+    <PackageReference Include="Blockcore.Core" Version="1.2.42" />
   </ItemGroup>
 
 </Project>
