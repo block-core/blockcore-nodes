@@ -12,17 +12,17 @@
    </PropertyGroup>
 
    <ItemGroup>
-      <PackageReference Include="Blockcore.Features.BlockStore" Version="1.2.44" />
-      <PackageReference Include="Blockcore.Features.Consensus" Version="1.2.44" />
-      <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.2.44" />
-      <PackageReference Include="Blockcore.Features.Miner" Version="1.2.44" />
-      <PackageReference Include="Blockcore.Features.NodeHost" Version="1.2.44" />
-      <PackageReference Include="Blockcore.Features.RPC" Version="1.2.44" />
-      <PackageReference Include="Blockcore.Features.Wallet" Version="1.2.44" />
-      <PackageReference Include="Blockcore.Core" Version="1.2.44" />
-      <PackageReference Include="Blockcore.Networks.Bitcoin" Version="1.2.44" />
-      <PackageReference Include="Blockcore.Features.Persistence.LevelDb.CorePackage" Version="1.2.44" />
-      <PackageReference Include="Blockcore.Features.Persistence.Rocksdb.CorePackage" Version="1.2.44" />
+      <PackageReference Include="Blockcore.Features.BlockStore" Version="1.2.45" />
+      <PackageReference Include="Blockcore.Features.Consensus" Version="1.2.45" />
+      <PackageReference Include="Blockcore.Features.MemoryPool" Version="1.2.45" />
+      <PackageReference Include="Blockcore.Features.Miner" Version="1.2.45" />
+      <PackageReference Include="Blockcore.Features.NodeHost" Version="1.2.45" />
+      <PackageReference Include="Blockcore.Features.RPC" Version="1.2.45" />
+      <PackageReference Include="Blockcore.Features.Wallet" Version="1.2.45" />
+      <PackageReference Include="Blockcore.Core" Version="1.2.45" />
+      <PackageReference Include="Blockcore.Networks.Bitcoin" Version="1.2.45" />
+      <PackageReference Include="Blockcore.Features.Persistence.LevelDb.CorePackage" Version="1.2.45" />
+      <PackageReference Include="Blockcore.Features.Persistence.Rocksdb.CorePackage" Version="1.2.45" />
    </ItemGroup>
 
 </Project>
